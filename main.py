@@ -25,7 +25,9 @@ def get_ip(text):
 def get_last(text):
     for x in words:
         if x.endswith(text):
-            print(get_ip(x), '--> "%s"' % x)
+            _addr = get_ip(x)
+            if _addr != None:
+                print(_addr, '--> "%s"' % x)
 
 def find_word(bytes_word, print_length = 10):
     last = 0
@@ -34,11 +36,14 @@ def find_word(bytes_word, print_length = 10):
         if last != -1:
             print("0x%X -->" % (last + OLD_BASE_ADDR), all_data[last:last+print_length])
 
+
+
 print("Загружаются строки перевода")
 trans = load_trans_mo('trans.mo')
 
 print("Ищем строки в исходном файле")
 words = extract_strings('Dwarf_Fortress')
+
 
 print("Создаётся файл для новой секции с переводом")
 rus_words   = make_dat_file('rus.dat', trans)
@@ -76,14 +81,12 @@ print("Поиск перекрестных ссылок")
 #Ищем указатели на используемые строки, в несколько потоков
 xref = find_xref.find(words, MAX_TO_FIND, all_data, load_from_cache=True)
 
-
-
 print("Перевод...")
 
 max_index = len(words)
 current_index = 0
 
-for test_word in words:
+for test_word in xref:
     
     try:
         #Если строки из бинарника нет в переводе просто проигнорируем это
@@ -95,6 +98,10 @@ for test_word in words:
     #Обрабатываем все найденые индексы и корректируем длину строки в коде
     for pos in all_poses:
         test.write(pos, new_index.to_bytes(4, byteorder="little"))
+
+
+        
+        
                                #edi, eax   ecx    edx   ebx
         if all_data[pos+4] in [0xbf, 0xb8, 0xb9, 0xba, 0xbb]:
             if all_data[pos+5] == len(test_word):

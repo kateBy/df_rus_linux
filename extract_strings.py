@@ -4,7 +4,7 @@ from elf import *
 chars = [i for i in range(ord(" "), 127)]
 nums = b'1234567890'
 
-
+"""Проверяем найденую строку на нечитаемые символы"""
 def check_forbidden(byte_string):
     if len(byte_string) < 2:
         return None
@@ -51,15 +51,72 @@ possible_gemini = [": ", ", ",
                    "Hotkey: ",
                    "Forge, ", "Fishery, ", "Glass ", "Jeweler, ", "Leather, "]
 
-def check_for_gemini(some_word, words, index):
-    for gemini in possible_gemini:
-        if some_word == gemini:
-            continue
-        if some_word.startswith(gemini):
-            words[some_word[len(gemini):]] = index + len(gemini)
-            check_for_gemini(some_word[len(gemini):], words, index + len(gemini)) #Рекурсивно вызываем еще раз для проверки
+#Поиск строк-близнецов постепенно отрезая от исходной строки буквы
+def find_gemini(words, translated):
+    result = {}
+    for word in words:
+        max_i = len(word)
+        i = 1
+        
+        while i < max_i-10:
+            if word[i:] in translated:
+                if not (word[i:] in words):
+                    result[words[word] + i] = word[i:]
+                    
+
+            i += 1
+
+    return result
 
 
+"""Ищет все включения байтов в буфере"""
+def find_bytes(some_bytes, buf_find):
+    #last = 0
+    result = []
+    #while last != -1:
+    last = buf_find(some_bytes, last + 1)
+    if last != -1:
+        result.append(last)
+
+    return last
+
+
+"""Проверяем, имеется ли в буфере ссылка с таким адресом"""
+def check_founded_gemini(gemini, buf):
+    result = {}
+    buf_find = buf.find
+    max_ind = len(gemini)
+    ind = 0
+    for g in gemini:
+        ind += 1
+
+        link_byte = buf_find(int.to_bytes(g, 4, byteorder="little"))
+        if link_byte != -1:
+            if gemini[g] in result:
+                print(gemini[g], "--->" ,hex(int.from_bytes(buf[link_byte:link_byte+4], 'little')), hex(g))
+                      
+            result[gemini[g]] = int.from_bytes(buf[link_byte:link_byte+4], 'little')
+        if (ind % 100) == 0:
+            print("%.2f" % (ind / max_ind * 100), "%")
+
+
+    SPLIT_SYMBOL = "<*|*>"
+
+
+    cache_file = open('gemini_cache.txt', 'wt')
+    for w in result:
+        line = str(w) + SPLIT_SYMBOL + str(result[w]) + "\n"
+        cache_file.write(line)
+
+    cache_file.close()
+        
+
+    return result
+
+            
+
+
+"""Извлекает все похожее на строки из секции .rodata"""
 def extract_strings(fn):
 
     test = ELF(fn)
@@ -84,7 +141,7 @@ def extract_strings(fn):
                 checked = check_forbidden(rodata[index:next_zero])
                 if checked != None:
                     words[checked] = index + rodata_vaddr
-                    check_for_gemini(checked, words, index + rodata_vaddr)
+                    #check_for_gemini(checked, words, index + rodata_vaddr, translated)
             
                 index = next_zero
             

@@ -46,7 +46,7 @@ def find_xrefs(words, procN, all_data, MAX_TO_FIND, msg, pipe, lock):
 
 def find(words, MAX_TO_FIND, all_data, load_from_cache = False):
 
-    SPLIT_SYMBOL = " <*|*> "
+    SPLIT_SYMBOL = "<*|*>"
 
     if load_from_cache:
         cache = open('cache.txt', 'rt').readlines()
