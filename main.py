@@ -20,8 +20,19 @@ def get_ip(text):
     while last != -1:
         last = all_data.find(test_addr, last+1)
         if last != -1:
-            print(hex(last + OLD_BASE_ADDR))
-            
+            return hex(last + OLD_BASE_ADDR)
+
+def get_last(text):
+    for x in words:
+        if x.endswith(text):
+            print(get_ip(x), '--> "%s"' % x)
+
+def find_word(bytes_word, print_length = 10):
+    last = 0
+    while last != -1:
+        last = all_data.find(bytes_word, last + 1)
+        if last != -1:
+            print("0x%X -->" % (last + OLD_BASE_ADDR), all_data[last:last+print_length])
 
 print("Загружаются строки перевода")
 trans = load_trans_mo('trans.mo')
@@ -84,8 +95,8 @@ for test_word in words:
     #Обрабатываем все найденые индексы и корректируем длину строки в коде
     for pos in all_poses:
         test.write(pos, new_index.to_bytes(4, byteorder="little"))
-                               #edi, eax 
-        if all_data[pos+4] in [0xbf, 0xb8, 0xb9, 0xba]:
+                               #edi, eax   ecx    edx   ebx
+        if all_data[pos+4] in [0xbf, 0xb8, 0xb9, 0xba, 0xbb]:
             if all_data[pos+5] == len(test_word):
                 #Случаи, когда после вызова строки ее размер заносится в edi
                 test.write(pos+5, len(trans[test_word]).to_bytes(4, 'little'))

@@ -25,14 +25,23 @@ def check_forbidden(byte_string):
     return byte_string.decode()
 
 #Возможные начала фраз, которые комплятор слепил вместе
-possible_gemini = ["Very ", "Not ", "Seek ", "Recruit/",
+possible_gemini = [": ", ", ",
+                   " was ", "claimed ",
+                   " on a w",            # him
+                   " into the area",     # ' around'
+                   "was entombed ",      # in
+                   "wild ",              # beasts
+                   "How are you,",       # ' my '
+                   
+                   
+                   "Very ", "Not ", "Seek ", "Recruit/",
                    "Seek Animal for ", "Orders: ", "Zone, ",
                    "Any ", "Apply ", "Metal ", "Siege ",
                    "Trap ", "Training ", "Other ", "Auto ",
                    "Engrave ", "Toggle ", "Set ", "How ",
-                   "Age of ", ": ", "Give ", "Getting ",
+                   "Age of ",  "Give ", "Getting ",
                    "Imported ", "Prepared ", " Gather ", "Store ",
-                   ": No Auto ", "south", "north",
+                   ": No Auto ", "south", "north", "forgetful "
 
                    "Below ", "Above ", "Elite ", "Master ", "Enemy ",
                    "Friendly ", "Abduction/" "Death/"
@@ -76,16 +85,6 @@ def extract_strings(fn):
                 if checked != None:
                     words[checked] = index + rodata_vaddr
                     check_for_gemini(checked, words, index + rodata_vaddr)
-                    
-##                    for gemini in possible_gemini:
-##                        if checked.startswith(gemini):
-##                            words[checked[len(gemini):]] = index + rodata_vaddr + len(gemini)
-##                            break
-                            
-
-
-                        
-                    
             
                 index = next_zero
             
