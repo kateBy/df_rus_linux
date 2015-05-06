@@ -61,16 +61,9 @@ unicode_patch('libgraphics.so.dat', 'libgraphics.so.dat.new')
 MAX_TO_FIND = hdr.prog_header[2].filesz
 
 
-##x = opcodes.find_all_stack_string(all_data)
-##r = lambda i : all_data[x[i]+2:x[i]+6]+all_data[x[i]+14:x[i]+18] + all_data[x[i]+28:x[i]+32]
-##for i in range(len(x)):
-##    print(r(i))
-
-
-
 print("Поиск перекрестных ссылок")
 #Ищем указатели на используемые строки, в несколько потоков
-xref = find_xref.find(trans, words, MAX_TO_FIND, all_data, load_from_cache=True)
+xref = find_xref.find(words, MAX_TO_FIND, all_data, load_from_cache=True)
 
 
 
@@ -92,7 +85,7 @@ for test_word in words:
     for pos in all_poses:
         test.write(pos, new_index.to_bytes(4, byteorder="little"))
                                #edi, eax 
-        if all_data[pos+4] in [0xbf, 0xb8]:
+        if all_data[pos+4] in [0xbf, 0xb8, 0xb9, 0xba]:
             if all_data[pos+5] == len(test_word):
                 #Случаи, когда после вызова строки ее размер заносится в edi
                 test.write(pos+5, len(trans[test_word]).to_bytes(4, 'little'))

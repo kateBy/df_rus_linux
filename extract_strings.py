@@ -24,6 +24,32 @@ def check_forbidden(byte_string):
             
     return byte_string.decode()
 
+#Возможные начала фраз, которые комплятор слепил вместе
+possible_gemini = ["Very ", "Not ", "Seek ", "Recruit/",
+                   "Seek Animal for ", "Orders: ", "Zone, ",
+                   "Any ", "Apply ", "Metal ", "Siege ",
+                   "Trap ", "Training ", "Other ", "Auto ",
+                   "Engrave ", "Toggle ", "Set ", "How ",
+                   "Age of ", ": ", "Give ", "Getting ",
+                   "Imported ", "Prepared ", " Gather ", "Store ",
+                   ": No Auto ", "south", "north",
+
+                   "Below ", "Above ", "Elite ", "Master ", "Enemy ",
+                   "Friendly ", "Abduction/" "Death/"
+
+                   
+
+                   "Hotkey: ",
+                   "Forge, ", "Fishery, ", "Glass ", "Jeweler, ", "Leather, "]
+
+def check_for_gemini(some_word, words, index):
+    for gemini in possible_gemini:
+        if some_word == gemini:
+            continue
+        if some_word.startswith(gemini):
+            words[some_word[len(gemini):]] = index + len(gemini)
+            check_for_gemini(some_word[len(gemini):], words, index + len(gemini)) #Рекурсивно вызываем еще раз для проверки
+
 
 def extract_strings(fn):
 
@@ -31,8 +57,8 @@ def extract_strings(fn):
     hdr = ELF_header(test)
 
 
-    #Поиск адресов строк и их адресов
-    for entry in hdr.section_header.entries:
+    
+    for entry in hdr.section_header.entries:                        #Поиск адресов строк и их адресов
             if entry.text_name == ".rodata":
                     break
                 
@@ -49,6 +75,17 @@ def extract_strings(fn):
                 checked = check_forbidden(rodata[index:next_zero])
                 if checked != None:
                     words[checked] = index + rodata_vaddr
+                    check_for_gemini(checked, words, index + rodata_vaddr)
+                    
+##                    for gemini in possible_gemini:
+##                        if checked.startswith(gemini):
+##                            words[checked[len(gemini):]] = index + rodata_vaddr + len(gemini)
+##                            break
+                            
+
+
+                        
+                    
             
                 index = next_zero
             

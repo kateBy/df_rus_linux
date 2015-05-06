@@ -2,7 +2,9 @@
 Dwarf_Fortress
 Edited_DF
 __pycache__/*
+additions/*
 *.h
 *.dat
 *.new
 *.mo
+*.po

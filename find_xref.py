@@ -5,10 +5,15 @@ from extract_strings import *
 import sys
 
 
+
+
 def find_xrefs(words, procN, all_data, MAX_TO_FIND, msg, pipe, lock):
     index = 0
     max_index = len(words)
     result = {}
+
+    #Так должно быть быстрее
+    _find = all_data.find
     
     for test_word in words:
         if index % 100 == 0:
@@ -18,11 +23,12 @@ def find_xrefs(words, procN, all_data, MAX_TO_FIND, msg, pipe, lock):
         index += 1
         
         old_index = words[test_word]
+        bOldindex = old_index.to_bytes(4, byteorder="little")
         all_poses = []
         pos = 0
         #Ищем все совпадения индекса
         while pos != -1:
-            pos = all_data.find(old_index.to_bytes(4, byteorder="little"), pos+1, MAX_TO_FIND)
+            pos = _find(bOldindex, pos+1, MAX_TO_FIND)
             if pos != -1:
                 all_poses.append(pos)
 
@@ -38,7 +44,7 @@ def find_xrefs(words, procN, all_data, MAX_TO_FIND, msg, pipe, lock):
 
 
 
-def find(trans, words, MAX_TO_FIND, all_data, load_from_cache = False):
+def find(words, MAX_TO_FIND, all_data, load_from_cache = False):
 
     SPLIT_SYMBOL = " <*|*> "
 
@@ -90,10 +96,12 @@ def find(trans, words, MAX_TO_FIND, all_data, load_from_cache = False):
     for d in results:
         res.update(d)
 
-    #print(len(results[0])+len(results[1])+len(results[2])+len(results[3]))
-    #print(len(res))
 
     #Записываем результаты на диск, чтобы не мудохаться много раз
+    sys.stdout.write("\n")
+    sys.stdout.flush()
+    print("Запись кэша на диск")
+    
     cache_file = open('cache.txt', 'wt')
     for w in res:
         line = str(w) + SPLIT_SYMBOL + "|".join([str(x) for x in res[w]]) + "\n"
