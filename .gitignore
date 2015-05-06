@@ -1,0 +1,8 @@
+*.txt
+Dwarf_Fortress
+Edited_DF
+__pycache__/*
+*.h
+*.dat
+*.new
+*.mo
