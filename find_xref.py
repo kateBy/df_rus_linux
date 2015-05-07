@@ -92,9 +92,55 @@ def find(words, MAX_TO_FIND, all_data, load_from_cache = False):
         if procs == 0:
             break
 
+        
+
     res = {}
     for d in results:
         res.update(d)
+
+
+    #Байты, которые должны идти перед указателем на строку, все остальные, кроме mov esp - мусор
+    good_bits = [
+             0xb8, # mov eax, offset
+             0xb9, # mov ecx, offset
+             0xba, # mov edx, offset
+             0xbb, # mov ebx, offset
+             0xbd, # mov ebp, offset
+             0xbe, # mov esi, offset
+             0xbf, # mov edi, offset
+             ]
+
+
+
+    bug_addr = []
+    for ref in res:
+        bug_addr.clear()
+        for xaddr in res[ref]:
+            bit = all_data[xaddr-1]
+            if not (bit in good_bits):              #Первый байт подозрителен
+                if all_data[xaddr-4] != 0xc7:       #Проверяем может быть это mov dword ptr esp
+                    if all_data[xaddr-3] != 0xc7:   #Проверяем может быть это mov  word ptr esp
+                        bug_addr.append(xaddr)      #Скорее всего - ошибочный адрес, исключаем его
+
+                        
+        if bug_addr != []:
+            new_ref = []
+            for i in res[ref]:
+                if not (i in bug_addr):
+                    new_ref.append(i)
+            if new_ref != []:
+                print("#BUG", bug_addr, ref)
+                res[ref] = new_ref
+            else:
+                res[ref] = None
+                print("!BUG", bug_addr, ref)
+
+
+
+    #res[ref] = [1,2,3]
+        
+    
+        
 
 
     #Записываем результаты на диск, чтобы не мудохаться много раз
@@ -104,6 +150,8 @@ def find(words, MAX_TO_FIND, all_data, load_from_cache = False):
     
     cache_file = open('cache.txt', 'wt')
     for w in res:
+        if res[w] == None:
+            continue
         line = str(w) + SPLIT_SYMBOL + "|".join([str(x) for x in res[w]]) + "\n"
         cache_file.write(line)
 

@@ -11,7 +11,6 @@ import sys
 import os
 import find_xref
 import opcodes
-from BUG import *
 
 
 #Функция, использовалась при отладке для поиска
@@ -85,13 +84,7 @@ xref = find_xref.find(words, MAX_TO_FIND, all_data, load_from_cache=True)
 print("Перевод...")
 
 
-
 for test_word in xref:
-    if test_word in BUGZ: #Сюда вставляю слова, вызывающие падение игры в модуле BUG.py
-        continue
-
-
-    
     
     try:
         #Если строки из бинарника нет в переводе просто проигнорируем это
@@ -103,9 +96,6 @@ for test_word in xref:
     #Обрабатываем все найденые индексы и корректируем длину строки в коде
     for pos in all_poses:
         test.write(pos, new_index.to_bytes(4, byteorder="little"))
-
-
-        
         
                                #edi, eax   ecx    edx   ebx
         if all_data[pos+4] in [0xbf, 0xb8, 0xb9, 0xba, 0xbb]:
@@ -125,18 +115,6 @@ for test_word in xref:
                 
                 test.write(pos-15, (len(trans[test_word])+1).to_bytes(4, 'little'))
                 continue
-            #if all_data[pos-15] == len(test_word):
-            #    test.write(pos-15, len(trans[test_word]).to_bytes(4, 'little'))
-            #    print("Здесь это есть!", test_word)
-                
-
-            
-
-##        if all_data[pos+17] == 0xb8:
-##            if all_data[pos+18] == len(test_word):
-##                print(test_word, "-->", pos)
-##                continue
-
 
         n = all_data.find(len(test_word).to_bytes(4,'little'),pos - 20, pos)
 

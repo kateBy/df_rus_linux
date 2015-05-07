@@ -24,32 +24,7 @@ def check_forbidden(byte_string):
             
     return byte_string.decode()
 
-#Возможные начала фраз, которые комплятор слепил вместе
-possible_gemini = [": ", ", ",
-                   " was ", "claimed ",
-                   " on a w",            # him
-                   " into the area",     # ' around'
-                   "was entombed ",      # in
-                   "wild ",              # beasts
-                   "How are you,",       # ' my '
-                   
-                   
-                   "Very ", "Not ", "Seek ", "Recruit/",
-                   "Seek Animal for ", "Orders: ", "Zone, ",
-                   "Any ", "Apply ", "Metal ", "Siege ",
-                   "Trap ", "Training ", "Other ", "Auto ",
-                   "Engrave ", "Toggle ", "Set ", "How ",
-                   "Age of ",  "Give ", "Getting ",
-                   "Imported ", "Prepared ", " Gather ", "Store ",
-                   ": No Auto ", "south", "north", "forgetful "
 
-                   "Below ", "Above ", "Elite ", "Master ", "Enemy ",
-                   "Friendly ", "Abduction/" "Death/"
-
-                   
-
-                   "Hotkey: ",
-                   "Forge, ", "Fishery, ", "Glass ", "Jeweler, ", "Leather, "]
 
 #Поиск строк-близнецов постепенно отрезая от исходной строки буквы
 def find_gemini(words, translated):
@@ -89,7 +64,6 @@ def check_founded_gemini(gemini, buf):
     ind = 0
     for g in gemini:
         ind += 1
-        #founded = find_bytes(int.to_bytes(g, 4, byteorder="little"), buf_find)
         link_byte = buf_find(int.to_bytes(g, 4, byteorder="little"))
         if link_byte != -1:
             if gemini[g] in result:
@@ -141,7 +115,7 @@ def extract_strings(fn):
                 checked = check_forbidden(rodata[index:next_zero])
                 if checked != None:
                     words[checked] = index + rodata_vaddr
-                    #check_for_gemini(checked, words, index + rodata_vaddr, translated)
+                    
             
                 index = next_zero
             
