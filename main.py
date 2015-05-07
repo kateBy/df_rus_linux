@@ -11,6 +11,7 @@ import sys
 import os
 import find_xref
 import opcodes
+from BUG import *
 
 
 #Функция, использовалась при отладке для поиска
@@ -83,10 +84,14 @@ xref = find_xref.find(words, MAX_TO_FIND, all_data, load_from_cache=True)
 
 print("Перевод...")
 
-max_index = len(words)
-current_index = 0
+
 
 for test_word in xref:
+    if test_word in BUGZ: #Сюда вставляю слова, вызывающие падение игры в модуле BUG.py
+        continue
+
+
+    
     
     try:
         #Если строки из бинарника нет в переводе просто проигнорируем это
@@ -153,10 +158,11 @@ main_menu = {"Продолжить Игру": b"Cont",
 
 ## Эти не тестировались
              
-             "Кастрировать":b"Geld",
-             "Производство древесного угля":b"Char",
-             "Уборка":b"Clea",
-             "Другая работа":b"Othe"}
+             #"Кастрировать":b"Geld",
+             #"Производство древесного угля":b"Char",
+             #"Уборка":b"Clea",
+             #"Другая работа":b"Othe"
+             }
 
 start_bytes = b"\xc7\x06"
 for _m in main_menu:

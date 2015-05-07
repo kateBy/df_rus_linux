@@ -58,10 +58,10 @@ def find_gemini(words, translated):
         max_i = len(word)
         i = 1
         
-        while i < max_i-10:
+        while i < max_i-2:
             if word[i:] in translated:
                 if not (word[i:] in words):
-                    result[words[word] + i] = word[i:]
+                     result[words[word] + i] = word[i:]
                     
 
             i += 1
@@ -89,7 +89,7 @@ def check_founded_gemini(gemini, buf):
     ind = 0
     for g in gemini:
         ind += 1
-
+        #founded = find_bytes(int.to_bytes(g, 4, byteorder="little"), buf_find)
         link_byte = buf_find(int.to_bytes(g, 4, byteorder="little"))
         if link_byte != -1:
             if gemini[g] in result:
