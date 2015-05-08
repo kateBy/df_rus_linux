@@ -71,8 +71,8 @@ h0 = template.pack(1, NEW_OFFSET, NEW_BASE_ADDR,  NEW_BASE_ADDR, 0x100000, 0x100
 
 test.write(52 + 32 * 7, h0)
 
-print("Патчится таблица преобразования символов в libgraphics.so")
-unicode_patch('libgraphics.so.dat', 'libgraphics.so.dat.new')
+#print("Патчится таблица преобразования символов в libgraphics.so")
+#unicode_patch('libgraphics.so.dat', 'libgraphics.so.dat.new')
 
 MAX_TO_FIND = hdr.prog_header[2].filesz
 

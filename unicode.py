@@ -23,7 +23,7 @@ def print_table(table):
     import struct
     template = struct.Struct("I" * 256)
     unpacked = template.unpack(table)
-    str_template = ("0x%08X "*16 + "\n")*16
+    str_template = ("0x%04X, "*8 + "\n")*32
 
     print(str_template % unpacked)
 
@@ -55,5 +55,15 @@ def unicode_patch(old_fn, new_fn):
     table2 = fn.read(256 * 4)
 
     open(new_fn, 'wb').write(fn.getvalue())
+
+if __name__ == "__main__":
+
+    from io import BytesIO
+
+    fn = BytesIO()
+    patch_unicode_table(fn, 0)
+
+    table = fn.getvalue()
+    print_table(table)
 
 
