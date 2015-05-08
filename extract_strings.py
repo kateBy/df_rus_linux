@@ -8,25 +8,21 @@ nums = b'1234567890'
 def check_forbidden(byte_string):
     if len(byte_string) < 2:
         return None
-    #if byte_string[0] == ord("["):
-    #    if byte_string.startswith(b"[NAME:") or byte_string.startswith(b"[ATTACK:EDGE") or byte_string.startswith(b"[ATTACK:BLUNT"):
-    # #       return byte_string.decode()
-    #    else:    
-    #        return None
         
     if byte_string[0] in nums:
         return None
     for char in byte_string:
         if not (char in chars):
             return None
-    #if byte_string == byte_string.upper():
-    #    return None
+
             
     return byte_string.decode()
 
 
 
-#Поиск строк-близнецов постепенно отрезая от исходной строки буквы
+"""Поиск строк-близнецов постепенно отрезая от исходной строки буквы
+а после - сравнение со словарём переводов, если строка имеется в переводах,
+заносим ее в список"""
 def find_gemini(words, translated):
     result = {}
     for word in words:
@@ -42,19 +38,6 @@ def find_gemini(words, translated):
             i += 1
 
     return result
-
-
-"""Ищет все включения байтов в буфере"""
-def find_bytes(some_bytes, buf_find):
-    #last = 0
-    result = []
-    #while last != -1:
-    last = buf_find(some_bytes, last + 1)
-    if last != -1:
-        result.append(last)
-
-    return last
-
 
 """Проверяем, имеется ли в буфере ссылка с таким адресом"""
 def check_founded_gemini(gemini, buf):
@@ -93,16 +76,14 @@ def check_founded_gemini(gemini, buf):
 """Извлекает все похожее на строки из секции .rodata"""
 def extract_strings(fn):
 
-    test = ELF(fn)
-    hdr = ELF_header(test)
-
-
+    elf = ELF(fn)
+    hdr = ELF_header(elf)
     
-    for entry in hdr.section_header.entries:                        #Поиск адресов строк и их адресов
-            if entry.text_name == ".rodata":
+    for entry in hdr.section_header.entries:   #Поиск смещений строк и их адресов
+            if entry.text_name == ".rodata":   #Поиск ведется только в секции .rodata
                     break
                 
-    rodata = test.read(entry.offset, entry.size)
+    rodata = elf.read(entry.offset, entry.size)
     rodata_vaddr = entry.addr
     
     max_index = len(rodata)
@@ -123,7 +104,7 @@ def extract_strings(fn):
         index += 1
     return words
 
-
+'''Загрузка строк перевода из файла trans.txt'''
 def load_trans_txt(fn):
     trans = open(fn, 'rt', encoding="cp1251")
     words = {}
@@ -136,6 +117,7 @@ def load_trans_txt(fn):
 
     return words
 
+'''Загрузка перевода из файла .mo с помощью библиотеки polib'''
 def load_trans_mo(fn):
     import polib
     result = {}
@@ -145,19 +127,9 @@ def load_trans_mo(fn):
 
     return result
 
-
-def compare(words, trans):
-    not_found = []
-    for i in words:
-        try:
-            tmp = trans[i]
-        except KeyError:
-            not_found.append(i)
-            
-    return not_found
-
 """Создаёт секцию с новыми строками и возвращает словарь,
-содержащий английскую версию строки и индекс ее в новой секции"""
+содержащий английскую версию строки и индекс ее в новой секции.
+Строки разделяются между собой одинарным нулём"""
 def make_dat_file(fn, trans, add_zeros_to = 0x100000):
     from io import BytesIO
     result = {}
@@ -195,7 +167,16 @@ def split_dictionary(dictionary, count):
 
     return result
 
-
+"""
+def compare0(words, trans):
+    not_found = []
+    for i in words:
+        try:
+            tmp = trans[i]
+        except KeyError:
+            not_found.append(i)
+            
+    return not_found """
 
 
 

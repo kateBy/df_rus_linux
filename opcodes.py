@@ -1,6 +1,6 @@
 
 
-
+'''Создаёт последовательность байт, которые являются джампом с одного адреса на другой'''
 def make_near_jmp(addr_from, addr_to):
     return b"\xe9" + (addr_to - addr_from).to_bytes(4, 'little', signed = True)
 
@@ -9,8 +9,8 @@ def make_near_jmp(addr_from, addr_to):
 
 
 
-#Создаёт последовательность байт, аналогичную загрузке
-#строк в главном меню, только выравнивает по 4
+'''Создаёт последовательность байт, аналогичную загрузке
+строк в главном меню, только выравнивает по 4'''
 def load_str_by_stack(text):
     def dword_mov_esi(x): 
         #mov dword prt [esi + x] 
@@ -36,6 +36,7 @@ def load_str_by_stack(text):
 
 
 JMP_LEN = 5
+'''Добавляет строку в новый сегмент данных, а так же код, необходимый для его загрузки'''
 def make_new_string(old_off, new_off, string, file_object, OLD_BASE_ADDR, NEW_BASE_ADDR, NEW_OFFSET, all_data):
     
     new_str = load_str_by_stack(string)
