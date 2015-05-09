@@ -97,8 +97,8 @@ for test_word in xref:
     for pos in all_poses:
         test.write(pos, new_index.to_bytes(4, byteorder="little"))
         
-                               #edi, eax   ecx    edx   ebx
-        if all_data[pos+4] in [0xbf, 0xb8, 0xb9, 0xba, 0xbb]:
+                               #edi, eax   ecx    edx   ebx   ebp
+        if all_data[pos+4] in [0xbf, 0xb8, 0xb9, 0xba, 0xbb, 0xbd]:
             if all_data[pos+5] == len(test_word):
                 #Случаи, когда после вызова строки ее размер заносится в edi
                 test.write(pos+5, len(trans[test_word]).to_bytes(4, 'little'))

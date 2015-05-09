@@ -29,7 +29,7 @@ def find_gemini(words, translated):
         max_i = len(word)
         i = 1
         
-        while i < max_i-2:
+        while i < max_i-1:
             if word[i:] in translated:
                 if not (word[i:] in words):
                      result[words[word] + i] = word[i:]
