@@ -104,6 +104,11 @@ for test_word in xref:
                 test.write(pos+5, len(trans[test_word]).to_bytes(4, 'little'))
                 continue
 
+        if all_data[pos+9] in [0xbf, 0xb8, 0xb9, 0xba, 0xbb, 0xbd, 0xbe]:
+            if all_data[pos+10] == len(test_word):
+                test.write(pos+10, len(trans[test_word]).to_bytes(4, 'little'))
+                continue
+
         if all_data[pos-16] == 0xb8:
             if all_data[pos-15] == (len(test_word)+1):
                 
@@ -115,6 +120,18 @@ for test_word in xref:
                 
                 test.write(pos-15, (len(trans[test_word])+1).to_bytes(4, 'little'))
                 continue
+##
+##        if all_data[pos+12] in [0xbf, 0xb8, 0xb9, 0xba, 0xbb, 0xbd, 0xbe]:
+##            if all_data[pos+13] == (len(test_word)):
+##                print(pos, "FOUND CORRECT SIZE", test_word)
+##                test.write(pos+13, (len(trans[test_word])).to_bytes(4, 'little'))
+##                continue
+##            
+##            if all_data[pos+13] == (len(test_word)+1):
+##                print(pos, "FOUND SIZE+1", test_word)
+##                """Пока что один случай: '  Squad Schedules: '"""
+##                test.write(pos+13, (len(trans[test_word])+1).to_bytes(4, 'little'))
+##                continue
 
         n = all_data.find(len(test_word).to_bytes(4,'little'),pos - 20, pos)
 
@@ -130,7 +147,7 @@ CURSOR = rus_words[-1]
 
 main_menu = {"Продолжить Игру": b"Cont",
              "Начать Игру":b"Star",
-             "Выход":b"Quit",
+             " Выход ":b"Quit",
              "Создать Новый Мир!":b"Crea",
              "Об Игре":b"Abou",
 
