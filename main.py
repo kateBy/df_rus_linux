@@ -7,7 +7,6 @@ if __name__ != '__main__':
 
 from elf import *
 from extract_strings import *
-from unicode import *
 import sys
 import os
 import find_xref
@@ -170,6 +169,8 @@ for _m in main_menu:
 
 print("Сохраняется результат...")
 test.save()
+
+os.remove('./rus.dat')
 
 print("Успех!")
 
