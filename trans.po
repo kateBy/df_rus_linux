@@ -26057,7 +26057,7 @@ msgid "Present Participle"
 msgstr "Причастие настоящего времени"
 
 msgid "Press "
-msgstr "Жмите "
+msgstr "Нажмите "
 
 msgid "Pressed Material"
 msgstr "Прессованные материалы"
@@ -36493,7 +36493,7 @@ msgid "a armorsmith's shop"
 msgstr "лавка бронника"
 
 msgid "a bedroom like a personal palace"
-msgstr "спальня, как собственный дворц"
+msgstr "спальня, как собственный дворец"
 
 msgid "a blacksmith's shop"
 msgstr "лавка кузнеца"
@@ -42212,7 +42212,7 @@ msgid "finds those that engage in trade and commerce to be fairly disgusting"
 msgstr "считает занимающихся торговлей и коммерцией довольно отвратительными"
 
 msgid "fine"
-msgstr "в хорошем настроении"
+msgstr "отличный"
 
 msgid "finely "
 msgstr "отлично "
@@ -51511,7 +51511,7 @@ msgid "task"
 msgstr "задание"
 
 msgid "tastefully arranged "
-msgstr "расставлен со вкусом "
+msgstr "установленым со вкусом "
 
 msgid "tavern (255,255,200)"
 msgstr "tavern (255,255,200)"
