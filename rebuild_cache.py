@@ -19,6 +19,7 @@ test = ELF("Dwarf_Fortress")
 hdr = ELF_header(test)
 all_data = test.file_object.getvalue()
 
+#Предел поиска строк
 MAX_TO_FIND = hdr.prog_header[2].filesz
 
 
