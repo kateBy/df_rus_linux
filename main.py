@@ -55,7 +55,8 @@ try:
     os.remove('/tmp/dwarf_base_addr')
     NEW_BASE_ADDR = ((int(bss_offset,16) + int(bss_len, 16))//4096 + 1 ) * 4096
 except:
-    print("Ошибка при получении сдвига секции")
+    print("Ошибка при получении адреса секции")
+    exit()
 
 #NEW_BASE_ADDR = 40694*4096 #0x9ef6000
 
@@ -71,13 +72,23 @@ all_data = test.file_object.getvalue()
 
 OLD_BASE_ADDR = 0x08048000
 
-#readelf ./Edited_DF -e | grep \]\ \.rus | awk '{print $5}'
-NEW_OFFSET = 5029*4096
+try:
+    os.system("readelf ./Edited_DF -e | grep \]\ \.rus | awk '{print $5}' > /tmp/dwarf_offset")
+    rus_offset = open('/tmp/dwarf_offset').read().strip()
+    os.remove('/tmp/dwarf_offset')
+    NEW_OFFSET = int(rus_offset, 16)
+except:
+    print("Ошибка при получении сдвига секции в памяти")
+    exit()
+              
+#NEW_OFFSET = 5029*4096
 
 #Создаётся запись для программного заголовка с указателями на новую секцию
+#без этой правки новая секция не будет подгружена в память
 template = struct.Struct("IIIIIIII")
 h0 = template.pack(1, NEW_OFFSET, NEW_BASE_ADDR,  NEW_BASE_ADDR, 0x100000, 0x100000, 4, 4096)
 
+#52-длина заголовка, 32-длина секции, 7-номер секции, которую можно переписать
 test.write(52 + 32 * 7, h0)
 
 MAX_TO_FIND = hdr.prog_header[2].filesz
