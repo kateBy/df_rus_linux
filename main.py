@@ -48,25 +48,34 @@ words = extract_strings('Dwarf_Fortress')
 print("Создаётся файл для новой секции с переводом")
 rus_words   = make_dat_file('rus.dat', trans)
 
+#Получаем сдвиг новой секции в памяти, выравниваем по 4096
+try:
+    os.system("readelf ./Dwarf_Fortress -e | grep \]\ \.bss | awk '{print $4, $6}' > /tmp/dwarf_base_addr")
+    bss_offset, bss_len = open('/tmp/dwarf_base_addr').read().strip().split(" ")
+    os.remove('/tmp/dwarf_base_addr')
+    NEW_BASE_ADDR = ((int(bss_offset,16) + int(bss_len, 16))//4096 + 1 ) * 4096
+except:
+    print("Ошибка при получении сдвига секции")
+
+#NEW_BASE_ADDR = 40694*4096 #0x9ef6000
 
 #Созданный файл с новыми строками вставляется как новая секция
 print("Создаётся модифицированный исполняемый файл")
 os.system("objcopy ./Dwarf_Fortress ./Edited_DF  --add-section .rus=rus.dat")
 os.system("objcopy ./Edited_DF --set-section-flags .rus=A")
-os.system("objcopy ./Edited_DF --change-section-vma .rus=0x9cbd000")
+os.system("objcopy ./Edited_DF --change-section-vma .rus=%s" % hex(NEW_BASE_ADDR))
 
 test = ELF("Edited_DF")
 hdr = ELF_header(test)
 all_data = test.file_object.getvalue()
 
+OLD_BASE_ADDR = 0x08048000
+
+#readelf ./Edited_DF -e | grep \]\ \.rus | awk '{print $5}'
+NEW_OFFSET = 5029*4096
+
 #Создаётся запись для программного заголовка с указателями на новую секцию
 template = struct.Struct("IIIIIIII")
-
-OLD_BASE_ADDR = 0x08048000
-NEW_BASE_ADDR = 40125*4096 #0x09cbd000
-
-NEW_OFFSET = 4461*4096
-
 h0 = template.pack(1, NEW_OFFSET, NEW_BASE_ADDR,  NEW_BASE_ADDR, 0x100000, 0x100000, 4, 4096)
 
 test.write(52 + 32 * 7, h0)
@@ -82,7 +91,7 @@ print("Перевод...")
 
 
 for test_word in xref:
-    
+   
     try:
         #Если строки из бинарника нет в переводе просто проигнорируем это
         new_index = rus_words[test_word] + NEW_BASE_ADDR
@@ -93,6 +102,13 @@ for test_word in xref:
     #Обрабатываем все найденые индексы и корректируем длину строки в коде
     for pos in all_poses:
         test.write(pos, new_index.to_bytes(4, byteorder="little"))
+
+                               #edi   eax   ecx   edx   ebx   ebp   esi
+        if all_data[pos-6] in [0xbf, 0xb8, 0xb9, 0xba, 0xbb, 0xbd, 0xbe]:
+            if all_data[pos-5] == len(test_word):
+                test.write(pos-5, len(trans[test_word]).to_bytes(4, 'little'))
+                #print("GOT IT!", test_word, trans[test_word])
+
         
                                #edi, eax   ecx    edx   ebx   ebp   esi
         if all_data[pos+4] in [0xbf, 0xb8, 0xb9, 0xba, 0xbb, 0xbd, 0xbe]:
@@ -130,6 +146,8 @@ for test_word in xref:
 ##                test.write(pos+13, (len(trans[test_word])+1).to_bytes(4, 'little'))
 ##                continue
 
+        
+
         n = all_data.find(len(test_word).to_bytes(4,'little'),pos - 20, pos)
 
         if n != -1:
@@ -150,13 +168,13 @@ main_menu = {"Продолжить Игру": b"Cont",
              }
 
 start_bytes = b"\xc7\x06"
-for _m in main_menu:
-    old_off = all_data.find(start_bytes + main_menu[_m])
+for menuitem in main_menu:
+    old_off = all_data.find(start_bytes + main_menu[menuitem])
     if old_off == -1:
-        print("NOT FOUND", _m)
+        print("NOT FOUND", menuitem)
         continue
     new_off = CURSOR
-    CURSOR += opcodes.make_new_string(old_off, new_off, _m,
+    CURSOR += opcodes.make_new_string(old_off, new_off, menuitem,
                                      test, OLD_BASE_ADDR, NEW_BASE_ADDR, NEW_OFFSET, all_data)
 
 

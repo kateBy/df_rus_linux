@@ -13,8 +13,6 @@ from time import time
 print("Ищем строки в исходном файле")
 words = extract_strings('Dwarf_Fortress')
 
-
-
 test = ELF("Dwarf_Fortress")
 hdr = ELF_header(test)
 all_data = test.file_object.getvalue()
@@ -34,6 +32,12 @@ chk = check_founded_gemini(gemini, all_data)
 print("Поиск занял", time() - start, "c")
 
 words.update(chk)
+
+print("Записываем trans.txt")
+trans_txt = open('trans.txt', 'wt')
+for word in words.keys():
+    trans_txt.write("%s|%i\n" % (word, words[word]))
+trans_txt.close()
 
 print("Поиск перекрестных ссылок")
 #Ищем указатели на используемые строки, в несколько потоков

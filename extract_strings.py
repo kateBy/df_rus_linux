@@ -89,10 +89,11 @@ def extract_strings(fn):
     max_index = len(rodata)
     index = 0
     words = {}
+    
     while index < max_index:
         if rodata[index] in chars:
             next_zero = rodata.find(0, index)
-            if next_zero != 0:
+            if next_zero != -1:
                 checked = check_forbidden(rodata[index:next_zero])
                 if checked != None:
                     words[checked] = index + rodata_vaddr
