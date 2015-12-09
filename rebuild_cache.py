@@ -22,7 +22,7 @@ MAX_TO_FIND = hdr.prog_header[2].filesz
 
 
 print("Загружаются строки перевода")
-trans = load_trans_mo('trans.mo')
+trans = load_trans_po('trans.po')
 
 
 print("Поиск строк-близнецов")

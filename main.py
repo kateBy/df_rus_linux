@@ -39,7 +39,7 @@ def find_word(bytes_word, print_length = 10):
 
 
 print("Загружаются строки перевода")
-trans = load_trans_mo('trans.mo')
+trans = load_trans_po('trans.po')
 
 print("Ищем строки в исходном файле")
 words = extract_strings('Dwarf_Fortress')

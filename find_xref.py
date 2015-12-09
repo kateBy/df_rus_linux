@@ -64,13 +64,20 @@ def find(words, MAX_TO_FIND, all_data, load_from_cache = False):
 
     #Если получили указание использовать кэш 
     if load_from_cache:
-        cache = open('cache.txt', 'rt').readlines()
-        res = {}
-        for line in cache:
-            word, data = line.split(SPLIT_SYMBOL)
-            res[word] = [int(x) for x in data.strip().split("|") if x != ""]
+        try:
+            cache = open('cache.txt', 'rt').readlines()
+            res = {}
+            for line in cache:
+                word, data = line.split(SPLIT_SYMBOL)
+                res[word] = [int(x) for x in data.strip().split("|") if x != ""]
 
-        return res
+            return res
+        except FileNotFoundError:
+            print("Отсутствует файл кэша! Необходимо запустить rebuild_cache.py")
+            exit()
+        except:
+            print("Ошибка при парсинге файла-кэша")
+            exit()
                 
         
 

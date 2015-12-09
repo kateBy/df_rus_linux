@@ -119,10 +119,10 @@ def load_trans_txt(fn):
     return words
 
 '''Загрузка перевода из файла .mo с помощью библиотеки polib'''
-def load_trans_mo(fn):
+def load_trans_po(fn):
     import polib
     result = {}
-    mofile = polib.mofile(fn)
+    mofile = polib.pofile(fn)
     for i in mofile:
         result[i.msgid] = i.msgstr
 
