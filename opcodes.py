@@ -46,13 +46,17 @@ def make_new_string(old_off, new_off, string, file_object, OLD_BASE_ADDR, NEW_BA
 
     first_zero = all_data.find(b"\x00" , old_off)
     if first_zero != 0:
-        file_object.write(old_off, b"\x90" * (first_zero - old_off + 1) )
+        file_object.seek(old_off)
+        file_object.write(b"\x90" * (first_zero - old_off + 1) )
 
-    file_object.write(new_off + NEW_OFFSET, new_str)
-    file_object.file_object.write(jmp)
+    file_object.seek(new_off + NEW_OFFSET)
+    file_object.write(new_str)
+    #Записываем jmp сразу после загрузки строки в стёк
+    file_object.write(jmp)
 
     jmp2 = make_near_jmp(addr_to, new_off + NEW_BASE_ADDR+1)
-    file_object.write(old_off, jmp2)
+    file_object.seek(old_off)
+    file_object.write(jmp2)
 
     return len(new_str) + JMP_LEN + 1
 

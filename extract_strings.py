@@ -1,4 +1,4 @@
-from elf import *
+
 
 
 chars = [i for i in range(ord(" "), 127)]
@@ -75,22 +75,22 @@ def check_founded_gemini(gemini, buf):
 
 """Извлекает все похожее на строки из секции .rodata"""
 def extract_strings(fn):
-
-    elf = ELF(fn)
-    hdr = ELF_header(elf)
+    import os
+    os.system("objdump -x ./Dwarf_Fortress | grep \.rodata | awk '{print $3,$4,$6}' > /tmp/ex_str.txt")
+    rodata_size, rodata_vaddr, rodata_offset = [int(x,16) for x in open("/tmp/ex_str.txt").read().split(" ")]
+    os.remove("/tmp/ex_str.txt")
     
-    for entry in hdr.section_header.entries:   #Поиск смещений строк и их адресов
-            if entry.text_name == ".rodata":   #Поиск ведется только в секции .rodata
-                    break
-                
-    rodata = elf.read(entry.offset, entry.size)
-    rodata_vaddr = entry.addr
+
+    _file = open(fn, "rb")
+    _file.seek(rodata_offset)
+    rodata = _file.read(rodata_size)
+    _file.close()
     
     max_index = len(rodata)
     index = 0
     words = {}
     
-    while index < max_index:
+    while index < rodata_size:
         if rodata[index] in chars:
             next_zero = rodata.find(0, index)
             if next_zero != -1:

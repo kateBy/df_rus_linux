@@ -5,8 +5,8 @@
 if __name__ != '__main__':
     exit()
 
-from elf import *
 from extract_strings import *
+import struct
 import sys
 import os
 import find_xref
@@ -66,9 +66,8 @@ os.system("objcopy ./Dwarf_Fortress ./Edited_DF  --add-section .rus=rus.dat")
 os.system("objcopy ./Edited_DF --set-section-flags .rus=A")
 os.system("objcopy ./Edited_DF --change-section-vma .rus=%s" % hex(NEW_BASE_ADDR))
 
-test = ELF("Edited_DF")
-hdr = ELF_header(test)
-all_data = test.file_object.getvalue()
+e_df = open("./Edited_DF", "r+b")
+all_data = e_df.read()
 
 OLD_BASE_ADDR = 0x08048000
 
@@ -89,14 +88,16 @@ template = struct.Struct("IIIIIIII")
 h0 = template.pack(1, NEW_OFFSET, NEW_BASE_ADDR,  NEW_BASE_ADDR, 0x100000, 0x100000, 4, 4096)
 
 #52-длина заголовка, 32-длина секции, 7-номер секции, которую можно переписать
-test.write(52 + 32 * 7, h0)
+#test.write(52 + 32 * 7, h0)
+e_df.seek(52 + 32 * 7)
+e_df.write(h0)
 
-MAX_TO_FIND = hdr.prog_header[2].filesz
+#MAX_TO_FIND = hdr.prog_header[2].filesz
 
 
 print("Поиск перекрестных ссылок")
 #Ищем указатели на используемые строки, в несколько потоков
-xref = find_xref.find(words, MAX_TO_FIND, all_data, load_from_cache=True)
+xref = find_xref.find(words, 0, all_data, load_from_cache=True)
 
 print("Перевод...")
 
@@ -112,12 +113,16 @@ for test_word in xref:
 
     #Обрабатываем все найденые индексы и корректируем длину строки в коде
     for pos in all_poses:
-        test.write(pos, new_index.to_bytes(4, byteorder="little"))
+        e_df.seek(pos)
+        e_df.write(new_index.to_bytes(4, byteorder="little"))
+        #test.write(pos, new_index.to_bytes(4, byteorder="little"))
 
                                #edi   eax   ecx   edx   ebx   ebp   esi
         if all_data[pos-6] in [0xbf, 0xb8, 0xb9, 0xba, 0xbb, 0xbd, 0xbe]:
             if all_data[pos-5] == len(test_word):
-                test.write(pos-5, len(trans[test_word]).to_bytes(4, 'little'))
+                e_df.seek(pos-5)
+                e_df.write(len(trans[test_word]).to_bytes(4, 'little'))
+                #test.write(pos-5, len(trans[test_word]).to_bytes(4, 'little'))
                 #print("GOT IT!", test_word, trans[test_word])
 
         
@@ -125,12 +130,16 @@ for test_word in xref:
         if all_data[pos+4] in [0xbf, 0xb8, 0xb9, 0xba, 0xbb, 0xbd, 0xbe]:
             if all_data[pos+5] == len(test_word):
                 #Случаи, когда после вызова строки ее размер заносится в edi
-                test.write(pos+5, len(trans[test_word]).to_bytes(4, 'little'))
+                e_df.seek(pos+5)
+                e_df.write(len(trans[test_word]).to_bytes(4, 'little'))
+                #test.write(pos+5, len(trans[test_word]).to_bytes(4, 'little'))
                 continue
 
         if all_data[pos+9] in [0xbf, 0xb8, 0xb9, 0xba, 0xbb, 0xbd, 0xbe]:
             if all_data[pos+10] == len(test_word):
-                test.write(pos+10, len(trans[test_word]).to_bytes(4, 'little'))
+                e_df.seek(pos+10)
+                e_df.write(len(trans[test_word]).to_bytes(4, 'little'))
+                #test.write(pos+10, len(trans[test_word]).to_bytes(4, 'little'))
                 continue
 
         if all_data[pos-16] == 0xb8:
@@ -141,8 +150,9 @@ for test_word in xref:
                 Создать с доп. параметрами
                 Арена тестирования объектов
                 """
-                
-                test.write(pos-15, (len(trans[test_word])+1).to_bytes(4, 'little'))
+                e_df.seek(pos-15)
+                e_df.write((len(trans[test_word])+1).to_bytes(4, 'little'))
+                #test.write(pos-15, (len(trans[test_word])+1).to_bytes(4, 'little'))
                 continue
 ##
 ##        if all_data[pos+12] in [0xbf, 0xb8, 0xb9, 0xba, 0xbb, 0xbd, 0xbe]:
@@ -163,7 +173,9 @@ for test_word in xref:
 
         if n != -1:
             #Случаи, когда перед вызовом строки в регистр, а после в стёк заносится ее 4-байтная длина
-            test.write(n, len(trans[test_word]).to_bytes(4, 'little'))
+            e_df.seek(n)
+            e_df.write(len(trans[test_word]).to_bytes(4, 'little'))
+            #test.write(n, len(trans[test_word]).to_bytes(4, 'little'))
             
 print("Отдельные строки для главного меню")
 
@@ -186,7 +198,7 @@ for menuitem in main_menu:
         continue
     new_off = CURSOR
     CURSOR += opcodes.make_new_string(old_off, new_off, menuitem,
-                                     test, OLD_BASE_ADDR, NEW_BASE_ADDR, NEW_OFFSET, all_data)
+                                     e_df, OLD_BASE_ADDR, NEW_BASE_ADDR, NEW_OFFSET, all_data)
 
 
 
@@ -194,7 +206,7 @@ for menuitem in main_menu:
    
 
 print("Сохраняется результат...")
-test.save()
+e_df.close()
 
 os.remove('./rus.dat')
 
