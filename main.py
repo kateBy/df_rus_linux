@@ -50,7 +50,7 @@ rus_words   = make_dat_file('rus.dat', trans)
 
 #Получаем сдвиг новой секции в памяти, выравниваем по 4096
 try:
-    os.system("readelf ./Dwarf_Fortress -e | grep \]\ \.bss | awk '{print $4, $6}' > /tmp/dwarf_base_addr")
+    os.system("objdump -x ./Dwarf_Fortress | grep \.bss | awk '{print $4,$3}' > /tmp/dwarf_base_addr")
     bss_offset, bss_len = open('/tmp/dwarf_base_addr').read().strip().split(" ")
     os.remove('/tmp/dwarf_base_addr')
     NEW_BASE_ADDR = ((int(bss_offset,16) + int(bss_len, 16))//4096 + 1 ) * 4096
