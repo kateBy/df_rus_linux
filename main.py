@@ -178,17 +178,39 @@ main_menu = {"Продолжить Игру": b"Cont",
              " Выход ":b"Quit",
              "Создать Новый Мир!":b"Crea",
              "Об Игре":b"Abou",
+
+             #Меняющийся заголовок
+             "Истории о ":b"Hist",
+             #Слова в заголовке у них загрузка в стёк через eax
+             "Жадности" : b"Gree",
+             "Алчности" : b"Avar",
+             "Настойчивости":b"Pers",
+             "Зависти":b"Jeal",
+             "Решительности":b"Dete",
+             "Обжорстве":b"Glut",
+             "Храбрости":b"Mett",
+             "Жадности":b"Cupi",
+             "Динамичности":b"Dyna",
+             "Упорстве":b"Tena",
+             "Старании":b"Exer",
+             "Предприимчивости":b"Ente",
+             " и ":b" and"
              }
 
-start_bytes = b"\xc7\x06"
+#Варианты опкодов и сдвига в стёке в зависимости от вида
+_start_bytes = {b"\xc7\x06":["esi",0],
+                b"\xc7\x43\x0e":["esi",0], #Истории о
+                b"\xc7\x42\x0e":["eax",0], #Для меняющихся слов в заголовке
+                b"\xc7\x40\x0e":["eax",0xe]}
+
 for menuitem in main_menu:
-    old_off = all_data.find(start_bytes + main_menu[menuitem])
-    if old_off == -1:
-        print("NOT FOUND", menuitem)
-        continue
-    new_off = CURSOR
-    CURSOR += opcodes.make_new_string(old_off, new_off, menuitem,
-                                     e_df, OLD_BASE_ADDR, NEW_BASE_ADDR, NEW_OFFSET, all_data)
+    for start_bytes in _start_bytes:
+        old_off = all_data.find(start_bytes + main_menu[menuitem])
+        if old_off != -1:
+            opcode_and_offset = _start_bytes[start_bytes]     
+            new_off = CURSOR
+            CURSOR += opcodes.make_new_string(old_off, new_off, menuitem,
+                                     e_df, OLD_BASE_ADDR, NEW_BASE_ADDR, NEW_OFFSET, all_data, opcode_and_offset)
 
 
 
