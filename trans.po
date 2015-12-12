@@ -7750,7 +7750,7 @@ msgid ": Copy orders"
 msgstr ": Копировать приказ"
 
 msgid ": Copy param set"
-msgstr ": Коп-ть набор парам-в"
+msgstr ": Копировать набор параметров"
 
 msgid ": Corpses"
 msgstr ": Трупы"
@@ -7855,7 +7855,7 @@ msgid ": Delete it"
 msgstr ": Удалить"
 
 msgid ": Delete param set"
-msgstr ": Уд-ть набор парам-в"
+msgstr ": Удалить набор параметров"
 
 msgid ": Delete uniform"
 msgstr ": Удалить униформу"

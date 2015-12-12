@@ -189,11 +189,15 @@ main_menu = {"Продолжить Игру": b"Cont",
              "Решительности":b"Dete",
              "Обжорстве":b"Glut",
              "Храбрости":b"Mett",
-             "Жадности":b"Cupi",
+             "Ненасытности":b"Cupi",
              "Динамичности":b"Dyna",
              "Упорстве":b"Tena",
              "Старании":b"Exer",
              "Предприимчивости":b"Ente",
+             "Усердии":b"Dili",
+             "Усердном труде":b"Toil",
+             "Трудолюбии":b"Indu",
+             "Находчивости":b"Reso",
              " и ":b" and"
              }
 
@@ -208,8 +212,7 @@ for menuitem in main_menu:
         old_off = all_data.find(start_bytes + main_menu[menuitem])
         if old_off != -1:
             opcode_and_offset = _start_bytes[start_bytes]     
-            new_off = CURSOR
-            CURSOR += opcodes.make_new_string(old_off, new_off, menuitem,
+            CURSOR += opcodes.make_new_string(old_off, CURSOR, menuitem,
                                      e_df, OLD_BASE_ADDR, NEW_BASE_ADDR, NEW_OFFSET, all_data, opcode_and_offset)
 
 
