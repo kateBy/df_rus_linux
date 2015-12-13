@@ -153,6 +153,7 @@ def make_dat_file(fn, trans, add_zeros_to = 0x100000):
 
 """Разбивает словарь на несколько словарей,
 нужно для запуска нескольких потоков замены индексов"""
+#FIXME Может быть пропущен последний элемент
 def split_dictionary(dictionary, count):
     split_by = len(dictionary) // count
     result = []
