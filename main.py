@@ -118,6 +118,7 @@ for test_word in xref:
             if all_data[pos-5] == len(test_word):
                 e_df.seek(pos-5)
                 e_df.write(little4bytes(len(trans[test_word])))
+                continue
 
         
                                #edi, eax   ecx    edx   ebx   ebp   esi

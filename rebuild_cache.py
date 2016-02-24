@@ -4,7 +4,6 @@
 if __name__ != '__main__':
     exit()
 
-from elf import *
 from extract_strings import *
 import find_xref
 from time import time
@@ -13,12 +12,10 @@ from time import time
 print("Ищем строки в исходном файле")
 words = extract_strings('Dwarf_Fortress')
 
-test = ELF("Dwarf_Fortress")
-hdr = ELF_header(test)
-all_data = test.file_object.getvalue()
+all_data = open("Dwarf_Fortress", 'rb').read()
 
 #Предел поиска строк
-MAX_TO_FIND = hdr.prog_header[2].filesz
+MAX_TO_FIND = len(all_data) #FIXME длина не соответствует концу секции
 
 
 print("Загружаются строки перевода")
