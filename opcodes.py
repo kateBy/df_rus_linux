@@ -1,3 +1,5 @@
+"""Модуль содержит функции, обрабатывающие или создающие машинный код в
+исполняемом файле Dwarf_Fortress"""
 
 
 '''Создаёт последовательность байт, которые являются джампом с одного адреса на другой'''
@@ -30,11 +32,7 @@ def load_str_by_stack(text, opcode_and_offset):
     for i in range(len(enc_text) // 4):
         result += dword_mov(start_offset + i*4) + get(i)
 
-
-
     return result
-
-
 
 
 JMP_LEN = 5
@@ -62,7 +60,7 @@ def make_new_string(old_off, new_off, string, file_object, OLD_BASE_ADDR, NEW_BA
 
     return len(new_str) + JMP_LEN + 1
 
-
+"""Поиск всех строк, которые загружаются через подготовленный стёк"""
 def find_all_stack_string(all_data):
     chars = [i for i in range(ord(" "), 127)]
     last = 0

@@ -1,5 +1,9 @@
-
-
+"""Модуль содержит функции для извлечения строк из исполняемого файла
+а так же поиска т.н. близнецов строк, т.к. GCC для строк, которые содержатся
+в других строках использует одни и те же строки, только со смещением,
+например:
+The finest place,0 и place,0 будут совмещены в одно место, только при запросе
+строки 'place' будет дана ссылка на [The finest place]+12 и т.д."""
 
 chars = [i for i in range(ord(" "), 127)]
 nums = b'1234567890'
@@ -168,34 +172,3 @@ def split_dictionary(dictionary, count):
             counter = 0
 
     return result
-
-"""
-def compare0(words, trans):
-    not_found = []
-    for i in words:
-        try:
-            tmp = trans[i]
-        except KeyError:
-            not_found.append(i)
-            
-    return not_found """
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
