@@ -5,7 +5,7 @@
 The finest place,0 и place,0 будут совмещены в одно место, только при запросе
 строки 'place' будет дана ссылка на [The finest place]+12 и т.д."""
 
-chars = [i for i in range(ord(" "), 127)]
+chars = set(i for i in range(32, 127))
 nums = b'1234567890'
 
 """Проверяем найденую строку на нечитаемые символы"""
@@ -54,7 +54,7 @@ def check_founded_gemini(gemini, buf):
         link_byte = buf_find(int.to_bytes(g, 4, byteorder="little"))
         if link_byte != -1:
             if gemini[g] in result:
-                print(gemini[g], "--->" ,hex(int.from_bytes(buf[link_byte:link_byte+4], 'little')), hex(g))
+                print(gemini[g], "--->", hex(int.from_bytes(buf[link_byte:link_byte+4], 'little')), hex(g))
                       
             result[gemini[g]] = int.from_bytes(buf[link_byte:link_byte+4], 'little')
         if (ind % 100) == 0:
