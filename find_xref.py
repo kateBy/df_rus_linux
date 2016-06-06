@@ -58,16 +58,14 @@ def find(words, MAX_TO_FIND, all_data, load_from_cache = False):
        load_from_cache - параметр, благодаря которому можно указать, нужно ли
        обновлять кэш или искать все заново (что даже на 4 ядрах где-то 2 минуты)"""
 
-    SPLIT_SYMBOL = "<*|*>" #Просто символ, который вряд ли встретится среди строк
-
     #Если получили указание использовать кэш 
     if load_from_cache:
         try:
             cache = open('cache.txt', 'rt').readlines()
             res = {}
             for line in cache:
-                word, data = line.split(SPLIT_SYMBOL)
-                res[word] = [int(x) for x in data.strip().split("|") if x != ""]
+                word, data = line.split('" -> [')
+                res[word[1:]] = [int(x) for x in data.strip()[:-1].split(",") if x != ""]
 
             return res
         except FileNotFoundError:
@@ -75,6 +73,8 @@ def find(words, MAX_TO_FIND, all_data, load_from_cache = False):
             exit()
         except:
             print("Ошибка при парсинге файла-кэша")
+            print(line)
+            print(len(res))
             exit()
                 
         
@@ -170,7 +170,7 @@ def find(words, MAX_TO_FIND, all_data, load_from_cache = False):
     for w in res:
         if res[w] == None:
             continue
-        line = str(w) + SPLIT_SYMBOL + "|".join([str(x) for x in res[w]]) + "\n"
+        line = "\"" + str(w) + "\" -> [" +",".join([str(x) for x in res[w]]) + "]\n"
         cache_file.write(line)
 
     cache_file.close()

@@ -7,8 +7,8 @@
 # Denis Denis <daimontvk@gmail.com>, 2015
 # Ekem Roht <ekemroht@gmail.com>, 2016
 # Mirag <Goblin5118@yandex.ru>, 2014
-# insolor <insolor@gmail.com>, 2014-2016
-# insolor <insolor@gmail.com>, 2014
+# insolor, 2014-2016
+# insolor, 2014
 # Ivan Aboneev <ivan@aboneev.ru>, 2015
 # Ivan <ilusha.a1998@mail.ru>, 2014
 # Konstantin <gosulons@gmail.com>, 2015
@@ -27,7 +27,7 @@
 # rytomen <rytomen@gmail.com>, 2014
 # samarit9n1n <san-arturos@yandex.ru>, 2014
 # samarit9n1n <san-arturos@yandex.ru>, 2014-2015
-# Sivash <sivash.d.v@gmail.com>, 2015
+# Дмитрий Сиваш <sivash.d.v@gmail.com>, 2015
 # Skin36, 2014-2015
 # Weers <kudriavihww@gmail.com>, 2014
 # Risto90 <wworld-rpg@yandex.ru>, 2014
@@ -37,7 +37,7 @@
 # Валентин 1 <zastrozhnyy@gmail.com>, 2015
 # Денис Подоляченко <podolachenko@gmail.com>, 2016
 # Дмитрий Йиртмид <cybulkod@mail.ru>, 2015
-# Екатерина Александрова <nonameisiam@yandex.ru>, 2015
+# kateBy <nonameisiam@yandex.ru>, 2015
 # Иван, 2015
 # Иван, 2015
 # михаил козлов <mr.waterphage@yandex.ru>, 2015
@@ -48,8 +48,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Dwarf Fortress\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2016-02-21 15:32+0000\n"
-"Last-Translator: insolor <insolor@gmail.com>\n"
+"PO-Revision-Date: 2016-03-19 22:29+0000\n"
+"Last-Translator: insolor\n"
 "Language-Team: Russian (http://www.transifex.com/dwarf-fortress-translation/dwarf-fortress/language/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1118,7 +1118,7 @@ msgid "praying to "
 msgstr "молится <datv>"
 
 msgid "contemplating "
-msgstr "размышляет "
+msgstr "размышляет о <loct>"
 
 msgid "cooking "
 msgstr "готовит"
@@ -3676,7 +3676,7 @@ msgid "somebody"
 msgstr "кем-то"
 
 msgid " in "
-msgstr " в <accs>"
+msgstr " в "
 
 msgid " lust for murder"
 msgstr " жажде убийства"
@@ -3706,7 +3706,7 @@ msgid ", now cursed"
 msgstr ", теперь проклят"
 
 msgid "  Save us from this "
-msgstr " Спаси нас от этого "
+msgstr " Спасите нас от этого <gent>"
 
 msgid "horror"
 msgstr "ужас"
@@ -3820,7 +3820,7 @@ msgid " unstable."
 msgstr "нестабильно."
 
 msgid " gladly not of the living."
-msgstr "к счастью нет среди живых."
+msgstr ", к счастью, нет среди живых."
 
 msgid " of the living and must be killed."
 msgstr "жив, но должен умереть."
@@ -4147,7 +4147,7 @@ msgid "a legendary killer"
 msgstr "легендарный убийца"
 
 msgid "an infamous killer"
-msgstr " печально известный убийца "
+msgstr "печально известный убийца"
 
 msgid "a noted killer"
 msgstr "знаменитый убийца"
@@ -4562,7 +4562,7 @@ msgstr "Зачем тратить время, думая о себе?"
 msgid ""
 "Some time spent in reflection is admirable, but you must not forget to live "
 "your life."
-msgstr "Время, проведённое в рефлексировании замечательно, но вы не должны забывать о реальном мире. "
+msgstr "Время, проведённое в рефлексировании замечательно, но вы не должны забывать о реальном мире."
 
 msgid "I think self-control is key.  Master yourself."
 msgstr "Я думаю, что самоконтроль является ключом. Совершенствуйте себя."
@@ -4657,7 +4657,7 @@ msgstr "Я думаю, что люди должны оттачивать сво�
 msgid ""
 "There's more to life than becoming great at just one thing, but being good "
 "at several isn't bad!"
-msgstr "Есть более важные вещи в жизни, чем становление сильным во всего одной способности, но обладание сразу несколькими навыками вовсе не плохо! "
+msgstr "Есть более важные вещи в жизни, чем становление сильным во всего одной способности, но обладание сразу несколькими навыками вовсе не плохо!"
 
 msgid "In life, you should work hard.  Then work harder."
 msgstr "В жизни ты должен усердно трудиться. А после - трудиться еще усерднее."
@@ -4705,7 +4705,7 @@ msgid "All of this striving against one another is so foolish."
 msgstr "Вся эта борьба друг против друга - это так глупо."
 
 msgid "There is value in a good rivalry, but such danger as well."
-msgstr "В хорошей конкуренции есть ценность, но есть и опасность. "
+msgstr "В хорошей конкуренции есть ценность, но есть и опасность."
 
 msgid "Keep going and never quit."
 msgstr "Продолжайте и никогда не останавливайтесь."
@@ -4718,7 +4718,7 @@ msgstr "Те, кто привязываются к другим людям - г�
 msgid ""
 "It's good to keep pushing forward, but sometimes you just have to know when "
 "it's time to stop."
-msgstr "Хорошо всегда двигаться вперёд, но иногда стоит задуматься, не пора ли остановиться. "
+msgstr "Хорошо всегда двигаться вперёд, но иногда стоит задуматься, не пора ли остановиться."
 
 msgid ""
 "Wouldn't it be grand to just take my life off and do nothing for the rest of"
@@ -4732,12 +4732,12 @@ msgid "There's work to be done!"
 msgstr "У нас есть работа!"
 
 msgid "Time spent in leisure is such a waste."
-msgstr "Время проведенное в праздности бессмысленно потеряно. "
+msgstr "Время проведенное в праздности бессмысленно потеряно."
 
 msgid ""
 "There's some value in leisure, but one also has to engage with other aspects"
 " of life."
-msgstr "В досуге есть смысл, но нужно обращать внимание  и на  другие аспекты жизни. "
+msgstr "В досуге есть смысл, но нужно обращать внимание  и на  другие аспекты жизни."
 
 msgid "Trade is the life-blood of a thriving society."
 msgstr "Торговля - это кровь процветающего сообщества."
@@ -4748,7 +4748,7 @@ msgstr "Вся эта торговля - не дело для честного �
 msgid ""
 "There's something to be said for trade as a necessity, but there are better "
 "things in life to do with one's time."
-msgstr "Есть что-то, что необходимо сообщить для торговли, но лучше оставить эти слухи при себе, чтобы рассказать в нужный момент.  "
+msgstr "Есть что-то, что необходимо сообщить для торговли, но лучше оставить эти слухи при себе, чтобы рассказать в нужный момент."
 
 msgid "There's nothing like a great romance!"
 msgstr "Нет ничего, что сможет сравниться с романтикой!"
@@ -4781,7 +4781,7 @@ msgstr "Я жажду прекрасного зрелища войны!"
 msgid ""
 "War is sometimes necessary, but peace must be valued as well, when we can "
 "have it."
-msgstr "Война иногда необходима, но мир должен быть всегда, когда он возможен. "
+msgstr "Война иногда необходима, но мир должен быть всегда, когда он возможен."
 
 msgid "Uhh..."
 msgstr "Ухх..."
@@ -5464,7 +5464,7 @@ msgid "It makes me so grouchy!"
 msgstr "Это делает меня таким ворчливым!"
 
 msgid "Not that it's your business!  Harumph!"
-msgstr "Это не твое дело! Агрхх! "
+msgstr "Это не твое дело! Агрхх!"
 
 msgid "The guilt is almost unbearable!"
 msgstr "Это чувство вины просто невыносимо!"
@@ -5650,7 +5650,7 @@ msgid "Most shocking!"
 msgstr "Это шокирует!"
 
 msgid "This is truly horrifying."
-msgstr "Это действительно ужасно."
+msgstr "Это воистину ужасающе."
 
 msgid "I am almost overcome by grief."
 msgstr "Я почти раздавлен горем."
@@ -6016,7 +6016,7 @@ msgid "I feel enthusiastic!"
 msgstr "Я полон энтузиазма!"
 
 msgid "I really don't see this working out."
-msgstr "Я очень сомневаюсь, что это сработает.  "
+msgstr "Я очень сомневаюсь, что это сработает."
 
 msgid "I'm feeling great!"
 msgstr "Я чувствую себя прекрасно!"
@@ -6343,7 +6343,7 @@ msgid "I feel restless."
 msgstr "Я чувствую беспокойство."
 
 msgid "I've been wronged."
-msgstr "Я был неправ."
+msgstr "Я был обижен."
 
 msgid "Why me?"
 msgstr "Почему я?"
@@ -6481,13 +6481,13 @@ msgid "I can take this."
 msgstr "Я могу принять это."
 
 msgid "I guess that would be alienating."
-msgstr "Я полагаю, что будет отчуждение."
+msgstr "Я думаю, что это было бы отчуждением."
 
 msgid "That wasn't amazing."
 msgstr "Тут нет ничего удивительного."
 
 msgid "I guess I should be feeling ambivalent right now."
-msgstr "Я предполагаю, что сейчас должно быть двойственное чувство."
+msgstr "По идее, сейчас я должен чувствовать двойственность."
 
 msgid "That was not amusing."
 msgstr "Здесь нет ничего забавного."
@@ -6772,7 +6772,7 @@ msgid "I have no zeal for this."
 msgstr "У меня нет рвения для этого."
 
 msgid "I could be questioning my life right now."
-msgstr "Я часто думаю что в жизни нет смысла.  "
+msgstr "Я часто думаю что в жизни нет смысла."
 
 msgid "This isn't a defeat."
 msgstr "Это не поражение."
@@ -7252,7 +7252,7 @@ msgid "I was near to "
 msgstr "Я был рядом с"
 
 msgid "my own"
-msgstr " моим "
+msgstr "моим"
 
 msgid "arranged "
 msgstr "расположен"
@@ -7474,10 +7474,10 @@ msgid "I just want to slow down and take it easy for a while."
 msgstr "Я просто хочу остановиться и немного отдохнуть."
 
 msgid "I long to make romance."
-msgstr "Я бы хотел завязать роман. "
+msgstr "Я бы хотел завязать роман."
 
 msgid "It would nice to get out in nature and see some creatures."
-msgstr "Это было бы неплохо побыть на природе, посмотреть на животных. "
+msgstr "Это было бы неплохо побыть на природе, посмотреть на животных."
 
 msgid "I want to see a great beast."
 msgstr "Я бы хотел увидеть большое чудовище."
@@ -7495,7 +7495,7 @@ msgid "This place could really use some more trouble."
 msgstr "Это место могло действительно иметь какую-то проблему в себе."
 
 msgid "I'm feeling argumentative."
-msgstr "Я чувствую себя аргументированным. "
+msgstr "Я чувствую себя аргументированным."
 
 msgid "I need to wear fine things."
 msgstr "Я хочу одеваться в хорошие вещи."
@@ -7507,7 +7507,7 @@ msgid "I just wish to help somebody."
 msgstr "Я просто хочу кому-нибудь помочь."
 
 msgid "I want to puzzle over something."
-msgstr "Я хочу поломать голову над чем-нибудь. "
+msgstr "Я хочу поломать голову над чем-нибудь."
 
 msgid "I have unmet needs."
 msgstr "У меня есть неудовлетворенные потребности."
@@ -7813,7 +7813,7 @@ msgid "a new friend"
 msgstr "новым другом"
 
 msgid "I got into an argument"
-msgstr "Я вступил в спор. "
+msgstr "Я вступил в спор"
 
 msgid "I am forming a grudge against "
 msgstr "Я затаил обиду на "
@@ -7852,10 +7852,10 @@ msgid "My family received justice when the criminal was convicted."
 msgstr "Моя семья добилась справедливости: преступник был осужден."
 
 msgid "I had a bath."
-msgstr "Я принял ванну."
+msgstr "Я помылся."
 
 msgid "I had a bath with soap!"
-msgstr "Я принял пенную ванну!"
+msgstr "Я помылся с мылом!"
 
 msgid "I killed somebody in a sparring accident."
 msgstr "Я случайно убил кого-то во время спарринга."
@@ -7960,7 +7960,7 @@ msgid "I learned "
 msgstr "И изучал"
 
 msgid "powerful knowledge"
-msgstr "полезное знание "
+msgstr "полезное знание"
 
 msgid "I've made a breakthrough regarding "
 msgstr "Я сделал прорыв в области"
@@ -8911,10 +8911,10 @@ msgid "Yes, you'd make a fantastic "
 msgstr "Да, вы сделали это фантастически"
 
 msgid " here.  Make us proud!"
-msgstr "здесь. Заставьте нас гордиться вами!  "
+msgstr " здесь. Заставьте нас гордиться вами!"
 
 msgid "I'll need to see something impressive before I consider it."
-msgstr "Я прежде чем я обдумать это, должен быть сильно впечатлён.  "
+msgstr "Я прежде чем я обдумать это, должен быть сильно впечатлён."
 
 msgid "I would love to join "
 msgstr "Я буду рад присоединиться"
@@ -8956,7 +8956,7 @@ msgid "I am sorry.  I do not think there is room for me."
 msgstr "Извините, но я не думаю, у вас найдётся место для меня."
 
 msgid "You are not worthy of such an honor yet.  I am sorry."
-msgstr "Сожалею, но вы пока не достойны такой чести. "
+msgstr "Сожалею, но вы пока не достойны такой чести."
 
 msgid "Gladly.  You are now one of my "
 msgstr "С радостью. Теперь вы один из моих "
@@ -9082,7 +9082,7 @@ msgid "Have you written a new poem?"
 msgstr "Вы написали новые стихи?"
 
 msgid "Is it time to make music?"
-msgstr "Разве сейчас время для музыки?    "
+msgstr "Разве сейчас подходящее время для музыки?"
 
 msgid "Are you still dancing?"
 msgstr "Вы всё ещё танцуете?"
@@ -9260,7 +9260,7 @@ msgstr " Я бросаю это безнадёжное дело."
 msgid ""
 "  We were going to entertain the world!  It's a shame, but I'll have to make"
 " my own way now."
-msgstr "Мы собирались покорить весь мир! Это позорно, но я продолжу свой путь в одиночку. "
+msgstr "  Мы собирались покорить весь мир! Это позорно, но я продолжу свой путь в одиночку."
 
 msgid "  I'm returning on my own."
 msgstr " Я возвращаюсь один."
@@ -9771,7 +9771,7 @@ msgid "a woven clothing shop"
 msgstr "лавка шерстяной одежды"
 
 msgid "a leather clothing shop"
-msgstr "лавка кожаной одежды "
+msgstr "лавка кожаной одежды"
 
 msgid "a bone carver's shop"
 msgstr "лавка резчика по кости"
@@ -10173,16 +10173,16 @@ msgid "It was legendary."
 msgstr "Это было легендарно."
 
 msgid "It was fantastic."
-msgstr "Это было просто фантастично. "
+msgstr "Это просто фантастика. "
 
 msgid "It was great."
-msgstr "Это было замечательно. "
+msgstr "Это было великолепно."
 
 msgid "It was good."
 msgstr "Это было неплохо."
 
 msgid "It was okay."
-msgstr "Это было нормально. "
+msgstr "Это было нормально."
 
 msgid "I agree completely."
 msgstr "Я полностью согласен."
@@ -10254,7 +10254,7 @@ msgid "is splendid."
 msgstr "великолепно."
 
 msgid "is really quite good!"
-msgstr "действительно довольно хорошо! "
+msgstr "действительно довольно неплохо!"
 
 msgid "shows such talent."
 msgstr "просматривается большой талант. "
@@ -13618,7 +13618,7 @@ msgid "enemy"
 msgstr "враг"
 
 msgid "State that listener had a good hunt"
-msgstr "Сказать, что собеседник неплохо поохотился"
+msgstr "Отметить, что собеседник неплохо поохотился"
 
 msgid "State that listener saved you from an enemy"
 msgstr "Сказать собеседнику, что он спас вас от врага"
@@ -13819,7 +13819,7 @@ msgid "hawk"
 msgstr "защищать"
 
 msgid "Yield in terror"
-msgstr "Поддаться паническому страху"
+msgstr "Поддаться панике"
 
 msgid "Yield"
 msgstr "Сдаться"
@@ -14584,19 +14584,19 @@ msgid "State feelings of unhappiness"
 msgstr "Выразить чувство несчастья"
 
 msgid "State feelings of wonder"
-msgstr "Выразить чувство удивления"
+msgstr "Выразить удивление"
 
 msgid "State feelings of worry"
-msgstr "Выразить чувство волнения"
+msgstr "Выразить волнение"
 
 msgid "State feelings of wrath"
-msgstr "Выразить чувство гнева"
+msgstr "Выразить гнев"
 
 msgid "State feelings of zeal"
-msgstr "Выразить чувство рвения"
+msgstr "Выразить рвение"
 
 msgid "State feelings of adoration"
-msgstr "Выразить чувство обожания"
+msgstr "Выразить обожание"
 
 msgid "State feelings of affection"
 msgstr "Выразить чувство привязанности"
@@ -14605,40 +14605,40 @@ msgid "State feelings of amusement"
 msgstr "Выразить чувство веселья"
 
 msgid "State feelings of contentment"
-msgstr "Выразить чувство удовлетворённости"
+msgstr "Выразить свою удовлетворённость"
 
 msgid "State feelings of delight"
-msgstr "Выразить чувство восхищения"
+msgstr "Выразить своё восхищение"
 
 msgid "State feelings of elation"
-msgstr "Выразить чувство энтузиазма"
+msgstr "Выразить энтузиазм"
 
 msgid "State feelings of enjoyment"
-msgstr "Выразить чувство удовольствия"
+msgstr "Выразить своё удовольствие"
 
 msgid "State feelings of exhilaration"
-msgstr "Выразить чувство радости"
+msgstr "Выразить свою радость"
 
 msgid "State feelings of fondness"
-msgstr "Выразить чувство нежности"
+msgstr "Выразить свою нежность"
 
 msgid "State feelings of freedom"
 msgstr "Выразить чувство свободы"
 
 msgid "State feelings of glee"
-msgstr "Выразить чувство ликования"
+msgstr "Выразить своё ликование"
 
 msgid "State feelings of happiness"
 msgstr "Выразить чувство счастья"
 
 msgid "State feelings of jolliness"
-msgstr "Выразить чувство веселья"
+msgstr "Выразить своё веселье"
 
 msgid "State feelings of joviality"
-msgstr "Выразить чувство радости"
+msgstr "Выразить свою радость"
 
 msgid "State feelings of jubilation"
-msgstr "Выразить чувство ликования"
+msgstr "Выразить своё ликование"
 
 msgid "State feelings of pleasure"
 msgstr "Выразить чувство наслаждения"
@@ -14647,10 +14647,10 @@ msgid "State feelings of pride"
 msgstr "Выразить чувство гордости"
 
 msgid "State feelings, enraptured"
-msgstr "Выразить чувство восторга"
+msgstr "Выразить своё восторг"
 
 msgid "State feelings, thrilled"
-msgstr "Выразить чувство тревоги"
+msgstr "Выразить свою тревогу"
 
 msgid "Verbally struggle against existential crisis"
 msgstr "Словесно бороться с экзистенциальным кризисом"
@@ -17654,13 +17654,13 @@ msgid "clean-shaven"
 msgstr "гладко выбритый"
 
 msgid "stubble"
-msgstr "щетина    "
+msgstr "щетина"
 
 msgid "neatly combed"
 msgstr "аккуратно зачёсанный"
 
 msgid "braided"
-msgstr "заплетены "
+msgstr "заплетены"
 
 msgid "arranged in double braids"
 msgstr "заплетена в две косы"
@@ -17732,7 +17732,7 @@ msgid "gigantic"
 msgstr " гигантский"
 
 msgid "very large"
-msgstr "очень большой "
+msgstr "очень большой"
 
 msgid "muscular"
 msgstr "мускулистый"
@@ -18143,7 +18143,7 @@ msgid "Harass"
 msgstr "Беспокойство"
 
 msgid "Site Walk"
-msgstr "Поход к месту "
+msgstr "Поход к месту"
 
 msgid "Site Walk to Building"
 msgstr "Поход к месту для строительства"
@@ -18920,7 +18920,7 @@ msgid "ninth eldest son"
 msgstr "девятый сын"
 
 msgid "tenth eldest son"
-msgstr "десятый сын "
+msgstr "десятый сын"
 
 msgid "youngest son"
 msgstr "младший сын"
@@ -20666,7 +20666,7 @@ msgid "wobbling"
 msgstr "колеблющийся"
 
 msgid "focused"
-msgstr "сосредоточенный "
+msgstr "сосредоточенный"
 
 msgid "even"
 msgstr "ровный"
@@ -20786,7 +20786,7 @@ msgid "Ending game..."
 msgstr "Завершение игры..."
 
 msgid "Really retire?  All active saves will be deleted.  ("
-msgstr "Уверены? Все текущие сохранения будут удалены.  ("
+msgstr "Уверены? Текущее сохранение будет удалено.  ("
 
 msgid " = yes, other = no)"
 msgstr " = да, другое = нет)"
@@ -20795,13 +20795,13 @@ msgid "You will be saved for later use in the region."
 msgstr "Персонаж будет сохранён для последующего использования в этом регионе."
 
 msgid "Really quit?  All active saves will be deleted.  ("
-msgstr "Уверены? Текущие сохранения будут удалены.  ("
+msgstr "Уверены? Текущее сохранение будет удалено.  ("
 
 msgid "The region will be saved for later use, but consider retiring the fort"
 msgstr "Регион будет сохранён для последующего использования, но подумайте о том, "
 
 msgid "instead if it is not a lost cause."
-msgstr "чтобы просто оставить крепость, если дела не так плохи."
+msgstr "чтобы просто оставить крепость, если всё не так безнадёжно."
 
 msgid ""
 "The fortress will become part of the world.  You may reassume control later,"
@@ -21654,13 +21654,13 @@ msgid "Elevation"
 msgstr "Высоты"
 
 msgid "Rainfall"
-msgstr "Осадки   "
+msgstr "Осадки"
 
 msgid "Temperature"
 msgstr "Температура"
 
 msgid "Drainage"
-msgstr "Дренаж   "
+msgstr "Дренаж"
 
 msgid "Volcanism"
 msgstr "Вулканизм"
@@ -21999,7 +21999,7 @@ msgid "Cloth"
 msgstr "Ткань"
 
 msgid "Weapons/Trap Comps"
-msgstr "Оружие/компон. ловушек  "
+msgstr "Оружие/компон. ловушек"
 
 msgid "Additional Options"
 msgstr "Дополнительные параметры"
@@ -24981,7 +24981,7 @@ msgid "Abandoned hillocks"
 msgstr "Заброшенные пригорки"
 
 msgid "Abandoned houses"
-msgstr "Брошенные дома  "
+msgstr "Брошенные дома"
 
 msgid "Abandoned hillock"
 msgstr "Заброшенный пригорок"
@@ -25179,7 +25179,7 @@ msgid ": Set First Name"
 msgstr ": Выбрать имя"
 
 msgid ": Customize Name"
-msgstr ": Изменить имя  "
+msgstr ": Изменить имя"
 
 msgid ": Random Name"
 msgstr ": Случайное имя"
@@ -27005,7 +27005,7 @@ msgid "dyed "
 msgstr "крашеный "
 
 msgid "melt-designated "
-msgstr "предназначенный для переплавлки"
+msgstr "предназначенный для переплавки"
 
 msgid "deep material "
 msgstr "глубокий материал "
@@ -28516,7 +28516,7 @@ msgid "Finalizing civ mats... ("
 msgstr "Завершение обсчёта цивилизаций... ("
 
 msgid "Finalizing art... ("
-msgstr "Завершение искусств... "
+msgstr "Завершение искусств... ("
 
 msgid "Finalizing uniforms... ("
 msgstr "Завершение униформ... ("
@@ -34043,7 +34043,7 @@ msgid " after "
 msgstr " после "
 
 msgid "appearing not to age"
-msgstr "появился "
+msgstr "отсутствия признаков старения"
 
 msgid "general suspicion"
 msgstr "всеобщее подозрение"
@@ -34751,7 +34751,7 @@ msgid " on a whim"
 msgstr " по прихоти"
 
 msgid " that it might bathe in misery forever"
-msgstr ", что может пребывать в нищете вечно"
+msgstr ", что может пребывать в пучинах отчаяния вечно"
 
 msgid " that more might be murdered"
 msgstr ", что могло быть убито больше"
@@ -35084,7 +35084,7 @@ msgid "there was a performance"
 msgstr "там прошло выступление"
 
 msgid " as part of "
-msgstr "в часть <gent>"
+msgstr "в честь празднования <gent>"
 
 msgid " held by "
 msgstr "принадлежит <datv>"
@@ -36768,7 +36768,7 @@ msgid "is throughout ornate and refined"
 msgstr "витиеватый и изысканный на всем протяжении"
 
 msgid "has rare but particularly exquisite turns of phrase"
-msgstr "имеет редкие, но особо изысканные обороты"
+msgstr "содержит редкие, но довольно изысканные обороты речи"
 
 msgid "is excessively ornate"
 msgstr "витиевато"
@@ -40944,7 +40944,7 @@ msgid "Unitview, Prefs, Profile"
 msgstr "Просмотр юнита, предпочтения, профиль"
 
 msgid "Unitview, Prefs, Occupation"
-msgstr "ЮнитоОсмотр, Привилегированные акции, Занятость"
+msgstr "Просмотр юнита, настройки, занятость"
 
 msgid "String: Backspace"
 msgstr "Строка: Backspace"
@@ -43552,10 +43552,10 @@ msgid "a legendary monster of"
 msgstr "легендарный монстр <gent>"
 
 msgid "an infamous monster of"
-msgstr "печально известный монстр <gent>"
+msgstr "печально известный монстр из"
 
 msgid "a noted monster of"
-msgstr "известный монстр <gent>"
+msgstr "известный монстр из"
 
 msgid "certainly feared as a monster by"
 msgstr "определённо, считается страшным чудовищем"
@@ -43564,13 +43564,13 @@ msgid "feared as a monster by"
 msgstr "считается страшным чудовищем"
 
 msgid "a legendary brigand of"
-msgstr "легендарный разбойник <gent>"
+msgstr "легендарный разбойник из"
 
 msgid "an infamous brigand of"
-msgstr "печально известный разбойник <gent>"
+msgstr "печально известный разбойник из"
 
 msgid "a noted brigand of"
-msgstr "известный разбойник <gent>"
+msgstr "известный разбойник из"
 
 msgid "certainly feared as a brigand by"
 msgstr "разбойник, определённо внушающий страх"
@@ -43582,7 +43582,7 @@ msgid "a legendary bully of"
 msgstr "легендарный хулиган <gent>"
 
 msgid "an infamous bully of"
-msgstr "печально известный хулиган из <gent>"
+msgstr "печально известный хулиган из"
 
 msgid "a noted bully of"
 msgstr "заметный хулиган из"
@@ -43642,7 +43642,7 @@ msgid "a legendary killer of"
 msgstr "легендарный убийца "
 
 msgid "an infamous killer of"
-msgstr "печально известный убийца"
+msgstr "печально известный убийца <gent>"
 
 msgid "a noted killer of"
 msgstr "замеченный убийца"
@@ -43759,7 +43759,7 @@ msgid "When possible, "
 msgstr "По возможности "
 
 msgid " prefers to consume "
-msgstr " предпочитает употреблять "
+msgstr " предпочитает употреблять<accs> "
 
 msgid "unknown meat"
 msgstr "неизвестное мясо"
@@ -43792,7 +43792,7 @@ msgid "unknown item"
 msgstr "неизвестный предмет"
 
 msgid " absolutely detests "
-msgstr " совсем не выносит "
+msgstr " совершенно не выносит<accs> "
 
 msgid " needs alcohol to get through the working day"
 msgstr " не может прожить и дня без алкоголя"
@@ -44030,7 +44030,7 @@ msgid "after arguing"
 msgstr "после спора"
 
 msgid "after being unable to argue"
-msgstr "после невозможности с кем-либо поспорить "
+msgstr "после невозможности с кем-либо поспорить"
 
 msgid "after being extravagant"
 msgstr "после того как был экстравагантным"
@@ -44057,10 +44057,10 @@ msgid "after a lack of abstract thinking"
 msgstr "после отсутствия абстрактных мыслей"
 
 msgid " culture, "
-msgstr " культуре, "
+msgstr " культуры, "
 
 msgid "Like others in "
-msgstr "Как другие в "
+msgstr "Как и многие из  "
 
 msgid "personally "
 msgstr "лично "
@@ -44069,7 +44069,7 @@ msgid "is an absolute believer in the rule of law"
 msgstr "является ярым сторонником верховенства закона"
 
 msgid "has a great deal of respect for the law"
-msgstr "высоко почитает закон"
+msgstr "высоко чтит закон"
 
 msgid "respects the law"
 msgstr "уважает закон"
@@ -44147,7 +44147,7 @@ msgid "is completely put off by the idea of friends"
 msgstr "из тех, кого идея дружбы полностью отталкивает"
 
 msgid "finds the whole idea of friendship disgusting"
-msgstr "находит саму идею дружбы отвратительной"
+msgstr "считает саму идею дружбы отвратительной"
 
 msgid ""
 "believes that the acquisition of power over others is the ideal goal in life"
@@ -44172,7 +44172,7 @@ msgstr "ненавидит тех, кто обладает властью над
 msgid ""
 "finds the acquisition and use of power abhorrent and would have all masters "
 "toppled"
-msgstr "находит получение и использование власти отвратительным и хотел бы свергнуть всех господ"
+msgstr "считает получение и использование власти отвратительным и хотел бы свергнуть всех господ"
 
 msgid "believes the truth is inviolable regardless of the cost"
 msgstr "верит, что истина неприложна вне зависимости от обстоятельств"
@@ -44219,7 +44219,7 @@ msgstr "чувствует полное отвращение к хитрости
 msgid ""
 "believes that artful speech and eloquent expression are of the highest "
 "ideals"
-msgstr "считает, что хитроумные речи и красноречивые выражения являются высшими идеалами"
+msgstr "считает, что хитроумные речи и красноречивые выражения являются высшим идеалом"
 
 msgid "deeply respects eloquent speakers"
 msgstr "глубоко уважает умелых ораторов"
@@ -44231,7 +44231,7 @@ msgid "doesn't value eloquence so much"
 msgstr "не так сильно ценит красноречие"
 
 msgid "finds eloquence and artful speech off-putting"
-msgstr "находит красноречие и хитроумные речи отталкивающими"
+msgstr "считает красноречие и хитроумные речи отталкивающими"
 
 msgid " somewhat disgusted with eloquent speakers"
 msgstr " некоторое отвращение к красноречивым ораторам"
@@ -44242,7 +44242,7 @@ msgstr "чувствует у "
 msgid ""
 "sees artful speech and eloquence as a wasteful form of deliberate deception "
 "and treats it as such"
-msgstr "видит в хитроумных речах и красноречии лишь изощрённую форму преднамеренного обмана и и относится соответствующе"
+msgstr "видит в хитроумных речах и красноречии лишь изощрённую форму обмана и и относится к ним соответствующим образом"
 
 msgid ""
 "holds fairness as one of the highest ideals and despises cheating of any "
@@ -44262,7 +44262,7 @@ msgid "sees life as unfair and doesn't mind it that way"
 msgstr "видит жизнь несправедливой и не против этого"
 
 msgid " finds it profitable"
-msgstr " находит это выгодным"
+msgstr " считает это выгодным"
 
 msgid "finds the idea of fair-dealing foolish and cheats when "
 msgstr "считает идею честного сотрудничества глупостью, и обманывает, когда "
@@ -44382,7 +44382,7 @@ msgid "doesn't really value independence one way or another"
 msgstr "так или иначе по-настоящему не ценит независимость"
 
 msgid "finds the ideas of independence and freedom somewhat foolish"
-msgstr "находит идеи независимости и свободы довольно глупыми"
+msgstr "считает идеи независимости и свободы довольно глупыми"
 
 msgid "sees freedom and independence as completely worthless"
 msgstr "считает свободу и независимость абсолютно бесполезными"
@@ -44457,7 +44457,7 @@ msgid "doesn't really see the value in self-examination"
 msgstr "не придаёт должного значения самоанализу"
 
 msgid "finds introspection to be a waste of time"
-msgstr "находит самоанализ пустой тратой времени"
+msgstr "считает самоанализ пустой тратой времени"
 
 msgid ""
 "thinks that introspection is valueless and those that waste time in self-"
@@ -44484,7 +44484,7 @@ msgid "doesn't particularly value self-control"
 msgstr "не придаёт особого значения самоконтролю"
 
 msgid "finds those that deny their impulses somewhat stiff"
-msgstr "находит тех, кто подавляет свои порывы, чопорными"
+msgstr "считает тех, кто подавляет свои порывы, немного надменными"
 
 msgid "sees the denial of impulses as a vain and foolish pursuit"
 msgstr "считает подавление порывов напрасным и глупым занятием"
@@ -44555,7 +44555,7 @@ msgid "truly values merrymaking and parties"
 msgstr "по-настоящему ценит веселье и вечеринки"
 
 msgid "finds merrymaking and partying worthwhile activities"
-msgstr "находит веселье и вечеринки достойным времяпрепровождением "
+msgstr "считает веселье и вечеринки достойным времяпрепровождением"
 
 msgid "doesn't really value merrymaking"
 msgstr "не слишком ценит увеселения"
@@ -44625,7 +44625,7 @@ msgid "does not really value skills related to fighting"
 msgstr "не особо ценит навыки, относящиеся к сражениям"
 
 msgid "finds those that develop skill with weapons and fighting distasteful"
-msgstr "находит неприятными тех, кто стремится оттачивать своё владение оружием и боевые навыки"
+msgstr "считает неприятными тех, кто стремится оттачивать своё владение оружием и боевые навыки"
 
 msgid ""
 "thinks that the pursuit of the skills of warfare and fighting is a low "
@@ -44649,7 +44649,7 @@ msgid "doesn't care if others take the time to master skills"
 msgstr "не обращает внимания, занимаются ли другие совершенствованием навыков"
 
 msgid "finds the pursuit of skill mastery off-putting"
-msgstr "находит стремление улучшать свои навыки отталкивающим"
+msgstr "считает стремление улучшать свои навыки отталкивающим"
 
 msgid "believes that the time taken to master a skill is a horrible waste"
 msgstr "считает оттачивание своих навыков пустой тратой времени"
@@ -44679,7 +44679,7 @@ msgstr "считает тех, кто много трудится, покорн�
 
 msgid ""
 "finds the proposition that one should work hard in life utterly abhorrent"
-msgstr "находит утверждение о необходимости упорно трудиться в жизни совершенно мерзким"
+msgstr "считает утверждение о необходимости упорно трудиться в жизни совершенно мерзким"
 
 msgid "finds sacrifice to be one of the highest ideals"
 msgstr "возносит жертвенность в число высочайших добродетелей"
@@ -44698,7 +44698,7 @@ msgid "sees sacrifice as wasteful and foolish"
 msgstr "считает самопожертвование бесполезным и глупым"
 
 msgid "finds sacrifice to be the height of folly"
-msgstr "находит самопожертвование вершиной безрассудства"
+msgstr "считает самопожертвование вершиной безрассудства"
 
 msgid ""
 "thinks that the entire concept of sacrifice for others is truly disgusting"
@@ -44719,13 +44719,13 @@ msgid "doesn't have strong views on competition"
 msgstr "не имеет чёткой позиции о соперничестве"
 
 msgid "sees competition as wasteful and silly"
-msgstr "рассматривает соперничество как глупую и напрасную затею"
+msgstr "считает соперничество как глупой и бессмысленной идеей"
 
 msgid "deeply dislikes competition"
 msgstr "очень не любит соперничество"
 
 msgid "finds the very idea of competition obscene"
-msgstr "находит саму идею соперничества недопустимой"
+msgstr "считает саму идею соперничества недопустимой"
 
 msgid ""
 "believes that perseverance is one of the greatest qualities somebody can "
@@ -44768,7 +44768,7 @@ msgid "doesn't think one way or the other about leisure time"
 msgstr "так или иначе не задумывается о свободном времени"
 
 msgid "finds leisure time wasteful"
-msgstr "находит свободное время бесполезным"
+msgstr "считает свободное время бесполезным"
 
 msgid "is offended by leisure time and leisurely living"
 msgstr "оскорбляется от свободного времени и праздной жизни"
@@ -44776,7 +44776,7 @@ msgstr "оскорбляется от свободного времени и п�
 msgid ""
 "believes that those that take leisure time are evil and finds the whole idea"
 " disgusting"
-msgstr "считает тех, у кого есть свободное время, злом, а саму идею находит отвратительной"
+msgstr "считает тех, у кого есть свободное время, злом, а саму мысль о безделии находит отвратительной"
 
 msgid "sees engaging in commerce as a high ideal in life"
 msgstr "видит занятие торговлей высоким идеалом в жизни"
@@ -45343,11 +45343,11 @@ msgid ""
 msgstr "вульгарное существо, которое не пытается соблюдать даже самые элементарные правила приличия"
 
 msgid " finds rules of etiquette to be valuable in the abstract"
-msgstr " находит правила этикета полезными, в принципе"
+msgstr " считает правила этикета, в принципе, полезными"
 
 msgid ""
 " finds dignified society to be stifling and silly when properly considered"
-msgstr " находит высшее общество удушающим и нелепым, когда правильно оценено"
+msgstr " считает высшее общество удушающим и нелепым, когда правильно оценено"
 
 msgid " since "
 msgstr ", так как "
@@ -45574,7 +45574,7 @@ msgid "has little interest in joking around"
 msgstr "мало интересуется шутками вокруг"
 
 msgid "does not find most jokes humorous"
-msgstr "не находит шутки смешными"
+msgstr "считает большую часть шуток несмешными"
 
 msgid "is utterly humorless"
 msgstr "без чувства юмора"
@@ -45687,7 +45687,7 @@ msgid " quite hopeful about the future"
 msgstr " в оптимистичном настрое в отношении будущего"
 
 msgid "generally finds "
-msgstr "как правило, находит "
+msgstr "как правило, считает "
 
 msgid ""
 "tends to assume the worst of two outcomes will be the one that comes to pass"
@@ -45978,7 +45978,7 @@ msgid " sense of independence"
 msgstr " чувство независимости"
 
 msgid " finds this can conflict with "
-msgstr " находит это противоречащим <datv>"
+msgstr " считает это противоречащим <datv>"
 
 msgid ", although "
 msgstr ", хотя "
@@ -46128,7 +46128,7 @@ msgstr "живёт чрезвычайно вялой, спокойной и ме
 
 msgid ""
 "never fails to seek out the most stressful and even dangerous situations"
-msgstr "всегда находит самые напряжённые и даже опасные ситуации"
+msgstr "постоянно попадает в самые напряжённые и даже опасные ситуации"
 
 msgid "seeks out exciting and adventurous situations"
 msgstr "ищет захватывающие приключения"
@@ -47299,19 +47299,19 @@ msgid ""
 msgstr "после странного обвинения жертвы преступления в совершении этого преступления"
 
 msgid "upon receiving justice through a criminal's conviction"
-msgstr "после  свершения правосудия преступник осуждён"
+msgstr "после осуждения по обвинению настоящего преступника"
 
 msgid "when a family member received justice through a criminal's conviction"
-msgstr "когда член семьи добился правосудия, преступник был осужден."
+msgstr "когда член семьи был осуждён по обвинению настоящего преступника"
 
 msgid "after being confined"
 msgstr "после заключения"
 
 msgid "after a bath"
-msgstr "после ванны"
+msgstr "после мытья"
 
 msgid "after a soapy bath"
-msgstr "после пенной ванны"
+msgstr "после мытья с мылом"
 
 msgid "after killing somebody by accident while sparring"
 msgstr "после случайного убийства кого-то во время спарринга"
@@ -47797,7 +47797,7 @@ msgstr "Вы совсем не цените жизнь, не так ли?"
 
 msgid ""
 "I am beside myself with grief.  Perhaps we will show you how they suffered."
-msgstr "Я вне себя от горя.  Нам придётся заставить вас почувствовать, как они страдали."
+msgstr "Я вне себя от горя.  Мы дадим вам почувствовать, как они страдали."
 
 msgid "Once a beautiful tree, and now?"
 msgstr "Когда-то это было прекрасным деревом, а сейчас?.."
@@ -49156,7 +49156,7 @@ msgstr ", где цифры показывают припев"
 msgid ""
 "As a rule throughout the poem, the end rhymes don't generally match "
 "perfectly.  "
-msgstr "Как правило во всей поэме конечные рифмы обычно не совпадают идеально."
+msgstr "Как правило, во всей поэме конечные рифмы обычно не совпадают идеально."
 
 msgid ""
 "In this part of the poem, the end rhymes don't need to match perfectly.  "
@@ -51989,7 +51989,7 @@ msgid "Detailed"
 msgstr "Детализированный"
 
 msgid "Rough-hewn "
-msgstr "Грубо высеченный "
+msgstr "Грубый"
 
 msgid "Straight "
 msgstr "Прямой "
@@ -52607,7 +52607,7 @@ msgid "detailed "
 msgstr "подробный "
 
 msgid "rough-hewn "
-msgstr "грубо высеченный "
+msgstr "грубый"
 
 msgid "straight "
 msgstr "прямой "
@@ -57368,7 +57368,7 @@ msgid "the Moves"
 msgstr "Движения"
 
 msgid " Language"
-msgstr "Язык"
+msgstr " язык"
 
 msgid "Language"
 msgstr "Язык"
@@ -65035,7 +65035,7 @@ msgid "an atrocious spatial sense"
 msgstr "отвратительно чувствует пространство"
 
 msgid "poor spatial senses"
-msgstr "слабо чувствует пространство"
+msgstr "слабое чувство пространства"
 
 msgid "a questionable spatial sense"
 msgstr "плохо чувствует пространство"
