@@ -217,8 +217,18 @@ for menuitem in main_menu:
                                      e_df, OLD_BASE_ADDR, NEW_BASE_ADDR, NEW_OFFSET, all_data, opcode_and_offset)
 
 
-
-
+print("Патчится функция выравнивания строк")
+asm_cmd = b'\xf7\xd1\x49\x85\xc9' #not ecx; dec ecx; test ecx, ecx
+offset = 0x8778C8C
+JMP_CMD_SIZE = 5
+print(hex(CURSOR + NEW_BASE_ADDR))
+x = opcodes.make_near_jmp(offset + JMP_CMD_SIZE, CURSOR + NEW_BASE_ADDR)
+e_df.seek(offset - OLD_BASE_ADDR)
+e_df.write(x)
+e_df.seek(CURSOR+NEW_OFFSET)
+e_df.write(asm_cmd)
+x = opcodes.make_near_jmp(CURSOR + NEW_BASE_ADDR + len(asm_cmd) + JMP_CMD_SIZE, offset + len(asm_cmd))
+e_df.write(x)
    
 
 print("Сохраняется результат...")
