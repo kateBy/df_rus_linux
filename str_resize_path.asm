@@ -1,7 +1,7 @@
 use32
 
 BACK_ADDR = 8778C8Ch
-FUNC_ADDR = 9ff302fh
+FUNC_ADDR = 9FF2FD3h
 CHANGE_PROC = 0h
 
 org FUNC_ADDR
@@ -17,4 +17,5 @@ nop
 
 ;Возвращаемся назад
 test ecx, ecx
-jmp near (BACK_ADDR+5)
+retn
+;jmp near (BACK_ADDR+5)
