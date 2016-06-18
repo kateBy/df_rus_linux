@@ -218,18 +218,19 @@ for menuitem in main_menu:
 
 
 print("Патчится функция выравнивания строк")
-asm_cmd = b'\xf7\xd1\x49\x85\xc9' #not ecx; dec ecx; test ecx, ecx
 offset = 0x8778C8C
+asmFile = 'str_resize_path.asm'
+binFile = '/tmp/str_resize_path.bin'
+
+os.system('fasm %s %s' % (asmFile, binFile))
+
 JMP_CMD_SIZE = 5
-print(hex(CURSOR + NEW_BASE_ADDR))
 x = opcodes.make_near_jmp(offset + JMP_CMD_SIZE, CURSOR + NEW_BASE_ADDR)
 e_df.seek(offset - OLD_BASE_ADDR)
 e_df.write(x)
 e_df.seek(CURSOR+NEW_OFFSET)
-e_df.write(asm_cmd)
-x = opcodes.make_near_jmp(CURSOR + NEW_BASE_ADDR + len(asm_cmd) + JMP_CMD_SIZE, offset + len(asm_cmd))
-e_df.write(x)
-   
+e_df.write(open(binFile, 'rb').read()) #Записываем результат работы FASM в файл
+os.remove(binFile)
 
 print("Сохраняется результат...")
 e_df.close()
