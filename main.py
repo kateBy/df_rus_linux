@@ -167,7 +167,7 @@ for test_word in xref:
             #Случаи, когда перед вызовом строки в регистр, а после в стёк заносится ее 4-байтная длина
             e_df.seek(n)
             e_df.write(little4bytes(len(trans[test_word])))
-            
+    
 print("Отдельные строки для главного меню")
 
 
@@ -219,15 +219,13 @@ for menuitem in main_menu:
 
 print("Патчится функция выравнивания строк")
 offset = 0x8778C8C #FIXME найти способ нахождения функции автоматически
-asmFile = 'str_resize_path.asm'
 binFile = '/tmp/str_resize_path.bin'
-
-os.system('fasm %s %s' % (asmFile, binFile))
+os.system('bash get_lib_addr.sh')
 
 JMP_CMD_SIZE = 5
 call = opcodes.make_call(offset + JMP_CMD_SIZE, CURSOR + NEW_BASE_ADDR)
 e_df.seek(offset - OLD_BASE_ADDR)
-e_df.write(call)
+e_df.write(call) #Создаем CALL-перехват управления на новую функцию
 e_df.seek(CURSOR+NEW_OFFSET)
 e_df.write(open(binFile, 'rb').read()) #Записываем результат работы FASM в файл
 os.remove(binFile)

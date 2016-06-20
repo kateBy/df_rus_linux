@@ -5185,16 +5185,16 @@ msgid "good"
 msgstr "хорошо"
 
 msgid "I've been "
-msgstr "Я был"
+msgstr "Я был "
 
 msgid "I feel "
-msgstr "Я чувствую"
+msgstr "Я чувствую "
 
 msgid "just fine"
 msgstr "просто прекрасно"
 
 msgid "I'm "
-msgstr "Я"
+msgstr "Я "
 
 msgid "Somebody help!"
 msgstr "Кто-нибудь, помогите!"
@@ -30605,7 +30605,7 @@ msgid "him"
 msgstr "его"
 
 msgid "her"
-msgstr "её "
+msgstr "её"
 
 msgid "himself"
 msgstr "себя"
@@ -36107,7 +36107,7 @@ msgid " the first of "
 msgstr " первым из <gent>"
 
 msgid " one of the first of "
-msgstr " одним из первых в"
+msgstr " одним из первых в "
 
 msgid " the only one of "
 msgstr " единственным из <gent>"
