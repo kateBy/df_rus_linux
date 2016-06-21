@@ -36936,22 +36936,22 @@ msgid "The writing conveys a moral lesson regarding "
 msgstr "Текст передаёт моральный урок, связанный с"
 
 msgid "The overall text emphasizes "
-msgstr "В целом, текст подчёркивает"
+msgstr "В целом, текст подчёркивает "
 
 msgid "For lyrics, the composer has selected "
-msgstr "В качестве текста автор выбрал"
+msgstr "В качестве текста автор выбрал "
 
 msgid "For musical accompaniment, the choreographer has selected "
-msgstr "В качестве музыкального аккомпанемента  хореограф выбрал"
+msgstr "В качестве музыкального аккомпанемента  хореограф выбрал "
 
 msgid "The writing "
 msgstr "Текст "
 
 msgid " yet it "
-msgstr ", хотя  "
+msgstr ", хотя "
 
 msgid " and it "
-msgstr " и      "
+msgstr " и  "
 
 msgid "Overall, the information is compiled masterfully"
 msgstr "В целом, информация подобрана мастерски"
@@ -37059,10 +37059,10 @@ msgid " covers "
 msgstr "покрывает"
 
 msgid "There used to be writing on the item.  "
-msgstr "Раньше здесь что-то было написано."
+msgstr "Раньше здесь что-то было написано.  "
 
 msgid "Written on the item is "
-msgstr "Здесь записан"
+msgstr "Здесь записан "
 
 msgid "an untitled"
 msgstr "безымянный"
@@ -37140,7 +37140,7 @@ msgid " entitled "
 msgstr ", озаглавленный как "
 
 msgid ", authored by "
-msgstr ", автором является"
+msgstr ", автором является "
 
 msgid "The written portion consists of "
 msgstr "Текстовая часть состоит из <gent>"
@@ -37314,7 +37314,7 @@ msgid "Slaughter "
 msgstr "Забить "
 
 msgid "Geld "
-msgstr "Кастрировать"
+msgstr "Кастрировать "
 
 msgid "Unchain"
 msgstr "Освободить"
@@ -37347,10 +37347,10 @@ msgid " Bracelet"
 msgstr "Браслет"
 
 msgid "Make Large "
-msgstr "Делать большой"
+msgstr "Делать большой "
 
 msgid " Gem"
-msgstr "Самоцвет"
+msgstr " Самоцвет"
 
 msgid "Mint "
 msgstr "Чеканить "
@@ -43165,7 +43165,7 @@ msgid "doesn't feel "
 msgstr "не чувствует"
 
 msgid "annoyed"
-msgstr "раздражение"
+msgstr "раздражен"
 
 msgid "satisfied"
 msgstr "удовлетворение"
@@ -43426,7 +43426,7 @@ msgid "pessimistic"
 msgstr "пессимистический"
 
 msgid "euphoric"
-msgstr "эйфория"
+msgstr "эйфорию"
 
 msgid "anything"
 msgstr "всё"
@@ -43829,7 +43829,7 @@ msgid " is getting used to tragedy.  "
 msgstr " свыкается с потерей.  "
 
 msgid "Overall, "
-msgstr "В целом,"
+msgstr "В целом, "
 
 msgid "very focused with satisfied needs"
 msgstr "сильно сконцентрирован, благодаря удовлетворённым потребностям"
@@ -46962,13 +46962,13 @@ msgid "after being able to rest and recuperate"
 msgstr "после появившейся возможности отдохнуть и восстановить силы"
 
 msgid "when caught in freakish weather"
-msgstr "попадая в странную погоду"
+msgstr "попав в странную погоду"
 
 msgid "when caught in the rain"
-msgstr "попадая под дождь"
+msgstr "попав под дождь"
 
 msgid "when caught in a snow storm"
-msgstr "попадая в снежную бурю"
+msgstr "попав в снежную бурю"
 
 msgid "after retching on a miasma"
 msgstr "после рвоты от миазмов"
@@ -64819,13 +64819,13 @@ msgid "quite susceptible to disease"
 msgstr "очень восприимчив к болезням"
 
 msgid "susceptible to disease"
-msgstr "восприимчивыми к болезням"
+msgstr "восприимчив к болезням"
 
 msgid "but "
 msgstr "но "
 
 msgid "awesome intellectual powers"
-msgstr "удивительный интеллект "
+msgstr "удивительный интеллект"
 
 msgid "great analytical abilities"
 msgstr "прекрасные аналитические способности"
@@ -64942,7 +64942,7 @@ msgid "very bad intuition"
 msgstr "очень плохая интуиция"
 
 msgid "bad intuition"
-msgstr "плохая интуиция"
+msgstr "плохую интуицию"
 
 msgid "absolutely boundless patience"
 msgstr "безграничное терпение"

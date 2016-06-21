@@ -126,9 +126,19 @@ def load_trans_txt(fn):
 def load_trans_po(fn):
     import polib
     result = {}
-    mofile = polib.pofile(fn)
-    for i in mofile:
-        result[i.msgid] = i.msgstr
+    pofile = polib.pofile(fn)
+    correct = open('correct.txt', 'wt')
+    for i in pofile:
+        if i.msgid.endswith(' '):      #Англ. кончается на пробел
+            angl_spaces = len(i.msgid) - len(i.msgid.rstrip())
+            ru_spaces = len(i.msgstr) - len(i.msgstr.rstrip())
+            if angl_spaces != ru_spaces:
+                result[i.msgid] = i.msgstr.rstrip() + ' ' * angl_spaces
+                correct.write('"%s"|"%s"\n' % (i.msgid, i.msgstr))
+            else:
+                result[i.msgid] = i.msgstr
+        else:      
+            result[i.msgid] = i.msgstr
 
     return result
 
