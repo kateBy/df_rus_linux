@@ -11,7 +11,7 @@ import sys
 import os
 import find_xref
 import opcodes
-
+from os.path import exists
 
 #Функция, использовалась при отладке для поиска
 def get_ip(text):
@@ -220,15 +220,23 @@ for menuitem in main_menu:
 print("Патчится функция выравнивания строк")
 offset = 0x8778C8C #FIXME найти способ нахождения функции автоматически
 binFile = '/tmp/str_resize_path.bin'
-os.system('bash get_lib_addr.sh')
+os.system('bash ./asm/get_lib_addr.sh ' + binFile)
 
-JMP_CMD_SIZE = 5
-call = opcodes.make_call(offset + JMP_CMD_SIZE, CURSOR + NEW_BASE_ADDR)
+CALL_SIZE = 5
+call = opcodes.make_call(offset + CALL_SIZE, CURSOR + NEW_BASE_ADDR)
 e_df.seek(offset - OLD_BASE_ADDR)
 e_df.write(call) #Создаем CALL-перехват управления на новую функцию
 e_df.seek(CURSOR+NEW_OFFSET)
-e_df.write(open(binFile, 'rb').read()) #Записываем результат работы FASM в файл
-os.remove(binFile)
+if exists(binFile):
+    asm_patch = open(binFile, 'rb').read()
+    e_df.write(asm_patch) #Записываем результат работы FASM в файл
+    CURSOR += len(asm_patch) + 1
+    os.remove(binFile)
+else:
+    print("---> !!!Ошибка при сборке asm-модуля!!!")
+
+
+
 
 print("Сохраняется результат...")
 e_df.close()

@@ -66475,3 +66475,6 @@ msgstr "Вы теперь контролируете "
 
 msgid ", ruling "
 msgstr ", правя "
+
+msgid "A short, sturdy creature fond of drink and industry."
+msgstr "Невысокое, коренастое существо, любитель выпивки и работы"
