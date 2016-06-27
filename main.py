@@ -223,11 +223,11 @@ binFile = '/tmp/str_resize_path.bin'
 os.system('bash ./asm/get_lib_addr.sh ' + binFile)
 
 CALL_SIZE = 5
-call = opcodes.make_call(offset + CALL_SIZE, CURSOR + NEW_BASE_ADDR)
-e_df.seek(offset - OLD_BASE_ADDR)
-e_df.write(call) #Создаем CALL-перехват управления на новую функцию
-e_df.seek(CURSOR+NEW_OFFSET)
 if exists(binFile):
+    call = opcodes.make_call(offset + CALL_SIZE, CURSOR + NEW_BASE_ADDR)
+    e_df.seek(offset - OLD_BASE_ADDR)
+    e_df.write(call) #Создаем CALL-перехват управления на новую функцию
+    e_df.seek(CURSOR+NEW_OFFSET)
     asm_patch = open(binFile, 'rb').read()
     e_df.write(asm_patch) #Записываем результат работы FASM в файл
     CURSOR += len(asm_patch) + 1
