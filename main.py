@@ -113,28 +113,6 @@ for test_word in xref:
         e_df.seek(pos)
         e_df.write(little4bytes(new_index))
 
-                               #edi   eax   ecx   edx   ebx   ebp   esi
-        if all_data[pos-6] in [0xbf, 0xb8, 0xb9, 0xba, 0xbb, 0xbd, 0xbe]:
-            if all_data[pos-5] == len(test_word):
-                e_df.seek(pos-5)
-                e_df.write(little4bytes(len(trans[test_word])))
-                continue
-
-        
-                               #edi, eax   ecx    edx   ebx   ebp   esi
-        if all_data[pos+4] in [0xbf, 0xb8, 0xb9, 0xba, 0xbb, 0xbd, 0xbe]:
-            if all_data[pos+5] == len(test_word):
-                #Случаи, когда после вызова строки ее размер заносится в edi
-                e_df.seek(pos+5)
-                e_df.write(little4bytes(len(trans[test_word])))
-                continue
-
-        if all_data[pos+9] in [0xbf, 0xb8, 0xb9, 0xba, 0xbb, 0xbd, 0xbe]:
-            if all_data[pos+10] == len(test_word):
-                e_df.seek(pos+10)
-                e_df.write(little4bytes(len(trans[test_word])))
-                continue
-
         if all_data[pos-16] == 0xb8:
             if all_data[pos-15] == (len(test_word)+1):
                 
@@ -143,31 +121,11 @@ for test_word in xref:
                 Создать с доп. параметрами
                 Арена тестирования объектов
                 """
+                
                 e_df.seek(pos-15)
                 e_df.write(little4bytes(len(trans[test_word])+1))
                 continue
-##
-##        if all_data[pos+12] in [0xbf, 0xb8, 0xb9, 0xba, 0xbb, 0xbd, 0xbe]:
-##            if all_data[pos+13] == (len(test_word)):
-##                print(pos, "FOUND CORRECT SIZE", test_word)
-##                test.write(pos+13, (len(trans[test_word])).to_bytes(4, 'little'))
-##                continue
-##            
-##            if all_data[pos+13] == (len(test_word)+1):
-##                print(pos, "FOUND SIZE+1", test_word)
-##                """Пока что один случай: '  Squad Schedules: '"""
-##                test.write(pos+13, (len(trans[test_word])+1).to_bytes(4, 'little'))
-##                continue
-
-        
-
-        n = all_data.find(little4bytes(len(test_word)),pos - 20, pos)
-
-        if n != -1:
-            #Случаи, когда перед вызовом строки в регистр, а после в стёк заносится ее 4-байтная длина
-            e_df.seek(n)
-            e_df.write(little4bytes(len(trans[test_word])))
-    
+  
 print("Отдельные строки для главного меню")
 
 
@@ -235,7 +193,42 @@ if exists(binFile):
 else:
     print("---> !!!Ошибка при сборке asm-модуля!!!")
 
+print("Патчится функция  std::string::assign(char  const*, uint)")
+offset = 0x804C8C8
+binFile = '/tmp/str_len.bin'
+os.system('fasm ./asm/str_len.asm ' + binFile)
 
+if exists(binFile):
+    jmp = opcodes.make_near_jmp(offset + CALL_SIZE, CURSOR + NEW_BASE_ADDR)
+    e_df.seek(offset - OLD_BASE_ADDR)
+    old_jmp = e_df.read(6)
+    e_df.seek(offset - OLD_BASE_ADDR)
+    e_df.write(jmp) #Создаем JMP-перехват управления на новую функцию
+    e_df.seek(CURSOR+NEW_OFFSET)
+    asm_patch = open(binFile, 'rb').read()
+    e_df.write(asm_patch) #Записываем результат работы FASM в файл
+    e_df.write(old_jmp)
+    CURSOR += len(asm_patch) + len(old_jmp) + 1
+    #os.remove(binFile)
+else:
+    print("---> !!!Ошибка при сборке asm-модуля!!!")
+
+print("Патчится функция  std::string::append(char  const*, uint)")
+offset = 0x804BFF8
+
+if exists(binFile):
+    jmp = opcodes.make_near_jmp(offset + CALL_SIZE, CURSOR + NEW_BASE_ADDR)
+    e_df.seek(offset - OLD_BASE_ADDR)
+    old_jmp = e_df.read(6)
+    e_df.seek(offset - OLD_BASE_ADDR)
+    e_df.write(jmp) #Создаем JMP-перехват управления на новую функцию
+    e_df.seek(CURSOR+NEW_OFFSET)
+    e_df.write(asm_patch) #Записываем результат работы FASM в файл
+    e_df.write(old_jmp)
+    CURSOR += len(asm_patch) + len(old_jmp) + 1
+    os.remove(binFile)
+else:
+    print("---> !!!Ошибка при сборке asm-модуля!!!")
 
 
 print("Сохраняется результат...")
