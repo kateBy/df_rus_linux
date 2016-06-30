@@ -151,10 +151,12 @@ def make_dat_file(fn, trans, add_zeros_to = 0x100000):
     offset = 0
     file = BytesIO()
     for i in trans:
-        result[i] = offset
+        result[i] = offset + 4 #Перед строкой идет 4 байта ее длины
         encoded = trans[i].encode('cp1251') + b"\x00"
+        ru_len = len(encoded)
+        file.write((ru_len-1).to_bytes(4, 'little')) #Записываем длину строки
         file.write(encoded)
-        offset += len(encoded)
+        offset += ru_len + 4
 
     if offset < add_zeros_to:
         file.write(b"\x00" * (add_zeros_to - offset))
