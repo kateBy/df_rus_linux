@@ -19766,40 +19766,40 @@ msgid "bull"
 msgstr "бык"
 
 msgid "Granite"
-msgstr "гранита"
+msgstr "Гранита"
 
 msgid "Slate"
-msgstr "сланца"
+msgstr "Сланца"
 
 msgid "Felsite"
-msgstr "фельзита"
+msgstr "Фельзита"
 
 msgid "Hematite"
-msgstr "гематита"
+msgstr "Гематита"
 
 msgid "Malachite"
-msgstr "малахита"
+msgstr "Малахита"
 
 msgid "Galena"
-msgstr "галенита"
+msgstr "Галенита"
 
 msgid "Limestone"
-msgstr "известняка"
+msgstr "Известняка"
 
 msgid "Sandstone"
-msgstr "песчаника"
+msgstr "Песчаника"
 
 msgid "Timber"
-msgstr "дерева"
+msgstr "Дерева"
 
 msgid "Moonstone"
-msgstr "лунного камня"
+msgstr "Лунного камня"
 
 msgid "Opal"
-msgstr "опала"
+msgstr "Опала"
 
 msgid "Obsidian"
-msgstr "обсидиана"
+msgstr "Обсидиана"
 
 msgid "Dabbling"
 msgstr "Посредственный"
