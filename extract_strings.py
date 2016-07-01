@@ -168,18 +168,14 @@ def make_dat_file(fn, trans, size = 0x100000):
 
 """Разбивает словарь на несколько словарей,
 нужно для запуска нескольких потоков замены индексов"""
-#FIXME Может быть пропущен последний элемент
-def split_dictionary(dictionary, count):
-    split_by = len(dictionary) // count
-    result = []
-    tmpdict={}
-    counter = 0
-    for i in dictionary:
-        tmpdict[i] = dictionary[i]
-        counter += 1
-        if counter == split_by:
-            result.append(tmpdict)
-            tmpdict = {}
-            counter = 0
+def split_dictionary(some_dict, out_count):
+    result = [{} for x in range(out_count)]
+    cursor = 0
+
+    for i in some_dict:
+        result[cursor][i] = some_dict[i]
+        cursor += 1
+        if cursor == out_count:
+            cursor = 0
 
     return result
