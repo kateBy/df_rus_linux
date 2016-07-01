@@ -11,9 +11,7 @@ REBUILD_CACHE = rebuild_cache.py
 .PHONY: all clean
 
 
-all: $(TARGET)
-
-$(TARGET): $(MAIN_OBJS)
+all: $(MAIN_OBJS)
 	$(PYTHON) $(MAIN)
 
 $(CACHE): $(CACHE_OBJS)
