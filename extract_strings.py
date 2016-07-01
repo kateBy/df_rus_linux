@@ -145,11 +145,13 @@ def load_trans_po(fn):
 """Создаёт секцию с новыми строками и возвращает словарь,
 содержащий английскую версию строки и индекс ее в новой секции.
 Строки разделяются между собой одинарным нулём"""
-def make_dat_file(fn, trans, add_zeros_to = 0x100000):
+def make_dat_file(fn, trans, size = 0x100000):
     from io import BytesIO
     result = {}
     offset = 0
     file = BytesIO()
+    file.write(b"\x00" * size)
+    file.seek(0)
     for i in trans:
         result[i] = offset + 4 #Перед строкой идет 4 байта ее длины
         encoded = trans[i].encode('cp1251') + b"\x00"
@@ -158,12 +160,9 @@ def make_dat_file(fn, trans, add_zeros_to = 0x100000):
         file.write(encoded)
         offset += ru_len + 4
 
-    if offset < add_zeros_to:
-        file.write(b"\x00" * (add_zeros_to - offset))
-
     open(fn, 'wb').write(file.getvalue())
 
-    result[-1] = offset
+    result["CURSOR"] = offset
 
     return result
 

@@ -1238,7 +1238,7 @@ msgid "being flayed"
 msgstr " освежёван"
 
 msgid "being mutilated"
-msgstr " изуродован"
+msgstr "изуродован"
 
 msgid "a "
 msgstr "  "
@@ -17009,7 +17009,7 @@ msgid "is tiny"
 msgstr "крошечный"
 
 msgid " is mangled beyond recognition.  "
-msgstr "изуродован до неузнаваемости."
+msgstr " изуродован до неузнаваемости."
 
 msgid " are spilled.  "
 msgstr " разлит.  "

@@ -129,7 +129,7 @@ for test_word in xref:
 print("Отдельные строки для главного меню")
 
 
-CURSOR = rus_words[-1]
+CURSOR = rus_words["CURSOR"]
 
 
 main_menu = {"Продолжить Игру": b"Cont",
