@@ -30,12 +30,6 @@ print("Поиск занял", time() - start, "c")
 
 words.update(chk)
 
-print("Записываем trans.txt")
-trans_txt = open('trans.txt', 'wt')
-for word in words.keys():
-    trans_txt.write("%s|%i\n" % (word, words[word]))
-trans_txt.close()
-
 print("Поиск перекрестных ссылок")
 #Ищем указатели на используемые строки, в несколько потоков
 start = time()

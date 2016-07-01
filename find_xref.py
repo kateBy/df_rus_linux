@@ -150,11 +150,9 @@ def find(words, MAX_TO_FIND, all_data, load_from_cache = False):
                 if not (i in bug_addr):
                     new_ref.append(i)
             if new_ref != []:
-                print("#BUG", bug_addr, ref)
                 res[ref] = new_ref
             else:
                 res[ref] = None
-                print("!BUG", bug_addr, ref)
 
       
     

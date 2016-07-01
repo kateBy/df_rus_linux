@@ -104,7 +104,7 @@ msgid " has discovered "
 msgstr "открыл"
 
 msgid " has become a student of "
-msgstr "стал учеником <gent>"
+msgstr "стал учеником "
 
 msgid "Ponder "
 msgstr "Размышлять"
@@ -116,7 +116,7 @@ msgid "Learn "
 msgstr "Изучать"
 
 msgid "Discuss "
-msgstr "Обсуждать <accs>"
+msgstr "Обсуждать "
 
 msgid "Write about "
 msgstr "Писать о"
@@ -128,7 +128,7 @@ msgid "Copy"
 msgstr "Переписывать"
 
 msgid "Meditate on "
-msgstr "Медитировать на <accs>"
+msgstr "Медитировать на "
 
 msgid "Pray to "
 msgstr "Молиться"
@@ -149,7 +149,7 @@ msgid "Play Make Believe"
 msgstr "Играть в \"изобрази\""
 
 msgid "Play with "
-msgstr "Играть с <ablt>"
+msgstr "Играть с "
 
 msgid "Toy"
 msgstr "игрушкой"
@@ -272,7 +272,7 @@ msgid " playing make believe."
 msgstr "играть в \"изобрази\"."
 
 msgid " playing with "
-msgstr "играют с <ablt>"
+msgstr "играют с "
 
 msgid "a toy"
 msgstr "игрушкой"
@@ -281,13 +281,13 @@ msgid "The performers"
 msgstr "Исполнители"
 
 msgid "the story of "
-msgstr "историю про <loct>"
+msgstr "историю про "
 
 msgid "reciting the poem "
 msgstr "читает стихи"
 
 msgid "an improvised recital of "
-msgstr "импровизированное декламирование <gent>"
+msgstr "импровизированное декламирование "
 
 msgid "the musical composition "
 msgstr "музыкальную композицию"
@@ -302,7 +302,7 @@ msgid "an improvised dance, "
 msgstr "импровизированный танец,"
 
 msgid " in the middle of "
-msgstr "в середине <gent>"
+msgstr "в середине "
 
 msgid "You continue the story."
 msgstr "Вы продолжаете рассказ."
@@ -581,7 +581,7 @@ msgid " make"
 msgstr "делать"
 
 msgid " a mockery of the "
-msgstr "издевательство над <ablt>"
+msgstr "издевательство над "
 
 msgid " with a shameworthy performance."
 msgstr "позорным исполнением."
@@ -662,7 +662,7 @@ msgid "its"
 msgstr "его"
 
 msgid "The "
-msgstr " <capitalize>"
+msgstr " "
 
 msgid "spinning "
 msgstr "крутящимся "
@@ -674,13 +674,13 @@ msgid "It"
 msgstr "Он"
 
 msgid ", but it is deflected by "
-msgstr ", но был отражён <ablt>"
+msgstr ", но был отражён "
 
 msgid " by the "
 msgstr " с помощью "
 
 msgid " in the "
-msgstr " в <accs>"
+msgstr " в "
 
 msgid " from behind"
 msgstr " сзади"
@@ -692,7 +692,7 @@ msgid " with "
 msgstr " с помощью "
 
 msgid ", but the attack is deflected by "
-msgstr ", но атака отражена <ablt>"
+msgstr ", но атака отражена "
 
 msgid ", lightly tapping the target!"
 msgstr ", слегка задев цель!"
@@ -752,7 +752,7 @@ msgid " is crushed!"
 msgstr " раздроблена!"
 
 msgid "passing through a hole in the "
-msgstr "проходит сквозь дыру в <loct>"
+msgstr "проходит сквозь дыру в "
 
 msgid "'s "
 msgstr " "
@@ -773,10 +773,10 @@ msgid "through the "
 msgstr "сквозь "
 
 msgid "tearing"
-msgstr "разрывая <accs>"
+msgstr "разрывая "
 
 msgid "tearing apart"
-msgstr "разрывая на части <accs>"
+msgstr "разрывая на части "
 
 msgid "shattering"
 msgstr "разбивая"
@@ -785,7 +785,7 @@ msgid "chipping"
 msgstr "разрубая"
 
 msgid "fracturing"
-msgstr "ломая <accs>"
+msgstr "ломая "
 
 msgid "denting"
 msgstr "прокусывая"
@@ -803,19 +803,19 @@ msgid " and"
 msgstr " и"
 
 msgid " tearing apart"
-msgstr " разрывая на части <accs>"
+msgstr " разрывая на части "
 
 msgid " shattering"
 msgstr " разбивая"
 
 msgid " tearing"
-msgstr " разрывая <accs>"
+msgstr " разрывая "
 
 msgid " chipping"
 msgstr " разрубая"
 
 msgid " fracturing"
-msgstr " ломая <accs>"
+msgstr " ломая "
 
 msgid " denting"
 msgstr " прокусывая"
@@ -827,22 +827,22 @@ msgid "breaking away"
 msgstr "отрывая"
 
 msgid " most of"
-msgstr " большую часть <gent>"
+msgstr " большую часть "
 
 msgid " half of"
-msgstr " половину <gent>"
+msgstr " половину "
 
 msgid " a piece of"
-msgstr " часть <gent>"
+msgstr " часть "
 
 msgid " the rest of"
-msgstr " оставшуюся часть <gent>"
+msgstr " оставшуюся часть "
 
 msgid " through a hole in the "
-msgstr " сквозь дыру в <loct>"
+msgstr " сквозь дыру в "
 
 msgid " through the "
-msgstr " сквозь <accs>"
+msgstr " сквозь "
 
 msgid " and spilling "
 msgstr " и разливая "
@@ -953,7 +953,7 @@ msgid " latches on firmly"
 msgstr " крепко держится"
 
 msgid " to "
-msgstr " <datv>"
+msgstr " "
 
 msgid " latch on firmly!"
 msgstr " крепко держитесь!"
@@ -998,19 +998,19 @@ msgid " sick!"
 msgstr " плохо!"
 
 msgid " is injected into the "
-msgstr " вводится в <accs>"
+msgstr " вводится в "
 
 msgid " crumbles over the "
-msgstr " рассыпается по <datv>"
+msgstr " рассыпается по "
 
 msgid " splatters over the "
-msgstr " разбрызгивается по <datv>"
+msgstr " разбрызгивается по "
 
 msgid " flows over the "
-msgstr " течёт по <datv>"
+msgstr " течёт по "
 
 msgid " pours over the "
-msgstr " льётся на <accs>"
+msgstr " льётся на "
 
 msgid " is sucked out of the wound!"
 msgstr " высосан из раны!"
@@ -1085,13 +1085,13 @@ msgid "shooting "
 msgstr "стреляет "
 
 msgid "surrounded by "
-msgstr "окружён <ablt>"
+msgstr "окружён "
 
 msgid "massacring "
 msgstr "устраивает бойню "
 
 msgid "fighting with "
-msgstr "сражается с <ablt>"
+msgstr "сражается с "
 
 msgid "greeting "
 msgstr "приветствует "
@@ -1100,25 +1100,25 @@ msgid "refusing "
 msgstr "отказывается "
 
 msgid "speaking with "
-msgstr "разговаривает с <ablt>"
+msgstr "разговаривает с "
 
 msgid "embracing "
-msgstr "обнимает <accs>"
+msgstr "обнимает "
 
 msgid "striking down "
-msgstr "поражает <accs>"
+msgstr "поражает "
 
 msgid "raising "
-msgstr "поднимает <accs>"
+msgstr "поднимает "
 
 msgid "hiding "
-msgstr "скрывает <accs>"
+msgstr "скрывает "
 
 msgid "praying to "
-msgstr "молится <datv>"
+msgstr "молится "
 
 msgid "contemplating "
-msgstr "размышляет о <loct>"
+msgstr "размышляет о "
 
 msgid "cooking "
 msgstr "готовит"
@@ -1130,13 +1130,13 @@ msgid "impaled on "
 msgstr "насажен на "
 
 msgid "being flayed by "
-msgstr "освежёван <ablt>"
+msgstr "освежёван "
 
 msgid "hanging from "
-msgstr "висит на <loct>"
+msgstr "висит на "
 
 msgid "being mutilated by "
-msgstr "покалечен <ablt>"
+msgstr "покалечен "
 
 msgid "praying"
 msgstr "молится"
@@ -1247,7 +1247,7 @@ msgid "Untitled"
 msgstr "Безымянный"
 
 msgid ", the deity of "
-msgstr ", божество <gent>"
+msgstr ", божество "
 
 msgid ", depicted as a "
 msgstr ", изображается как "
@@ -1268,7 +1268,7 @@ msgid "male "
 msgstr "мужской "
 
 msgid "the deity of "
-msgstr "божество <gent>"
+msgstr "божество "
 
 msgid "called the "
 msgstr "называется"
@@ -1307,7 +1307,7 @@ msgid " a"
 msgstr " "
 
 msgid " a series of "
-msgstr "серия <gent>"
+msgstr "серия "
 
 msgid " graceful"
 msgstr "благодарный"
@@ -1646,7 +1646,7 @@ msgid " originating in "
 msgstr "придуманный в"
 
 msgid " originally devised by "
-msgstr "изначально придуманный <ablt>"
+msgstr "изначально придуманный "
 
 msgid ""
 "The rules of the form are applied by choreographers to produce individual "
@@ -1657,7 +1657,7 @@ msgid "The form guides dancers during improvised performances.  "
 msgstr "Танцевальный жанр направляет танцоров во время импровизированных выступлений."
 
 msgid "The dance is accompanied by "
-msgstr "Танец сопровождается <ablt>"
+msgstr "Танец сопровождается "
 
 msgid " as the dancer acts out "
 msgstr "как только танцор заканчивает"
@@ -1666,7 +1666,7 @@ msgid " as the dancers act out "
 msgstr "как только танцоры заканчивают"
 
 msgid "any composition of "
-msgstr "любую композицию из <gent>"
+msgstr "любую композицию из "
 
 msgid "The dancer performs "
 msgstr "Танцор исполняют"
@@ -1798,7 +1798,7 @@ msgid "with the lead turning out counterclockwise"
 msgstr "с ведущим оборотом против часовой стрелки"
 
 msgid "The dancers imitate the movement of the "
-msgstr "Танцоры имитируют движение <gent>"
+msgstr "Танцоры имитируют движение "
 
 msgid "This dance is a refined artform, with "
 msgstr "Этот танец является изысканной формой искусства с"
@@ -1816,7 +1816,7 @@ msgid "The entire dance has a basic movement "
 msgstr "Весь танец имеет базовое движение"
 
 msgid "The"
-msgstr " <capitalize>"
+msgstr " "
 
 msgid " dance is"
 msgstr "танец"
@@ -2149,7 +2149,7 @@ msgid " section is distinct.  "
 msgstr "секция различается."
 
 msgid "to the "
-msgstr "<datv> "
+msgstr " "
 
 msgid "There are partner changes "
 msgstr "Происходят смены партнёра"
@@ -2347,7 +2347,7 @@ msgid "The impertinent magma has defaced a "
 msgstr "Едкая магма изуродовала "
 
 msgid "A "
-msgstr "<capitalize>"
+msgstr ""
 
 msgid " sculpture has melted!"
 msgstr " скульптура расплавлена!"
@@ -2983,7 +2983,7 @@ msgid "You've caught a "
 msgstr "Вы поймали "
 
 msgid "Your trap was robbed of the "
-msgstr "Из вашей ловушки забрали <accs>"
+msgstr "Из вашей ловушки забрали "
 
 msgid " closes."
 msgstr " закрывает."
@@ -3220,10 +3220,10 @@ msgid " from a period of no rule"
 msgstr " периода без правителя"
 
 msgid "strike"
-msgstr "бьёте <accs>"
+msgstr "бьёте "
 
 msgid "strikes"
-msgstr "бьёт <accs>"
+msgstr "бьёт "
 
 msgid " pull"
 msgstr " дёргает"
@@ -3235,10 +3235,10 @@ msgid " on the embedded "
 msgstr " на встроенном "
 
 msgid " miss "
-msgstr " промахиваетесь мимо <gent>"
+msgstr " промахиваетесь мимо "
 
 msgid " misses "
-msgstr " промахивается мимо <gent>"
+msgstr " промахивается мимо "
 
 msgid " lock"
 msgstr " блокируете"
@@ -3307,7 +3307,7 @@ msgid " on "
 msgstr " на "
 
 msgid " the choke hold of "
-msgstr " удушающий захват <gent>"
+msgstr " удушающий захват "
 
 msgid " break"
 msgstr " освобождаетесь"
@@ -3325,7 +3325,7 @@ msgid " struggles"
 msgstr " бьётся"
 
 msgid " in vain against the grip of "
-msgstr " в тисках <gent>"
+msgstr " в тисках "
 
 msgid " shake"
 msgstr " трясёте"
@@ -3334,10 +3334,10 @@ msgid " shakes"
 msgstr " трясёт"
 
 msgid " around by the "
-msgstr " вокруг за <accs>"
+msgstr " вокруг за "
 
 msgid " is ripped away and remains in "
-msgstr " оторвана и остаётся в <loct>"
+msgstr " оторвана и остаётся в "
 
 msgid " mouth"
 msgstr " пасти"
@@ -3352,7 +3352,7 @@ msgid " loses"
 msgstr " теряет"
 
 msgid " hold of the "
-msgstr " власть над <ablt>"
+msgstr " власть над "
 
 msgid "strangle"
 msgstr "душите"
@@ -3382,7 +3382,7 @@ msgid " has moved out of range!"
 msgstr " вышел за грань!"
 
 msgid " of "
-msgstr " <gent>"
+msgstr " "
 
 msgid "push"
 msgstr "толкаете"
@@ -3400,10 +3400,10 @@ msgid " drop away as "
 msgstr " упасть, в то время как "
 
 msgid "attack"
-msgstr "атакуете <accs>"
+msgstr "атакуете "
 
 msgid "attacks"
-msgstr "атакует <accs>"
+msgstr "атакует "
 
 msgid " catch"
 msgstr " ловите"
@@ -3412,10 +3412,10 @@ msgid " catches"
 msgstr " ловит"
 
 msgid " strike at "
-msgstr " бьёте <accs>"
+msgstr " бьёте "
 
 msgid " strikes at "
-msgstr " бьёт <accs>"
+msgstr " бьёт "
 
 msgid " but the shot is "
 msgstr " но удар был "
@@ -3433,16 +3433,16 @@ msgid "parried"
 msgstr "парирован"
 
 msgid " by "
-msgstr " <ablt>"
+msgstr " "
 
 msgid " but the shot is blocked!"
 msgstr " но выстрел заблокирован!"
 
 msgid " attack "
-msgstr " атакуете <accs>"
+msgstr " атакуете "
 
 msgid " attacks "
-msgstr " атакует <accs>"
+msgstr " атакует "
 
 msgid " but "
 msgstr " но "
@@ -3520,7 +3520,7 @@ msgid " looks "
 msgstr " выглядит "
 
 msgid "surprised by the ferocity of "
-msgstr "удивлённым жестокостью <gent>"
+msgstr "удивлённым жестокостью "
 
 msgid " onslaught!"
 msgstr " натиска!"
@@ -3694,7 +3694,7 @@ msgid "  It pains me all the more, for the foul villain "
 msgstr " Что делает мне ещё больнее, этот бесчестный злодей "
 
 msgid "was once"
-msgstr "был когда-то <ablt>"
+msgstr "был когда-то "
 
 msgid " my own "
 msgstr " мой "
@@ -3706,7 +3706,7 @@ msgid ", now cursed"
 msgstr ", теперь проклят"
 
 msgid "  Save us from this "
-msgstr " Спасите нас от этого <gent>"
+msgstr " Спасите нас от этого "
 
 msgid "horror"
 msgstr "ужас"
@@ -3769,7 +3769,7 @@ msgid "a poem"
 msgstr "стихи"
 
 msgid " recitation of "
-msgstr "декламирование <gent>"
+msgstr "декламирование "
 
 msgid "music"
 msgstr "музыка"
@@ -3781,7 +3781,7 @@ msgid "speaking"
 msgstr "разговор"
 
 msgid " performance of "
-msgstr "исполнение <gent>"
+msgstr "исполнение "
 
 msgid "dance"
 msgstr "танец"
@@ -4790,7 +4790,7 @@ msgid "us"
 msgstr "us"
 
 msgid "in"
-msgstr "в <accs>"
+msgstr "в "
 
 msgid "as"
 msgstr "как"
@@ -4811,16 +4811,16 @@ msgid "on "
 msgstr "на"
 
 msgid "the subject of"
-msgstr "предмет <gent>"
+msgstr "предмет "
 
 msgid "the concept of"
-msgstr "концепция <gent>"
+msgstr "концепция "
 
 msgid "the idea of"
-msgstr "идея <gent>"
+msgstr "идея "
 
 msgid "the theme of"
-msgstr "тема <gent>"
+msgstr "тема "
 
 msgid "to "
 msgstr "к"
@@ -4978,7 +4978,7 @@ msgid "I wouldn't feel comfortable getting all dressed up."
 msgstr "Я чувствую себя некомфортно, когда богато одет."
 
 msgid "Did you hear the one about the "
-msgstr "Вы слышали о <loct>"
+msgstr "Вы слышали о "
 
 msgid "That isn't funny."
 msgstr "Это не смешно."
@@ -6808,7 +6808,7 @@ msgid " through my efforts"
 msgstr " благодаря моим усилиям"
 
 msgid " and it is all thanks to "
-msgstr " и всё это благодаря <datv>"
+msgstr " и всё это благодаря "
 
 msgid "I found myself dead."
 msgstr "Я понял, что я мёртв."
@@ -6985,22 +6985,22 @@ msgid "blood-drinking"
 msgstr "вампиризм"
 
 msgid "I told the story of "
-msgstr "Я рассказал историю про <accs>"
+msgstr "Я рассказал историю про "
 
 msgid "I saw "
 msgstr "Я видел как"
 
 msgid "a telling of"
-msgstr "рассказывал про <accs>"
+msgstr "рассказывал про "
 
 msgid " the story of "
-msgstr "историю про <accs>"
+msgstr "историю про "
 
 msgid " told the story of "
-msgstr "рассказывал историю про <accs>"
+msgstr "рассказывал историю про "
 
 msgid "story of "
-msgstr "история про <accs>"
+msgstr "история про "
 
 msgid " was told"
 msgstr "была рассказана"
@@ -7009,7 +7009,7 @@ msgid "I recited "
 msgstr "Я декламировал"
 
 msgid "a recital of"
-msgstr "декламация <gent>"
+msgstr "декламация "
 
 msgid " recited "
 msgstr "декламировал"
@@ -7045,7 +7045,7 @@ msgid "perform"
 msgstr "исполнять"
 
 msgid "a performance of"
-msgstr "выступление <gent>"
+msgstr "выступление "
 
 msgid " was performed"
 msgstr "было исполнено"
@@ -7054,7 +7054,7 @@ msgid "danced"
 msgstr "танцевал"
 
 msgid "I saw a performance of "
-msgstr "Я видел выступление <gent>"
+msgstr "Я видел выступление "
 
 msgid " demanded submission from "
 msgstr " потребовал подчинения от "
@@ -7186,7 +7186,7 @@ msgid " is really dead."
 msgstr " действительно мёртв."
 
 msgid ", slayer of "
-msgstr ", убийца <gent>"
+msgstr ", убийца "
 
 msgid ", slayer."
 msgstr ", убийца."
@@ -7327,7 +7327,7 @@ msgid "tortured"
 msgstr "испытывал пытки"
 
 msgid "I was "
-msgstr "Я был <ablt>"
+msgstr "Я был "
 
 msgid " by the ghost "
 msgstr "призраком"
@@ -7423,7 +7423,7 @@ msgid "I need a drink."
 msgstr "Мне нужно выпить."
 
 msgid "I must pray to "
-msgstr "Мне нужно помолиться <datv>"
+msgstr "Мне нужно помолиться "
 
 msgid "I need time to contemplate."
 msgstr "Мне нужно время размышление."
@@ -7582,7 +7582,7 @@ msgid "I can now reside in "
 msgstr "Теперь я могу жить в"
 
 msgid "I am now part of "
-msgstr "Теперь я часть <gent>"
+msgstr "Теперь я часть "
 
 msgid "I was denied residency in "
 msgstr "Мне отказали в жительстве в"
@@ -8005,7 +8005,7 @@ msgid "There was an incident."
 msgstr "Там произошёл инцидент."
 
 msgid "The body of "
-msgstr "Тело <gent>"
+msgstr "Тело "
 
 msgid "my pet"
 msgstr "моего питомца"
@@ -8212,7 +8212,7 @@ msgid " was slain"
 msgstr " был убит"
 
 msgid "by a "
-msgstr " <ablt>"
+msgstr " "
 
 msgid "by the forces of "
 msgstr "силами "
@@ -9474,7 +9474,7 @@ msgid "You must drive the skulking vermin "
 msgstr "Вы должны прогнать этого подлого злодея"
 
 msgid " out of "
-msgstr " от <gent>"
+msgstr " от "
 
 msgid "You must drive "
 msgstr "Вы должны прогнать"
@@ -9882,7 +9882,7 @@ msgid "My "
 msgstr "Мой "
 
 msgid " is a group of "
-msgstr " - группа <gent>"
+msgstr " - группа "
 
 msgid "  I rule "
 msgstr " Я управляю "
@@ -9921,22 +9921,22 @@ msgid "my"
 msgstr "мой"
 
 msgid " offer of tribute from "
-msgstr " предложение дани от <gent>"
+msgstr " предложение дани от "
 
 msgid " refused "
 msgstr " отказался "
 
 msgid " demand of tribute from "
-msgstr " потребовал дань с <gent>"
+msgstr " потребовал дань с "
 
 msgid " accepted a peace offer from "
-msgstr " принял предложение мира от <gent>"
+msgstr " принял предложение мира от "
 
 msgid " to stop the conflict between "
 msgstr " остановить конфликт между "
 
 msgid " refused an offer of peace from "
-msgstr " отказался от предложения мира от <gent>"
+msgstr " отказался от предложения мира от "
 
 msgid " regarding the conflict between "
 msgstr " относительно конфликта между "
@@ -9951,10 +9951,10 @@ msgid " claimed "
 msgstr " занят "
 
 msgid " in the name of "
-msgstr " во имя <gent>"
+msgstr " во имя "
 
 msgid " became "
-msgstr " стал <ablt>"
+msgstr " стал "
 
 msgid "ruler"
 msgstr "правителем"
@@ -9999,7 +9999,7 @@ msgid " reclaimed "
 msgstr " вернули "
 
 msgid " on behalf of "
-msgstr " от имени <gent>"
+msgstr " от имени "
 
 msgid "We founded "
 msgstr "Мы основали "
@@ -10008,7 +10008,7 @@ msgid " founded "
 msgstr " основал "
 
 msgid " after a long journey from the lands of "
-msgstr " после долгого путешествия из земель <gent>"
+msgstr " после долгого путешествия из земель "
 
 msgid "I hear that a group from "
 msgstr "Я слышал, что группа из "
@@ -10035,13 +10035,13 @@ msgid " moved on in search of a better future"
 msgstr " ушёл на поиски лучшего будущего"
 
 msgid " after the horrible mismanagement of "
-msgstr " после полной бесхозяйственности <gent>"
+msgstr " после полной бесхозяйственности "
 
 msgid "We had to pull out of "
-msgstr "Нам пришлось уйти из <gent>"
+msgstr "Нам пришлось уйти из "
 
 msgid " gave up on their occupation of "
-msgstr " сдались оккупации <gent>"
+msgstr " сдались оккупации "
 
 msgid "We banded up as "
 msgstr "Мы объединились как "
@@ -10059,7 +10059,7 @@ msgid " just before an army"
 msgstr " прямо перед армией"
 
 msgid " led by "
-msgstr " возглавляемой <ablt>"
+msgstr " возглавляемой "
 
 msgid " descended upon the place."
 msgstr " спустился до места"
@@ -10548,7 +10548,7 @@ msgid "I've forgotten what to say..."
 msgstr "Я забыл что говорить..."
 
 msgid "I'm in charge of "
-msgstr "Я стою во главе <gent>"
+msgstr "Я стою во главе "
 
 msgid " now.  Make way for "
 msgstr " теперь. Уступи дорогу "
@@ -10847,7 +10847,7 @@ msgid "I will not bow before you."
 msgstr "Я не склонюсь перед вами."
 
 msgid " offers to pay homage to "
-msgstr " предлагает платить дань <datv>"
+msgstr " предлагает платить дань "
 
 msgid " will no longer pay homage to "
 msgstr " больше не будет платить дань "
@@ -11092,7 +11092,7 @@ msgid ""
 msgstr "Это поселение изолировано от остального мира в плане торговли."
 
 msgid "The people of "
-msgstr "Народ <gent>"
+msgstr "Народ "
 
 msgid " go to "
 msgstr " отправились в "
@@ -11242,7 +11242,7 @@ msgid " were "
 msgstr " были "
 
 msgid " was "
-msgstr " был <ablt>"
+msgstr " был "
 
 msgid "tanned"
 msgstr "дублёный"
@@ -11851,7 +11851,7 @@ msgid "A bandit gang calling itself "
 msgstr "Банда преступников, называющих себя"
 
 msgid ", led by "
-msgstr ", во главе с <ablt>"
+msgstr ", во главе с "
 
 msgid "has been harassing people right here on the streets of "
 msgstr "донимал людей здесь, на улицах "
@@ -11875,7 +11875,7 @@ msgid "I am a "
 msgstr "Я "
 
 msgid " of the "
-msgstr "  <gent>"
+msgstr "  "
 
 msgid ", as are you"
 msgstr ", как вы"
@@ -11884,10 +11884,10 @@ msgid "forgetful guard"
 msgstr "рассеянная стража"
 
 msgid "I am a slave of "
-msgstr "Я раб <gent>"
+msgstr "Я раб "
 
 msgid "I am a prisoner of "
-msgstr "Я пленник <gent>"
+msgstr "Я пленник "
 
 msgid "Please help me to escape from this place."
 msgstr "Пожалуйста, помогите мне выбраться из этого места."
@@ -12011,7 +12011,7 @@ msgid "Search first in the keep to the "
 msgstr "Сначала осмотри крепость на "
 
 msgid ", for I speak of our master"
-msgstr ", я говорю от имени <gent>"
+msgstr ", я говорю от имени "
 
 msgid "Search first in the great tower to the "
 msgstr "Для начала поищите большой башне на "
@@ -12358,7 +12358,7 @@ msgid "kill "
 msgstr "убить"
 
 msgid "drive the forces of "
-msgstr "прогнать войска <gent>"
+msgstr "прогнать войска "
 
 msgid "drive "
 msgstr "прогнать"
@@ -12367,7 +12367,7 @@ msgid "Give an order based on "
 msgstr "Отдать приказ на основании "
 
 msgid "'s relationship with "
-msgstr " отношения с <ablt>"
+msgstr " отношения с "
 
 msgid "Go into "
 msgstr "Входить "
@@ -12454,16 +12454,16 @@ msgid "reunited"
 msgstr "воссоединённый"
 
 msgid "Bring up your reunion with "
-msgstr "Поднять вопрос о вашем воссоединении с <ablt>"
+msgstr "Поднять вопрос о вашем воссоединении с "
 
 msgid "Bring up the reunion of "
-msgstr "Поднять вопрос о воссоединении <gent>"
+msgstr "Поднять вопрос о воссоединении "
 
 msgid "Bring up your death"
 msgstr "Поднять тему о вашей смерти"
 
 msgid "Bring up the death of "
-msgstr "Поднять вопрос о смерти <gent>"
+msgstr "Поднять вопрос о смерти "
 
 msgid "Bring up "
 msgstr "Поднять тему о "
@@ -12562,7 +12562,7 @@ msgid "leader"
 msgstr "лидер"
 
 msgid "Spread rumor of "
-msgstr "Распространить слух про <accs>"
+msgstr "Распространить слух про "
 
 msgid " ascension"
 msgstr " повышение"
@@ -12580,13 +12580,13 @@ msgid "tribute"
 msgstr "дань"
 
 msgid "'s acceptance of "
-msgstr "принятие <gent>"
+msgstr "принятие "
 
 msgid "'s offer of tribute"
 msgstr " предложение дани"
 
 msgid "'s refusal of "
-msgstr " отказ от <gent>"
+msgstr " отказ от "
 
 msgid "'s demand for tribute"
 msgstr " требование дани"
@@ -12595,7 +12595,7 @@ msgid "'s offer of peace"
 msgstr " предложение мира"
 
 msgid "'s cessation of tribute to "
-msgstr " прекращение выплаты дани <datv>"
+msgstr " прекращение выплаты дани "
 
 msgid "'s claim"
 msgstr " претензии"
@@ -12634,7 +12634,7 @@ msgid " against "
 msgstr " против "
 
 msgid "Spread rumor of the "
-msgstr "Распространить слухи про <accs>"
+msgstr "Распространить слухи про "
 
 msgid "overthrow"
 msgstr "свержение"
@@ -12685,13 +12685,13 @@ msgid " toward "
 msgstr " вперёд "
 
 msgid "Spread rumor of the occupation of "
-msgstr "Распространить слухи о занятии <gent>"
+msgstr "Распространить слухи о занятии "
 
 msgid "Spread rumor of your reunion with "
-msgstr "Распространить слухи о вашем воссоединении с <ablt>"
+msgstr "Распространить слухи о вашем воссоединении с "
 
 msgid "Spread rumor of the reunion of "
-msgstr "Распространить слухи о воссоединении <gent>"
+msgstr "Распространить слухи о воссоединении "
 
 msgid " death"
 msgstr " смерть"
@@ -12700,7 +12700,7 @@ msgid "Spread rumor of your abduction"
 msgstr "Распространить слухи о вашем похищении"
 
 msgid "Spread rumor of the abduction of "
-msgstr "Распространить слухи о похищении <gent>"
+msgstr "Распространить слухи о похищении "
 
 msgid "Trade or settle debts"
 msgstr "Торговать или возвращать долг"
@@ -12841,7 +12841,7 @@ msgid "stop"
 msgstr "остановка"
 
 msgid "Ask the listener for the location of "
-msgstr "Спросить собеседника о расположении <gent>"
+msgstr "Спросить собеседника о расположении "
 
 msgid "the object"
 msgstr "предмет"
@@ -12892,7 +12892,7 @@ msgid "Cancel tribute from "
 msgstr "Отменить дань с "
 
 msgid "Offer peace between "
-msgstr "Предложить мир между <ablt>"
+msgstr "Предложить мир между "
 
 msgid "Demand that "
 msgstr "Потребовать "
@@ -12946,7 +12946,7 @@ msgid "position"
 msgstr "должность"
 
 msgid "Offer listener your position as "
-msgstr "Предложить свою кандидатуру в качестве <gent>"
+msgstr "Предложить свою кандидатуру в качестве "
 
 msgid "adopt"
 msgstr "усыновить"
@@ -13240,7 +13240,7 @@ msgid "Leave "
 msgstr "Покинуть"
 
 msgid "Kick listener out of "
-msgstr "Выгнать собеседника из <gent>"
+msgstr "Выгнать собеседника из "
 
 msgid "kick"
 msgstr "выгнать "
@@ -13747,16 +13747,16 @@ msgid " is dead"
 msgstr " мёртв"
 
 msgid "Give your opinion of "
-msgstr "Выразить своё мнение о <loct>"
+msgstr "Выразить своё мнение о "
 
 msgid "opinion"
 msgstr "мнение"
 
 msgid "Provide the location of "
-msgstr "Указать расположение <gent>"
+msgstr "Указать расположение "
 
 msgid "Provide the whereabouts of "
-msgstr "Рассказать о местонахождении <gent>"
+msgstr "Рассказать о местонахождении "
 
 msgid "Explain your current journey"
 msgstr "Рассказать о своём путешествии "
@@ -17054,7 +17054,7 @@ msgid "spraying"
 msgstr "распыление"
 
 msgid "running with"
-msgstr "бежит с <ablt>"
+msgstr "бежит с "
 
 msgid "dripping"
 msgstr "капающий"
@@ -17492,16 +17492,16 @@ msgid " spots"
 msgstr " пятна"
 
 msgid "with a touch of"
-msgstr "с оттенком <gent>"
+msgstr "с оттенком "
 
 msgid "with flecks of"
-msgstr "с пятнами <gent>"
+msgstr "с пятнами "
 
 msgid "with some"
 msgstr "с некоторыми"
 
 msgid "mixed with"
-msgstr "смешан с <ablt>"
+msgstr "смешан с "
 
 msgid " stripes"
 msgstr " полосы"
@@ -21108,7 +21108,7 @@ msgid "Mandates:"
 msgstr "Поручения:"
 
 msgid "Export of "
-msgstr "Экспорт <gent>"
+msgstr "Экспорт "
 
 msgid "Make "
 msgstr "Делать "
@@ -21144,7 +21144,7 @@ msgid ": Customize"
 msgstr ": Настройка"
 
 msgid "The Kills of "
-msgstr "Убийства <gent>"
+msgstr "Убийства "
 
 msgid "  Dwarf Fortress: Load World  "
 msgstr " Dwarf Fortress: Загрузка мира "
@@ -22329,7 +22329,7 @@ msgid ": Done."
 msgstr ": Готово"
 
 msgid "  Relationships of "
-msgstr "  Отношения <gent>"
+msgstr "  Отношения "
 
 msgid "Pet"
 msgstr "Питомец"
@@ -22512,7 +22512,7 @@ msgid "The peaceful town of "
 msgstr "Мирный городок "
 
 msgid " is threatened!  The forces of "
-msgstr " в опасности! Войска <gent>"
+msgstr " в опасности! Войска "
 
 msgid " are on the march.  "
 msgstr " маршируют. "
@@ -22532,7 +22532,7 @@ msgid ""
 msgstr " не знает пощады. Бегите -- у вас мало времени! Надеюсь, я смогу убедить вашу семью и родственников бежать."
 
 msgid "Legends speak of "
-msgstr "Легенды говорят о <loct>"
+msgstr "Легенды говорят о "
 
 msgid "an ancient"
 msgstr "древнем"
@@ -22556,7 +22556,7 @@ msgid ""
 msgstr " истинное имя. Точное место хорошо известно, но никто не смог проникнуть в его секреты. Если вы сможете узнать истинное имя монстра, вы сможете прекратить этот ужас навсегда."
 
 msgid "The citizens of "
-msgstr "Жители <gent>"
+msgstr "Жители "
 
 msgid " are plagued by bandits.  The gang"
 msgstr " подвергаются нападениям бандитов. Банда"
@@ -22843,7 +22843,7 @@ msgid "When Necessary"
 msgstr "Когда необходимо"
 
 msgid "What would you like to do with "
-msgstr "Что вы хотите сделать с <ablt>"
+msgstr "Что вы хотите сделать с "
 
 msgid "Where would you like to move?"
 msgstr "Куда вы хотите двигаться?"
@@ -22867,7 +22867,7 @@ msgid "Continuing shouting"
 msgstr "Продолжать кричать"
 
 msgid "Ongoing conversation with "
-msgstr "Продолжающийся диалог с <ablt>"
+msgstr "Продолжающийся диалог с "
 
 msgid "You don't know anything specific about this, unfortunately."
 msgstr "К сожалению, вы не знаете ничего конкретного об этом."
@@ -23086,13 +23086,13 @@ msgid " to view other pages"
 msgstr " для просмотра других страниц"
 
 msgid "a colony of "
-msgstr "колония <gent>"
+msgstr "колония "
 
 msgid "many "
 msgstr "много "
 
 msgid "a swarm of "
-msgstr "рой <gent>"
+msgstr "рой "
 
 msgid "Miasma"
 msgstr "Миазмы"
@@ -23206,25 +23206,25 @@ msgid "Magma ["
 msgstr "Магма ["
 
 msgid "A spattering of "
-msgstr "Брызги <gent>"
+msgstr "Брызги "
 
 msgid "A smear of "
-msgstr "Пятно <gent>"
+msgstr "Пятно "
 
 msgid "A pool of "
-msgstr "Лужа <gent>"
+msgstr "Лужа "
 
 msgid "A thin layer of "
-msgstr "Тонкий слой <gent>"
+msgstr "Тонкий слой "
 
 msgid "A small pile of "
-msgstr "Кучка <gent>"
+msgstr "Кучка "
 
 msgid "A pile of "
-msgstr "Куча <gent>"
+msgstr "Куча "
 
 msgid "A dusting of "
-msgstr "Тонкий слой <gent>"
+msgstr "Тонкий слой "
 
 msgid "The vegetation is heavily damaged here."
 msgstr "Растительность сильно повреждена."
@@ -23663,7 +23663,7 @@ msgid "You've already searched this area recently."
 msgstr "Вы недавно осматривали эту область."
 
 msgid "You've found a colony of "
-msgstr "Вы нашли колонию <gent>"
+msgstr "Вы нашли колонию "
 
 msgid " and another small creature."
 msgstr " и ещё одно небольшое существо."
@@ -24147,7 +24147,7 @@ msgid "in order to rescue"
 msgstr ", чтобы спасти"
 
 msgid "agreed to adventure with"
-msgstr "согласился путешествовать с <ablt>"
+msgstr "согласился путешествовать с "
 
 msgid "wherever the journey might lead"
 msgstr ", куда бы не привела дорога"
@@ -24174,7 +24174,7 @@ msgid "Drive members of"
 msgstr "Прогнать членов "
 
 msgid "out of"
-msgstr "из <gent>"
+msgstr "из "
 
 msgid "Drive"
 msgstr "Вести"
@@ -24243,7 +24243,7 @@ msgid "Wrestle "
 msgstr "Бороться "
 
 msgid "The Wrestling of "
-msgstr "Борьба с <ablt>"
+msgstr "Борьба с "
 
 msgid "Latch"
 msgstr "Захват"
@@ -24708,7 +24708,7 @@ msgid " when done."
 msgstr ", когда закончите."
 
 msgid "There is nothing to do with "
-msgstr "Ничего нельзя сделать с <ablt>"
+msgstr "Ничего нельзя сделать с "
 
 msgid "You empty the "
 msgstr "Вы опустошили "
@@ -24723,7 +24723,7 @@ msgid "You put the "
 msgstr "Вы положили "
 
 msgid " into the "
-msgstr " в <accs>"
+msgstr " в "
 
 msgid "You eat the "
 msgstr "Вы едите "
@@ -25617,7 +25617,7 @@ msgid "You set a fire."
 msgstr "Вы разжигаете огонь."
 
 msgid "Interact with "
-msgstr "Взаимодействовать с <ablt>"
+msgstr "Взаимодействовать с "
 
 msgid "Push "
 msgstr "Толкнуть "
@@ -25942,7 +25942,7 @@ msgid " dubious"
 msgstr " нерешительный"
 
 msgid " worshipper of "
-msgstr " поклонник <gent>"
+msgstr " поклонник "
 
 msgid ", the "
 msgstr ", "
@@ -26311,7 +26311,7 @@ msgid " and your military commander"
 msgstr " и ваш военный командир"
 
 msgid "This person is one of the "
-msgstr "Это один из <gent>"
+msgstr "Это один из "
 
 msgid " and your military subordinate"
 msgstr " и ваш военный подчинённый"
@@ -26396,31 +26396,31 @@ msgid "This event occurred on the "
 msgstr "Это событие произошло в "
 
 msgid " in the year "
-msgstr " в <loct> "
+msgstr " в  "
 
 msgid "Your reunion with "
-msgstr "Ваше воссоединение с <ablt>"
+msgstr "Ваше воссоединение с "
 
 msgid "The reunion of "
-msgstr "Воссоединение <gent>"
+msgstr "Воссоединение "
 
 msgid "Your death"
 msgstr "Ваша смерть "
 
 msgid "The death of "
-msgstr "Смерть <gent>"
+msgstr "Смерть "
 
 msgid "The insurrection"
 msgstr "Восстание"
 
 msgid "The occupation of "
-msgstr "Оккупация <gent>"
+msgstr "Оккупация "
 
 msgid "Your abduction"
 msgstr "Ваше похищение"
 
 msgid "The abduction of "
-msgstr "Похищение <gent>"
+msgstr "Похищение "
 
 msgid "Tell a story"
 msgstr "Рассказать историю"
@@ -26447,7 +26447,7 @@ msgid "Speak"
 msgstr "Говорить"
 
 msgid " is an example of "
-msgstr "- это пример <gent>"
+msgstr "- это пример "
 
 msgid "musical composition"
 msgstr "музыкальная композиция"
@@ -26846,7 +26846,7 @@ msgid "Metal armor"
 msgstr "Металлические доспехи"
 
 msgid " has assumed the position of "
-msgstr " получил должность <gent>"
+msgstr " получил должность "
 
 msgid " trying to generate musical form without speech or instruments"
 msgstr "пытается создать музыкальный стиль не использующий слова и инструменты"
@@ -27167,7 +27167,7 @@ msgid " that isn't a bin"
 msgstr " это не ящик"
 
 msgid " by a "
-msgstr "<ablt>"
+msgstr ""
 
 msgid "flown"
 msgstr "пролетел"
@@ -27231,19 +27231,19 @@ msgid "mounted "
 msgstr "установленный"
 
 msgid "a telling of the story of "
-msgstr "рассказ про <accs>"
+msgstr "рассказ про "
 
 msgid "storytelling"
 msgstr "рассказ"
 
 msgid "a recital of "
-msgstr "декламация <gent>"
+msgstr "декламация "
 
 msgid "a poetry recital"
 msgstr "поэтическая декламация"
 
 msgid "a performance of "
-msgstr "выступление <gent>"
+msgstr "выступление "
 
 msgid "a concert"
 msgstr "концерт"
@@ -27267,13 +27267,13 @@ msgid "images"
 msgstr "изображения"
 
 msgid "the carrying of "
-msgstr "ношение <gent>"
+msgstr "ношение "
 
 msgid "flowers"
 msgstr "цветы"
 
 msgid "the scattering of "
-msgstr "рассеяние <gent>"
+msgstr "рассеяние "
 
 msgid "acrobats"
 msgstr "акробаты"
@@ -27288,10 +27288,10 @@ msgid "candles"
 msgstr "свечи"
 
 msgid "the giving of "
-msgstr "подношение <gent>"
+msgstr "подношение "
 
 msgid "the sacrifice of "
-msgstr "жертва <gent>"
+msgstr "жертва "
 
 msgid "Year "
 msgstr "Год "
@@ -27380,10 +27380,10 @@ msgid " centered around "
 msgstr "вокруг"
 
 msgid " divine aspect of "
-msgstr "божественный аспект <gent>"
+msgstr "божественный аспект "
 
 msgid "A performance of "
-msgstr "Выступление <gent>"
+msgstr "Выступление "
 
 msgid "A dance"
 msgstr "Танец"
@@ -27392,13 +27392,13 @@ msgid "A concert"
 msgstr "Концерт"
 
 msgid "A recital of "
-msgstr "Чтение <gent>"
+msgstr "Чтение "
 
 msgid "A poetry recital"
 msgstr "Чтение стихов"
 
 msgid "The story of "
-msgstr "История про <accs>"
+msgstr "История про "
 
 msgid "A story recital"
 msgstr "Чтение рассказа"
@@ -27511,7 +27511,7 @@ msgid " ruled the world."
 msgstr " управлял миром."
 
 msgid "the last of the "
-msgstr "последний из <gent>"
+msgstr "последний из "
 
 msgid "ancient "
 msgstr "древние "
@@ -27547,10 +27547,10 @@ msgid " the world."
 msgstr " мире."
 
 msgid "Part of "
-msgstr "Часть <gent>"
+msgstr "Часть "
 
 msgid "In "
-msgstr "В <loct>"
+msgstr "В "
 
 msgid "ended."
 msgstr "закончилась."
@@ -28981,7 +28981,7 @@ msgid "glob"
 msgstr "жир"
 
 msgid " laced with "
-msgstr " с примесью <gent>"
+msgstr " с примесью "
 
 msgid "powder"
 msgstr "порошок"
@@ -29242,7 +29242,7 @@ msgid "chain "
 msgstr "кольчужный "
 
 msgid "suits of "
-msgstr "комплекты <gent>"
+msgstr "комплекты "
 
 msgid "armor"
 msgstr "броня"
@@ -29266,7 +29266,7 @@ msgid "legwear"
 msgstr "брюки"
 
 msgid "A kidnapper has made off with "
-msgstr "Похититель скрылся с <ablt>"
+msgstr "Похититель скрылся с "
 
 msgid " has stolen "
 msgstr " украл "
@@ -29275,10 +29275,10 @@ msgid "A thief has stolen "
 msgstr "Вор украл "
 
 msgid "Of "
-msgstr " <gent>"
+msgstr " "
 
 msgid "of "
-msgstr "  <gent>"
+msgstr "  "
 
 msgid " is taken by a fey mood!"
 msgstr " охвачен вдохновением!"
@@ -29563,7 +29563,7 @@ msgid "Chairs: "
 msgstr "Стулья:"
 
 msgid "Dedicated to "
-msgstr "Посвящён <datv>"
+msgstr "Посвящён "
 
 msgid "No particular deity"
 msgstr "Нет конкретного божества"
@@ -29602,10 +29602,10 @@ msgid "There are no petitions that need your attention."
 msgstr "Нет заявлений, требующих вашего внимания."
 
 msgid "Status of "
-msgstr "Статус <gent>"
+msgstr "Статус "
 
 msgid "Citizenship of "
-msgstr "Гражданство <gent>"
+msgstr "Гражданство "
 
 msgid "Some corrupt data"
 msgstr "Некоторое количество поврежденных данных"
@@ -29647,7 +29647,7 @@ msgid "desires citizenship."
 msgstr "хочет стать гражданином."
 
 msgid "as a citizen of"
-msgstr "в качестве гражданина <gent>"
+msgstr "в качестве гражданина "
 
 msgid ": Select/scroll"
 msgstr ": Выбор/прокр."
@@ -30889,7 +30889,7 @@ msgid ": Swap right panel"
 msgstr ": Сдвинуть правую панель"
 
 msgid "  The Health of "
-msgstr "  Здоровье <gent>"
+msgstr "  Здоровье "
 
 msgid "In Traction"
 msgstr "На тракционном столе"
@@ -31231,7 +31231,7 @@ msgid "Bleeding stopped"
 msgstr "Кровотечение остановлено"
 
 msgid "Compound fracture of "
-msgstr "Сложный перелом <gent>"
+msgstr "Сложный перелом "
 
 msgid " repaired"
 msgstr " восстановлен"
@@ -32038,7 +32038,7 @@ msgid " has been disturbed."
 msgstr " была нарушена."
 
 msgid "group of "
-msgstr "группа <gent>"
+msgstr "группа "
 
 msgid "Many "
 msgstr "Много "
@@ -32047,7 +32047,7 @@ msgid " have been disturbed."
 msgstr " был нарушен."
 
 msgid "swarm of "
-msgstr "рой <gent>"
+msgstr "рой "
 
 msgid " has "
 msgstr " имеет "
@@ -32056,7 +32056,7 @@ msgid " its way out of confinement!"
 msgstr " его выхода из заключения!"
 
 msgid " caught in a burst of "
-msgstr " попал в струю <gent>"
+msgstr " попал в струю "
 
 msgid "an official land of the realm"
 msgstr "официальные земли области"
@@ -32071,7 +32071,7 @@ msgid "lumber limits"
 msgstr "пиломатериалы пределы"
 
 msgid "  The Wealth of "
-msgstr "      Богатство <gent>"
+msgstr "      Богатство "
 
 msgid ": Mode"
 msgstr ": Режим"
@@ -32122,22 +32122,22 @@ msgid "This building "
 msgstr "Это строение "
 
 msgid "was designed by"
-msgstr "было разработано <ablt>"
+msgstr "было разработано "
 
 msgid "was well-designed by"
-msgstr "было хорошо разработано <ablt>"
+msgstr "было хорошо разработано "
 
 msgid "was finely-designed by"
-msgstr "было тонко разработано <ablt>"
+msgstr "было тонко разработано "
 
 msgid "was superiorly designed by"
-msgstr "было отлично разработано <ablt>"
+msgstr "было отлично разработано "
 
 msgid "bears the exceptional design of"
 msgstr "носит исключительный дизайн"
 
 msgid "was masterfully designed by"
-msgstr "было мастерски разработано <ablt>"
+msgstr "было мастерски разработано "
 
 msgid "an unknown architect"
 msgstr "неизвестный архитектор"
@@ -32146,22 +32146,22 @@ msgid "The structure "
 msgstr "Структура "
 
 msgid "was built by"
-msgstr "была построена <ablt>"
+msgstr "была построена "
 
 msgid "was solidly built by"
-msgstr "была надёжно построена <ablt>"
+msgstr "была надёжно построена "
 
 msgid "was finely-built by"
-msgstr "была тонко построена <ablt>"
+msgstr "была тонко построена "
 
 msgid "was superiorly built by"
-msgstr "была отлично построена <ablt>"
+msgstr "была отлично построена "
 
 msgid "was exceptionally built by"
-msgstr "была исключительно построена <ablt>"
+msgstr "была исключительно построена "
 
 msgid "was masterfully built by"
-msgstr "была мастерски построена <ablt>"
+msgstr "была мастерски построена "
 
 msgid "an unknown artisan"
 msgstr "неизвестным ремесленником"
@@ -32275,7 +32275,7 @@ msgid " torturing "
 msgstr " пытает "
 
 msgid " committing a depraved act upon "
-msgstr " совершает развратные действия над <ablt>"
+msgstr " совершает развратные действия над "
 
 msgid " devouring "
 msgstr " пожирает "
@@ -32290,13 +32290,13 @@ msgid " shooting "
 msgstr " стреляет "
 
 msgid " surrounded by "
-msgstr " окружён <ablt>"
+msgstr " окружён "
 
 msgid " massacring "
 msgstr " устраивает бойню "
 
 msgid " fighting with "
-msgstr " сражается с <ablt>"
+msgstr " сражается с "
 
 msgid " greeting "
 msgstr " приветствует "
@@ -32305,7 +32305,7 @@ msgid " refusing "
 msgstr " отказывается "
 
 msgid " speaking with "
-msgstr " разговаривает с <ablt>"
+msgstr " разговаривает с "
 
 msgid " embracing "
 msgstr " обнимает "
@@ -32320,7 +32320,7 @@ msgid " hiding "
 msgstr " скрывает "
 
 msgid " praying to "
-msgstr " молится <datv>"
+msgstr " молится "
 
 msgid " contemplating "
 msgstr " созерцает "
@@ -32332,16 +32332,16 @@ msgid " engraving "
 msgstr " гравирует "
 
 msgid " impaled on "
-msgstr " насажен на <accs>"
+msgstr " насажен на "
 
 msgid " being flayed by "
-msgstr " освежёван <ablt>"
+msgstr " освежёван "
 
 msgid " hanging from "
-msgstr " висит на <loct>"
+msgstr " висит на "
 
 msgid " being mutilated by "
-msgstr " покалечен <ablt>"
+msgstr " покалечен "
 
 msgid "This is a "
 msgstr "Это "
@@ -32674,7 +32674,7 @@ msgid "in order to glorify "
 msgstr "чтобы прославлять"
 
 msgid "after dreaming of "
-msgstr "после мечты про <accs>"
+msgstr "после мечты про "
 
 msgid "after praying to "
 msgstr "после молитвы к"
@@ -32815,19 +32815,19 @@ msgid " by growing vegetation"
 msgstr " растущими растениями"
 
 msgid " masterfully designed by "
-msgstr " мастерски разработан <ablt>"
+msgstr " мастерски разработан "
 
 msgid " masterfully constructed by "
-msgstr " мастерски построено <ablt>"
+msgstr " мастерски построено "
 
 msgid "the masterful "
 msgstr "мастерски "
 
 msgid " created by "
-msgstr " создан <ablt>"
+msgstr " создан "
 
 msgid " masterfully dyed with "
-msgstr " мастерски окрасил <ablt>"
+msgstr " мастерски окрасил "
 
 msgid "addition of a masterful image"
 msgstr "мастерское добавление рисунка"
@@ -32869,13 +32869,13 @@ msgid "addition of a masterful instrument piece"
 msgstr "добавление мастерски сделанной детали инструмента"
 
 msgid " prepared by "
-msgstr " подготовлен <ablt>"
+msgstr " подготовлен "
 
 msgid "the masterful engraving"
 msgstr "мастерская гравюра"
 
 msgid "the destruction of "
-msgstr "разрушение <gent>"
+msgstr "разрушение "
 
 msgid " led the attack"
 msgstr " возглавил атаку"
@@ -32899,16 +32899,16 @@ msgid " and destroyed "
 msgstr " и разрушен "
 
 msgid "the defeat of "
-msgstr "поражение <gent>"
+msgstr "поражение "
 
 msgid " and destruction of "
-msgstr " и уничтожение <gent>"
+msgstr " и уничтожение "
 
 msgid " and pillaged "
 msgstr " и разграблен "
 
 msgid " and pillaging of "
-msgstr " и разграбление <gent>"
+msgstr " и разграбление "
 
 msgid " and placed "
 msgstr " и установлен "
@@ -32917,13 +32917,13 @@ msgid " and others"
 msgstr " и другие"
 
 msgid " in charge of "
-msgstr " во главе <gent>"
+msgstr " во главе "
 
 msgid "The new government was called "
 msgstr "Новое правительство было названо "
 
 msgid " and lordship of "
-msgstr " и господство над <ablt>"
+msgstr " и господство над "
 
 msgid " over "
 msgstr " за "
@@ -32935,7 +32935,7 @@ msgid ", to be delivered from "
 msgstr ", чтобы быть доставленным из "
 
 msgid "the securing of "
-msgstr "охрана <gent>"
+msgstr "охрана "
 
 msgid "'s tribute from "
 msgstr " дань от "
@@ -32944,16 +32944,16 @@ msgid " and took over "
 msgstr " и взял на себя "
 
 msgid " and takeover of "
-msgstr " и захват <gent>"
+msgstr " и захват "
 
 msgid " routed "
 msgstr " проложил "
 
 msgid "the rout of "
-msgstr "путь <gent>"
+msgstr "путь "
 
 msgid "the attack of "
-msgstr "нападение <gent>"
+msgstr "нападение "
 
 msgid " abandoned the settlement of "
 msgstr " оставили поселение "
@@ -32971,7 +32971,7 @@ msgid "the abandonment of "
 msgstr "покидание "
 
 msgid "the withering of "
-msgstr "угасание <gent>"
+msgstr "угасание "
 
 msgid " formed"
 msgstr " сформировал"
@@ -32983,7 +32983,7 @@ msgid " moved"
 msgstr " переместился"
 
 msgid "a multitude of"
-msgstr "множество <gent>"
+msgstr "множество "
 
 msgid "hundreds"
 msgstr "сотни"
@@ -32992,7 +32992,7 @@ msgid "some hundred"
 msgstr "несколько сотен"
 
 msgid "dozens of"
-msgstr "десятки <gent>"
+msgstr "десятки "
 
 msgid "several"
 msgstr "несколько"
@@ -33004,7 +33004,7 @@ msgid " joined with "
 msgstr " присоединился к "
 
 msgid " the joining of "
-msgstr "воссоединение <gent>"
+msgstr "воссоединение "
 
 msgid " merged with "
 msgstr " объединён с "
@@ -33020,19 +33020,19 @@ msgid " regained their senses after another period of questionable judgment."
 msgstr " пришли в чувство после очередного периода сомнительного судейства."
 
 msgid "the formation of "
-msgstr "образование <gent>"
+msgstr "образование "
 
 msgid "ascendency of the criminal organization"
 msgstr "доминирование криминальной организации"
 
 msgid "relocation of"
-msgstr "перемещение <gent>"
+msgstr "перемещение "
 
 msgid "the incorporation of "
-msgstr "поглощение <gent>"
+msgstr "поглощение "
 
 msgid " into "
-msgstr " в <accs>"
+msgstr " в "
 
 msgid "the return to reason at the settlement of "
 msgstr "возврат к порядку в поселении "
@@ -33062,16 +33062,16 @@ msgid "the repeal of numerous oppressive laws"
 msgstr "отмена нескольких несправедливых законов"
 
 msgid " finished the construction of "
-msgstr " завершили строительство <gent>"
+msgstr " завершили строительство "
 
 msgid " as a part of "
-msgstr " как часть <gent>"
+msgstr " как часть "
 
 msgid " connecting "
 msgstr " соединение "
 
 msgid "the completion of "
-msgstr "завершение <gent>"
+msgstr "завершение "
 
 msgid " thrust a spire of slade up from the underworld, naming it "
 msgstr " воздвиг башню из слейда, восходящую из подземного мира в наш мир, и назвал её "
@@ -33092,25 +33092,25 @@ msgid " created "
 msgstr " создал "
 
 msgid "the creation of "
-msgstr "создание <gent>"
+msgstr "создание "
 
 msgid "the construction of "
-msgstr "строительство <gent>"
+msgstr "строительство "
 
 msgid "the foundation of "
-msgstr "основание <gent>"
+msgstr "основание "
 
 msgid "the emergence of "
-msgstr "появление <gent>"
+msgstr "появление "
 
 msgid " from the underworld through the power of "
-msgstr " из подземного мира по зову <gent>"
+msgstr " из подземного мира по зову "
 
 msgid "the replacement of "
-msgstr "замена <gent>"
+msgstr "замена "
 
 msgid "the razing of "
-msgstr "разрушение <gent>"
+msgstr "разрушение "
 
 msgid "profaning"
 msgstr "осквернение"
@@ -33149,13 +33149,13 @@ msgid " crushed the insurrection in "
 msgstr " подавлено восстание в "
 
 msgid "the overthrow of "
-msgstr "свержение <gent>"
+msgstr "свержение "
 
 msgid "the end of the insurrection in "
-msgstr "окончание восстания в <loct>"
+msgstr "окончание восстания в "
 
 msgid "the crushing of the insurrection against "
-msgstr "подавление восстания в <loct>"
+msgstr "подавление восстания в "
 
 msgid " were taken by a mood to act against their better judgment at "
 msgstr " поддались настроению действовать против их лучших побуждений "
@@ -33164,16 +33164,16 @@ msgid " launched an expedition to reclaim "
 msgstr " начата экспедиция по возвращению "
 
 msgid "the questionable judgment of "
-msgstr "сомнительное суждение о <loct>"
+msgstr "сомнительное суждение о "
 
 msgid "the reclamation of "
-msgstr "возвращение <gent>"
+msgstr "возвращение "
 
 msgid " devoured "
 msgstr " съел "
 
 msgid "the devouring of "
-msgstr "поедание <gent>"
+msgstr "поедание "
 
 msgid "broken away"
 msgstr "сломано"
@@ -33257,7 +33257,7 @@ msgid " were"
 msgstr " были"
 
 msgid " the first to reach the summit of "
-msgstr " первым достиг вершины <gent>"
+msgstr " первым достиг вершины "
 
 msgid "an unknown peak"
 msgstr "неизвестного пика"
@@ -33266,40 +33266,40 @@ msgid ", which rises above "
 msgstr ", которая возвышается над "
 
 msgid "the climbing of "
-msgstr "восхождение <gent>"
+msgstr "восхождение "
 
 msgid " escaped from "
-msgstr " бежал из <gent>"
+msgstr " бежал из "
 
 msgid " returned to "
-msgstr " вернулся в <accs>"
+msgstr " вернулся в "
 
 msgid " made a journey to "
-msgstr " совершил путешествие в <accs>"
+msgstr " совершил путешествие в "
 
 msgid "unknown lands"
 msgstr "неизвестные земли"
 
 msgid "the escape from "
-msgstr "побег из <gent>"
+msgstr "побег из "
 
 msgid "the return of "
-msgstr "возвращение <gent>"
+msgstr "возвращение "
 
 msgid "the journey of "
-msgstr "путешествие <gent>"
+msgstr "путешествие "
 
 msgid " tamed the "
-msgstr " приручил <accs>"
+msgstr " приручил "
 
 msgid "wild beasts"
 msgstr "дикие звери"
 
 msgid "the taming of the "
-msgstr "приручение <gent>"
+msgstr "приручение "
 
 msgid " fought with "
-msgstr " сражался с <ablt>"
+msgstr " сражался с "
 
 msgid ".  While defeated, the latter escaped unscathed"
 msgstr ".  Несмотря на поражение, последний бежал невредимым"
@@ -33323,28 +33323,28 @@ msgid " was forced to make a hasty escape"
 msgstr " был вынужден поспешно отступить"
 
 msgid " surprised "
-msgstr " застал врасплох <accs>"
+msgstr " застал врасплох "
 
 msgid " ambushed "
-msgstr " напал из засады на <accs>"
+msgstr " напал из засады на "
 
 msgid " happened upon "
-msgstr " наткнулся на <accs>"
+msgstr " наткнулся на "
 
 msgid " cornered "
 msgstr " загнал в угол "
 
 msgid " confronted "
-msgstr " столкнулся с <ablt>"
+msgstr " столкнулся с "
 
 msgid "a scuffle between "
-msgstr "стычка между <ablt>"
+msgstr "стычка между "
 
 msgid " in which the former emerged victorious"
 msgstr ", в которой первый вышел победителем"
 
 msgid "the escape of "
-msgstr "побег <gent>"
+msgstr "побег "
 
 msgid " after a punishing fight"
 msgstr " после тяжёлой борьбы"
@@ -33353,22 +33353,22 @@ msgid " after a horrific combat"
 msgstr " после ужасной битвы"
 
 msgid "attack on"
-msgstr "нападение на <accs>"
+msgstr "нападение на "
 
 msgid "surprising of"
-msgstr "удивление <gent>"
+msgstr "удивление "
 
 msgid "ambush of"
-msgstr "засада <gent>"
+msgstr "засада "
 
 msgid "happening upon"
-msgstr "случайная встреча с <ablt>"
+msgstr "случайная встреча с "
 
 msgid "cornering of"
-msgstr "окружение <gent>"
+msgstr "окружение "
 
 msgid "confrontation of"
-msgstr "противостояние <gent>"
+msgstr "противостояние "
 
 msgid "was the very first to discover"
 msgstr "был первооткрывателем"
@@ -33377,7 +33377,7 @@ msgid "independently discovered"
 msgstr "независимо открыл"
 
 msgid "became obsessed with "
-msgstr "стал одержим идеей <gent>"
+msgstr "стал одержим идеей "
 
 msgid " own mortality and sought to extend "
 msgstr " собственной смертности и поисками способа продления "
@@ -33593,10 +33593,10 @@ msgid "was killed by falling rocks"
 msgstr "убит упавшем камнем"
 
 msgid ", slain by "
-msgstr ", убит <ablt>"
+msgstr ", убит "
 
 msgid ", slain by a "
-msgstr ", убит <ablt>"
+msgstr ", убит "
 
 msgid ", slain"
 msgstr ", убит"
@@ -33623,16 +33623,16 @@ msgid "was killed by a flying object"
 msgstr "убит летящим предметом"
 
 msgid "was banished by "
-msgstr "изгнан <ablt>"
+msgstr "изгнан "
 
 msgid "was banished by a "
-msgstr "изгнан <ablt>"
+msgstr "изгнан "
 
 msgid ", struck down by "
-msgstr ", убит <ablt>"
+msgstr ", убит "
 
 msgid ", struck down by a "
-msgstr ", убит <ablt>"
+msgstr ", убит "
 
 msgid ", struck down "
 msgstr ", убит "
@@ -33650,13 +33650,13 @@ msgid "independent discovery"
 msgstr "независимое открытие"
 
 msgid "the new desire of"
-msgstr "новое желание о <loct>"
+msgstr "новое желание о "
 
 msgid "the new dream of"
-msgstr "новая мечта о <loct>"
+msgstr "новая мечта о "
 
 msgid "the new obsession of"
-msgstr "новая навязчивая идея о <loct>"
+msgstr "новая навязчивая идея о "
 
 msgid "to rule the world"
 msgstr "править миром"
@@ -33704,55 +33704,55 @@ msgid ", once more,"
 msgstr ", снова"
 
 msgid "the death of "
-msgstr "смерть <gent>"
+msgstr "смерть "
 
 msgid " in a cage"
 msgstr " в клетке"
 
 msgid "the fall of "
-msgstr "падение <gent>"
+msgstr "падение "
 
 msgid " into a deep chasm"
 msgstr " в глубокую пропасть"
 
 msgid "the passing of "
-msgstr "прохождение <gent>"
+msgstr "прохождение "
 
 msgid "the death in the dark of "
-msgstr "смерть во мраке <gent>"
+msgstr "смерть во мраке "
 
 msgid "the starvation of "
-msgstr "голодание <gent>"
+msgstr "голодание "
 
 msgid "the dehydration of "
-msgstr "обезвоживание <gent>"
+msgstr "обезвоживание "
 
 msgid "the drowning of "
-msgstr "утопление <gent>"
+msgstr "утопление "
 
 msgid "the burning of "
-msgstr "горение <gent>"
+msgstr "горение "
 
 msgid " in magma"
 msgstr " в магме"
 
 msgid "the boiling of "
-msgstr "кипение <gent>"
+msgstr "кипение "
 
 msgid "the melting of "
-msgstr "таяние <gent>"
+msgstr "таяние "
 
 msgid "the condensation of "
-msgstr "конденсация <gent>"
+msgstr "конденсация "
 
 msgid "the freezing of "
-msgstr "замораживание <gent>"
+msgstr "замораживание "
 
 msgid "the heat-induced death of "
-msgstr "перегрев <gent>"
+msgstr "перегрев "
 
 msgid "the encasement of "
-msgstr "замурование <gent>"
+msgstr "замурование "
 
 msgid " in cooling lava"
 msgstr " в застывшей лаве"
@@ -33764,19 +33764,19 @@ msgid " in ice"
 msgstr " во льду"
 
 msgid " in a "
-msgstr " в <loct>"
+msgstr " в "
 
 msgid "'s fire"
 msgstr " пламенем"
 
 msgid "the scalding of "
-msgstr "ошпаривание <gent>"
+msgstr "ошпаривание "
 
 msgid " in a magma mist"
 msgstr " в тумане магмы"
 
 msgid "the crushing of "
-msgstr "дробление <gent>"
+msgstr "дробление "
 
 msgid " under a drawbridge"
 msgstr " под подъёмным мостом"
@@ -33788,49 +33788,49 @@ msgid " by falling rocks"
 msgstr " падающими камнями"
 
 msgid "the shooting of "
-msgstr "выстрел <gent>"
+msgstr "выстрел "
 
 msgid "the mortal wounding of "
-msgstr "смертельное ранение <gent>"
+msgstr "смертельное ранение "
 
 msgid "the fatal illness of "
-msgstr "смертельная болезнь <gent>"
+msgstr "смертельная болезнь "
 
 msgid "the hacking of "
-msgstr "разрубание <gent>"
+msgstr "разрубание "
 
 msgid "the beheading of "
-msgstr "обезглавливание <gent>"
+msgstr "обезглавливание "
 
 msgid "the crucifixion of "
-msgstr "распятие <gent>"
+msgstr "распятие "
 
 msgid "the burial of "
-msgstr "захоронение <gent>"
+msgstr "захоронение "
 
 msgid "the leaving of "
-msgstr "уход <gent>"
+msgstr "уход "
 
 msgid "the feeding of "
-msgstr "кормление <gent>"
+msgstr "кормление "
 
 msgid "the killing of "
-msgstr "убийство <gent>"
+msgstr "убийство "
 
 msgid "the slaughter of "
-msgstr "убийство <gent>"
+msgstr "убийство "
 
 msgid "the scuttling of "
-msgstr "затопление <gent>"
+msgstr "затопление "
 
 msgid "the draining of "
-msgstr "осушение <gent>"
+msgstr "осушение "
 
 msgid " blood"
 msgstr " крови"
 
 msgid "the murder of "
-msgstr "убийство <gent>"
+msgstr "убийство "
 
 msgid " by a trap"
 msgstr " ловушкой"
@@ -33842,46 +33842,46 @@ msgid " by a flying object"
 msgstr " летящим предметом"
 
 msgid "the collapse of "
-msgstr "обрушение <gent>"
+msgstr "обрушение "
 
 msgid " after an attack by "
-msgstr " после нападения <gent>"
+msgstr " после нападения "
 
 msgid " after an attack by a "
-msgstr " после нападения <gent>"
+msgstr " после нападения "
 
 msgid " after an attack"
 msgstr " после атаки"
 
 msgid " attack with "
-msgstr " атака с помощью <gent>"
+msgstr " атака с помощью "
 
 msgid "the vanishment of "
-msgstr "исчезновение <gent>"
+msgstr "исчезновение "
 
 msgid "the putting to rest of "
-msgstr "упокоение <gent>"
+msgstr "упокоение "
 
 msgid "the collision of "
-msgstr "столкновение <gent>"
+msgstr "столкновение "
 
 msgid " with an obstacle"
 msgstr " с препятствием"
 
 msgid ", after the death strike by "
-msgstr ", после смертельного удара <ablt>"
+msgstr ", после смертельного удара "
 
 msgid ", after the death strike by a "
-msgstr ", после смертельного удара <ablt>"
+msgstr ", после смертельного удара "
 
 msgid "the impalement of "
-msgstr "сажание на кол <gent>"
+msgstr "сажание на кол "
 
 msgid " on spikes"
 msgstr " на колья"
 
 msgid "the scaring of "
-msgstr "рубцевание <gent>"
+msgstr "рубцевание "
 
 msgid " to death "
 msgstr " насмерть "
@@ -33893,22 +33893,22 @@ msgid "was"
 msgstr "был"
 
 msgid " reunited with "
-msgstr " воссоединился с <ablt>"
+msgstr " воссоединился с "
 
 msgid " through the efforts of "
-msgstr " благодаря усилиям <gent>"
+msgstr " благодаря усилиям "
 
 msgid "the reunion of "
-msgstr "воссоединение <gent>"
+msgstr "воссоединение "
 
 msgid " abducted "
-msgstr " похитил <accs>"
+msgstr " похитил "
 
 msgid " was abducted"
 msgstr " был похищен"
 
 msgid "the abduction of "
-msgstr "похищение <gent>"
+msgstr "похищение "
 
 msgid "began wandering"
 msgstr "начал странствие"
@@ -33929,28 +33929,28 @@ msgid "decided to become a thief, operating"
 msgstr "решил стать вором, работая"
 
 msgid "gave up being a "
-msgstr "отказался от работы <ablt>"
+msgstr "отказался от работы "
 
 msgid " to become a "
-msgstr ", чтобы стать <ablt>"
+msgstr ", чтобы стать "
 
 msgid "became a "
-msgstr "стал <ablt>"
+msgstr "стал "
 
 msgid "stopped being a "
-msgstr "перестал быть <ablt>"
+msgstr "перестал быть "
 
 msgid "lost a hist fig entry"
 msgstr "потеряна запись ист. фиг."
 
 msgid " around"
-msgstr " около <gent>"
+msgstr " около "
 
 msgid " in"
-msgstr " в <loct>"
+msgstr " в "
 
 msgid " out of"
-msgstr " из <gent>"
+msgstr " из "
 
 msgid " the wilds"
 msgstr " дебрях"
@@ -34082,10 +34082,10 @@ msgid " to"
 msgstr " к"
 
 msgid " into the area around"
-msgstr " в районе <gent>"
+msgstr " в районе "
 
 msgid " into"
-msgstr " в <accs>"
+msgstr " в "
 
 msgid "gave birth to"
 msgstr "дала жизнь"
@@ -34100,76 +34100,76 @@ msgid "received the worship of"
 msgstr "получил поклонение"
 
 msgid "became romantically involved with"
-msgstr "влюбился в <accs>"
+msgstr "влюбился в "
 
 msgid "was imprisoned by"
-msgstr "был заключён в тюрьму <ablt>"
+msgstr "был заключён в тюрьму "
 
 msgid "imprisoned"
 msgstr "заключил в тюрьму"
 
 msgid "became the master of"
-msgstr "стал мастером <gent>"
+msgstr "стал мастером "
 
 msgid "began an apprenticeship under"
 msgstr "начал обучение под руководством"
 
 msgid "began traveling with"
-msgstr "начал путешествие вместе с <ablt>"
+msgstr "начал путешествие вместе с "
 
 msgid "ceased being the master of"
-msgstr "перестал быть мастером <gent>"
+msgstr "перестал быть мастером "
 
 msgid "ceased being the apprentice of"
-msgstr "перестал быть учеником <gent>"
+msgstr "перестал быть учеником "
 
 msgid "was sired by"
-msgstr "был рождён <ablt>"
+msgstr "был рождён "
 
 msgid "became the parent of"
-msgstr "стал родителем <gent>"
+msgstr "стал родителем "
 
 msgid "began worshipping"
 msgstr "начал поклоняться"
 
 msgid "stopped being the mother of"
-msgstr "перестала быть матерью <gent>"
+msgstr "перестала быть матерью "
 
 msgid "stopped being the father of"
-msgstr "перестал быть отцом <gent>"
+msgstr "перестал быть отцом "
 
 msgid "divorced"
 msgstr "развёлся"
 
 msgid "stopped being the child of"
-msgstr "перестал быть ребёнком <gent>"
+msgstr "перестал быть ребёнком "
 
 msgid "lost the worship of"
-msgstr "потерял поклонение <gent>"
+msgstr "потерял поклонение "
 
 msgid "ended the romantic relationship with"
-msgstr "прекратил романтические отношения с <ablt>"
+msgstr "прекратил романтические отношения с "
 
 msgid "was no longer imprisoned by"
-msgstr "освобождён из заключения <gent>"
+msgstr "освобождён из заключения "
 
 msgid "no longer imprisoned"
 msgstr "освобождён из тюрьмы"
 
 msgid "stopped being the master of"
-msgstr "перестал быть мастером <gent>"
+msgstr "перестал быть мастером "
 
 msgid "stopped being the apprentice of"
-msgstr "перестал быть учеником <gent>"
+msgstr "перестал быть учеником "
 
 msgid "stopped traveling with"
-msgstr "прекратил путешествие с <ablt>"
+msgstr "прекратил путешествие с "
 
 msgid "stopped being the parent of"
-msgstr "перестал быть родителем <gent>"
+msgstr "перестал быть родителем "
 
 msgid "lost faith in"
-msgstr "потеряли веру в <accs>"
+msgstr "потеряли веру в "
 
 msgid "started working at"
 msgstr "начал работать в"
@@ -34199,7 +34199,7 @@ msgid "stopped hanging out at"
 msgstr "более не болтается на"
 
 msgid "moved out of"
-msgstr "переехал из <gent>"
+msgstr "переехал из "
 
 msgid " taught "
 msgstr " учил "
@@ -34208,10 +34208,10 @@ msgid " learned"
 msgstr " изучил"
 
 msgid "the learning of "
-msgstr "изучение <gent>"
+msgstr "изучение "
 
 msgid " from the teaching of "
-msgstr " от обучения <gent>"
+msgstr " от обучения "
 
 msgid "the moment when "
 msgstr "момент, когда "
@@ -34223,13 +34223,13 @@ msgid " changed"
 msgstr " изменил"
 
 msgid " from a "
-msgstr " из <gent>"
+msgstr " из "
 
 msgid " into a "
-msgstr " в <accs>"
+msgstr " в "
 
 msgid "the transformation of "
-msgstr "превращение <gent>"
+msgstr "превращение "
 
 msgid " fooled "
 msgstr " одурачил "
@@ -34238,19 +34238,19 @@ msgid " into believing "
 msgstr " в веру "
 
 msgid "the impersonation of "
-msgstr "воплощение <gent>"
+msgstr "воплощение "
 
 msgid "members of "
-msgstr "члены <gent>"
+msgstr "члены "
 
 msgid "compelled the creation of"
-msgstr "настоял на создании <gent>"
+msgstr "настоял на создании "
 
 msgid "collaborated to create"
 msgstr "участвовал в создании "
 
 msgid " the position of "
-msgstr " должность <gent>"
+msgstr " должность "
 
 msgid " through force of argument"
 msgstr " силой убеждения"
@@ -34277,169 +34277,169 @@ msgid "popularly-supported creation"
 msgstr "всенародно поддерживаемое создание"
 
 msgid " of the position of "
-msgstr " должность <gent>"
+msgstr " должность "
 
 msgid " was enslaved by"
-msgstr " был порабощён <ablt>"
+msgstr " был порабощён "
 
 msgid " was imprisoned by"
-msgstr " был заключён в тюрьму <ablt>"
+msgstr " был заключён в тюрьму "
 
 msgid " of"
-msgstr " <gent>"
+msgstr " "
 
 msgid "a mercenary for"
-msgstr "наёмником <gent>"
+msgstr "наёмником "
 
 msgid "an enemy of"
-msgstr "врагом <gent>"
+msgstr "врагом "
 
 msgid "a criminal in the eyes of"
-msgstr "преступником в глазах <gent>"
+msgstr "преступником в глазах "
 
 msgid "a member of"
-msgstr "членом <gent>"
+msgstr "членом "
 
 msgid "a former member of"
-msgstr "бывшим членом <gent>"
+msgstr "бывшим членом "
 
 msgid "a former mercenary of"
-msgstr "бывшим наёмником <gent>"
+msgstr "бывшим наёмником "
 
 msgid "a former slave of"
-msgstr "бывшим рабом <gent>"
+msgstr "бывшим рабом "
 
 msgid "a former prisoner of"
-msgstr "бывший узник <gent>"
+msgstr "бывший узник "
 
 msgid "a worker of"
-msgstr "работник <gent>"
+msgstr "работник "
 
 msgid "a claimant for "
-msgstr "претендент на <accs>"
+msgstr "претендент на "
 
 msgid "ceased to be a "
-msgstr "перестал быть <ablt>"
+msgstr "перестал быть "
 
 msgid "ceased to be "
-msgstr "перестал быть <ablt>"
+msgstr "перестал быть "
 
 msgid "left the service of"
-msgstr "оставил службу у <gent>"
+msgstr "оставил службу у "
 
 msgid "made peace with"
-msgstr "заключил мир с <ablt>"
+msgstr "заключил мир с "
 
 msgid "was brought to the justice of"
-msgstr "был предан правосудию в <gent>"
+msgstr "был предан правосудию в "
 
 msgid "left"
 msgstr "оставил"
 
 msgid "escaped from the slavery of"
-msgstr "бежал из рабства <gent>"
+msgstr "бежал из рабства "
 
 msgid "escaped from the prisons of"
-msgstr "бежал из тюрьмы <gent>"
+msgstr "бежал из тюрьмы "
 
 msgid "stopped working for"
-msgstr "перестал работать на <accs>"
+msgstr "перестал работать на "
 
 msgid "ceased to be a claimant for "
-msgstr "перестал быть претендентом на <accs>"
+msgstr "перестал быть претендентом на "
 
 msgid "the status of"
-msgstr "статус <gent>"
+msgstr "статус "
 
 msgid "the marriage of"
-msgstr "брак <gent>"
+msgstr "брак "
 
 msgid "the belief of"
-msgstr "вера <gent>"
+msgstr "вера "
 
 msgid "the romantic relationship between"
-msgstr "романтические отношения между <ablt>"
+msgstr "романтические отношения между "
 
 msgid "the imprisonment by"
-msgstr "лишение свободы <ablt>"
+msgstr "лишение свободы "
 
 msgid "the imprisonment of"
-msgstr "лишение свободы <gent>"
+msgstr "лишение свободы "
 
 msgid "the apprenticeship of"
-msgstr "ученичество <gent>"
+msgstr "ученичество "
 
 msgid "the master-apprentice relationship of"
-msgstr "отношения учитель-ученик между <ablt>"
+msgstr "отношения учитель-ученик между "
 
 msgid "the companionship of"
-msgstr "сотрудничество <gent>"
+msgstr "сотрудничество "
 
 msgid "the former apprenticeship of"
-msgstr "бывшее ученичество <gent>"
+msgstr "бывшее ученичество "
 
 msgid "the former master-apprentice relationship of"
-msgstr "бывшие отношения учитель-ученик <gent>"
+msgstr "бывшие отношения учитель-ученик "
 
 msgid "as the child of"
-msgstr "как ребёнок <gent>"
+msgstr "как ребёнок "
 
 msgid "and"
 msgstr "и"
 
 msgid "as the parent of"
-msgstr "как родитель <gent>"
+msgstr "как родитель "
 
 msgid "of"
-msgstr " <gent>"
+msgstr " "
 
 msgid "by"
-msgstr "<ablt>"
+msgstr ""
 
 msgid "over"
-msgstr "над <ablt>"
+msgstr "над "
 
 msgid "the termination of"
-msgstr "прекращение <gent>"
+msgstr "прекращение "
 
 msgid "the divorce of"
-msgstr "развод <gent>"
+msgstr "развод "
 
 msgid "the loss of faith of"
-msgstr "потеря веры в <accs>"
+msgstr "потеря веры в "
 
 msgid "the end of the romantic relationship between"
-msgstr "конец романтических отношений между <ablt>"
+msgstr "конец романтических отношений между "
 
 msgid "the end of the imprisonment by"
-msgstr "прекращение лишения свободы <ablt>"
+msgstr "прекращение лишения свободы "
 
 msgid "the end of the imprisonment of"
-msgstr "конец лишения свободы <gent>"
+msgstr "конец лишения свободы "
 
 msgid "the end of the apprenticeship of"
-msgstr "конец ученичества <gent>"
+msgstr "конец ученичества "
 
 msgid "the end of the master-apprentice of"
-msgstr "конец ученичества <gent>"
+msgstr "конец ученичества "
 
 msgid "the end of the companionship of"
-msgstr "конец сотрудничества <gent>"
+msgstr "конец сотрудничества "
 
 msgid "the working of"
-msgstr "работа <gent>"
+msgstr "работа "
 
 msgid "the seat of power of"
-msgstr "место силы <gent>"
+msgstr "место силы "
 
 msgid "the hanging-out of"
-msgstr "место сборищ <gent>"
+msgstr "место сборищ "
 
 msgid "the residence of"
-msgstr "резиденция <gent>"
+msgstr "резиденция "
 
 msgid "the lair of"
-msgstr "логово <gent>"
+msgstr "логово "
 
 msgid "at"
 msgstr "в"
@@ -34496,109 +34496,109 @@ msgid "the claim"
 msgstr "требование"
 
 msgid "as a "
-msgstr "в качестве <gent>"
+msgstr "в качестве "
 
 msgid "to the position of "
-msgstr "на должность <gent>"
+msgstr "на должность "
 
 msgid "into the mercenary service of"
 msgstr "в службу наёмником"
 
 msgid "as an enemy of"
-msgstr "как врага <gent>"
+msgstr "как врага "
 
 msgid "in the eyes of"
-msgstr "в глазах <gent>"
+msgstr "в глазах "
 
 msgid "as a member of"
-msgstr "в качестве члена <gent>"
+msgstr "в качестве члена "
 
 msgid "as a former member of"
-msgstr "как бывший член <gent>"
+msgstr "как бывший член "
 
 msgid "as a former mercenary of"
-msgstr "как бывший наёмник <gent>"
+msgstr "как бывший наёмник "
 
 msgid "as a former slave of"
-msgstr "как бывший раб <gent>"
+msgstr "как бывший раб "
 
 msgid "as a former prisoner of"
-msgstr "как бывший узник <gent>"
+msgstr "как бывший узник "
 
 msgid "for"
-msgstr "для <gent> "
+msgstr "для  "
 
 msgid "the loss of status of"
-msgstr "потеря статуса <gent>"
+msgstr "потеря статуса "
 
 msgid "the fall of"
-msgstr "падение <gent>"
+msgstr "падение "
 
 msgid "the removal of"
-msgstr "удаление <gent>"
+msgstr "удаление "
 
 msgid "the departure of"
-msgstr "изгнание <gent>"
+msgstr "изгнание "
 
 msgid "the peace-making of"
-msgstr "миротворчество <gent>"
+msgstr "миротворчество "
 
 msgid "the loss of heroic status of"
-msgstr "потеря героического статуса <gent>"
+msgstr "потеря героического статуса "
 
 msgid "the end of the membership of"
-msgstr "окончание членства <loct>"
+msgstr "окончание членства "
 
 msgid "the end of the former membership of"
-msgstr "окончание бывшего членства <gent>"
+msgstr "окончание бывшего членства "
 
 msgid "the end of the former mercenary status of"
-msgstr "окончание бывшего наёмничества <gent>"
+msgstr "окончание бывшего наёмничества "
 
 msgid "the end of the former enslavement of"
-msgstr "окончание бывшего пребывания в рабстве <gent>"
+msgstr "окончание бывшего пребывания в рабстве "
 
 msgid "the end of the former imprisonment of"
-msgstr "окончание бывшего тюремного заключения <gent>"
+msgstr "окончание бывшего тюремного заключения "
 
 msgid "the escape of"
-msgstr "побег <gent>"
+msgstr "побег "
 
 msgid "the end of work"
 msgstr "конец работы"
 
 msgid "the end of the claim of"
-msgstr "конец претензий на <accs>"
+msgstr "конец претензий на "
 
 msgid "from the position of "
-msgstr "с должности <gent>"
+msgstr "с должности "
 
 msgid "from the mercenary service of"
 msgstr "с наёмной службы"
 
 msgid "with"
-msgstr "с <ablt>"
+msgstr "с "
 
 msgid "from the slavery of"
-msgstr "от рабства <gent>"
+msgstr "от рабства "
 
 msgid "from the prisons of"
-msgstr "из тюрем <gent>"
+msgstr "из тюрем "
 
 msgid " made contact with "
-msgstr " вступили в контакт с <ablt>"
+msgstr " вступили в контакт с "
 
 msgid "the first contact of "
-msgstr "первый контакт с <ablt>"
+msgstr "первый контакт с "
 
 msgid " rejected contact with "
-msgstr " отклонил контакт с <ablt>"
+msgstr " отклонил контакт с "
 
 msgid "the rejection of contact by "
-msgstr "отказ от контакта <ablt>"
+msgstr "отказ от контакта "
 
 msgid " between "
-msgstr " между <ablt>"
+msgstr " между "
 
 msgid " concluded"
 msgstr " решили"
@@ -34640,13 +34640,13 @@ msgid "the miserable failure"
 msgstr "досадная ошибка"
 
 msgid " proposed by "
-msgstr " предложенный <ablt>"
+msgstr " предложенный "
 
 msgid " was rejected by "
-msgstr " было отклонено <ablt>"
+msgstr " было отклонено "
 
 msgid "the rejection of "
-msgstr "отказ от <gent>"
+msgstr "отказ от "
 
 msgid " concluded "
 msgstr " заключили "
@@ -34781,7 +34781,7 @@ msgid ".  The ritual involved "
 msgstr ". Ритуал вовлёк "
 
 msgid " made an agreement with "
-msgstr "заключили соглашение с <ablt>"
+msgstr "заключили соглашение с "
 
 msgid ", becoming a resident of "
 msgstr ", становясь жителем"
@@ -34826,7 +34826,7 @@ msgid "a corrupt agreement was formed"
 msgstr "сформировано испорченное соглашение"
 
 msgid " was accepted by "
-msgstr " было принято <ablt>"
+msgstr " было принято "
 
 msgid "the conclusion of "
 msgstr "заключение "
@@ -34856,7 +34856,7 @@ msgid "the formation of a corrupt agreement"
 msgstr "создание испорченного соглашения"
 
 msgid "the acceptance of "
-msgstr "принятие <gent>"
+msgstr "принятие "
 
 msgid " became embroiled in a dispute over "
 msgstr " был втянут в спор за "
@@ -34865,16 +34865,16 @@ msgid "the dispute between "
 msgstr "спор между "
 
 msgid " accepted an offer of peace from "
-msgstr " принял предложение мира от <gent>"
+msgstr " принял предложение мира от "
 
 msgid "the acceptance of an offer of peace from "
-msgstr "принятие предложения мира от <gent>"
+msgstr "принятие предложения мира от "
 
 msgid " rejected an offer of peace from "
-msgstr " отверг предложение мира от <gent>"
+msgstr " отверг предложение мира от "
 
 msgid "the rejection of an offer of peace from "
-msgstr "отказ от предложения мира от <gent>"
+msgstr "отказ от предложения мира от "
 
 msgid "the bodies"
 msgstr "тела"
@@ -34907,46 +34907,46 @@ msgid "impalement on "
 msgstr "сажание на "
 
 msgid "construction of a grisly mound from"
-msgstr "насыпание ужасного кургана из <gent>"
+msgstr "насыпание ужасного кургана из "
 
 msgid "construction of a grotesque pillar from"
-msgstr "возведение гротескного столба из <gent>"
+msgstr "возведение гротескного столба из "
 
 msgid "construction of a gruesome sculpture from"
-msgstr "ваяние ужасной скульптуры из <gent>"
+msgstr "ваяние ужасной скульптуры из "
 
 msgid "display on "
 msgstr "показ на "
 
 msgid " of the skins of"
-msgstr " из кожи <gent>"
+msgstr " из кожи "
 
 msgid "animation of"
-msgstr "оживление <gent>"
+msgstr "оживление "
 
 msgid "hanging from a "
 msgstr "висит на "
 
 msgid "horrible mutilation of"
-msgstr "ужасные увечья <gent>"
+msgstr "ужасные увечья "
 
 msgid " lost a diplomat at "
 msgstr " потеряли дипломата "
 
 msgid "They suspected the involvement of "
-msgstr "Они подозревали вмешательство <gent>"
+msgstr "Они подозревали вмешательство "
 
 msgid "the loss of a diplomat of "
-msgstr "потеря дипломата <gent>"
+msgstr "потеря дипломата "
 
 msgid " with the possible involvement of "
-msgstr " с возможным вмешательством <gent>"
+msgstr " с возможным вмешательством "
 
 msgid " voided all agreements with "
-msgstr " разорвали все соглашения с <ablt>"
+msgstr " разорвали все соглашения с "
 
 msgid "the voiding of agreements with "
-msgstr "разрыв соглашений с <ablt>"
+msgstr "разрыв соглашений с "
 
 msgid ", merchants from "
 msgstr ", купцы из "
@@ -34991,22 +34991,22 @@ msgid " was stored in "
 msgstr " сохранена "
 
 msgid "the concealment of "
-msgstr "сокрытие <gent>"
+msgstr "сокрытие "
 
 msgid "the storing of "
-msgstr "хранение <gent>"
+msgstr "хранение "
 
 msgid " was claimed in "
 msgstr " был утверждён в "
 
 msgid "the acquisition of "
-msgstr "приобретение <gent>"
+msgstr "приобретение "
 
 msgid "a poetic form"
 msgstr "поэтический жанр"
 
 msgid " was created by "
-msgstr "был создан <ablt>"
+msgstr "был создан "
 
 msgid "a musical form"
 msgstr "музыкальный стиль"
@@ -35018,10 +35018,10 @@ msgid "a work"
 msgstr "работа"
 
 msgid " was authored by "
-msgstr "был создан <ablt>"
+msgstr "был создан "
 
 msgid "the authoring of "
-msgstr "создание <gent>"
+msgstr "создание "
 
 msgid " received its name"
 msgstr " получил своё имя"
@@ -35030,7 +35030,7 @@ msgid " was created"
 msgstr " создан"
 
 msgid "the naming of "
-msgstr "название <gent>"
+msgstr "название "
 
 msgid " was made"
 msgstr "был сделан"
@@ -35039,19 +35039,19 @@ msgid " from"
 msgstr "из"
 
 msgid "the making of "
-msgstr "создание <gent>"
+msgstr "создание "
 
 msgid " was lost in "
-msgstr " был потерян в <loct>"
+msgstr " был потерян в "
 
 msgid "the disappearance of "
-msgstr "исчезновение <gent>"
+msgstr "исчезновение "
 
 msgid " was found in "
-msgstr " был найден в <loct>"
+msgstr " был найден в "
 
 msgid "the discovery of "
-msgstr "открытие <gent>"
+msgstr "открытие "
 
 msgid " was stolen"
 msgstr " был похищен"
@@ -35060,19 +35060,19 @@ msgid " and brought to "
 msgstr " и отнесён в "
 
 msgid "the theft of "
-msgstr "кража <gent>"
+msgstr "кража "
 
 msgid " was recovered by "
-msgstr " был спасён <ablt>"
+msgstr " был спасён "
 
 msgid "the recovery of "
-msgstr "спасение <gent>"
+msgstr "спасение "
 
 msgid " was dropped by "
-msgstr " был сброшен <ablt>"
+msgstr " был сброшен "
 
 msgid "the discardment of "
-msgstr "отказ от <gent>"
+msgstr "отказ от "
 
 msgid " held "
 msgstr " провели "
@@ -35084,10 +35084,10 @@ msgid "there was a performance"
 msgstr "там прошло выступление"
 
 msgid " as part of "
-msgstr "в честь празднования <gent>"
+msgstr "в честь празднования "
 
 msgid " held by "
-msgstr "принадлежит <datv>"
+msgstr "принадлежит "
 
 msgid "the performance"
 msgstr "представление"
@@ -35150,7 +35150,7 @@ msgid "there was a procession"
 msgstr "там прошла процессия"
 
 msgid "a procession held by "
-msgstr "шествие, проведённое <ablt>"
+msgstr "шествие, проведённое "
 
 msgid " held a ceremony"
 msgstr "состоялась церемония"
@@ -35159,13 +35159,13 @@ msgid "there was a ceremony"
 msgstr "там прошла церемония"
 
 msgid "a ceremony held by "
-msgstr "церемония, проведённая <ablt>"
+msgstr "церемония, проведённая "
 
 msgid " was a "
-msgstr " был <ablt>"
+msgstr " был "
 
 msgid " was a legendary "
-msgstr " был легендарным <ablt>"
+msgstr " был легендарным "
 
 msgid "The pages are blank.  "
 msgstr "Страницы чисты.  "
@@ -35177,7 +35177,7 @@ msgid " were a population within "
 msgstr " проживали среди "
 
 msgid " was a"
-msgstr "была <ablt>"
+msgstr "была "
 
 msgid " civilization of "
 msgstr " цивилизация "
@@ -35213,7 +35213,7 @@ msgid "[C:3:0:1]Related Historical Figures[C:7:0:0][B]"
 msgstr "[C:3:0:1]Связанные исторические фигуры[C:7:0:0][B]"
 
 msgid "object of "
-msgstr "предмет <gent>"
+msgstr "предмет "
 
 msgid "ardent "
 msgstr "горячего "
@@ -35606,7 +35606,7 @@ msgid "Age of Three Powers"
 msgstr "Эра Троевластия"
 
 msgid "Age of "
-msgstr "Эра <gent>"
+msgstr "Эра "
 
 msgid "Two "
 msgstr "Двух "
@@ -35615,7 +35615,7 @@ msgid "Two Powers"
 msgstr "Двух Сил"
 
 msgid "Age of the "
-msgstr "Эра <gent>"
+msgstr "Эра "
 
 msgid " Age"
 msgstr " Эра"
@@ -35672,7 +35672,7 @@ msgid " in the wilds"
 msgstr " в дебрях"
 
 msgid "Duel of "
-msgstr "Дуэль <gent>"
+msgstr "Дуэль "
 
 msgid "Pillaging"
 msgstr "Мародёрство"
@@ -36077,7 +36077,7 @@ msgid "a deity"
 msgstr "божество"
 
 msgid " that occurs in the myths of "
-msgstr ", который упоминается в мифах <gent>"
+msgstr ", который упоминается в мифах "
 
 msgid "a force"
 msgstr "сила"
@@ -36095,25 +36095,25 @@ msgid " is the "
 msgstr " является "
 
 msgid " was the "
-msgstr " был <ablt>"
+msgstr " был "
 
 msgid "The identity of "
-msgstr "Личность <gent>"
+msgstr "Личность "
 
 msgid " has been lost to time"
 msgstr " была потеряна во времени"
 
 msgid " the first of "
-msgstr " первым из <gent>"
+msgstr " первым из "
 
 msgid " one of the first of "
 msgstr " одним из первых в "
 
 msgid " the only one of "
-msgstr " единственным из <gent>"
+msgstr " единственным из "
 
 msgid " one of the only ones of "
-msgstr " одним из единственных <gent>"
+msgstr " одним из единственных "
 
 msgid " kind"
 msgstr " роде"
@@ -36131,13 +36131,13 @@ msgid "guided by forces unknown.  "
 msgstr "управляем неизвестными силами.  "
 
 msgid " most often takes the form of a "
-msgstr " чаще всего принимает форму <gent>"
+msgstr " чаще всего принимает форму "
 
 msgid " was most often depicted as a "
-msgstr " чаще всего изображается в виде <gent>"
+msgstr " чаще всего изображается в виде "
 
 msgid "associated with "
-msgstr "связан с <ablt>"
+msgstr "связан с "
 
 msgid "Use OpenGL?"
 msgstr "Использовать OpenGL?"
@@ -36174,13 +36174,13 @@ msgid "This is"
 msgstr "Это"
 
 msgid "This is a stack of"
-msgstr "Это стопка <gent>"
+msgstr "Это стопка "
 
 msgid " bundles of"
-msgstr " пучки <gent>"
+msgstr " пучки "
 
 msgid "This is a bundle of"
-msgstr "Это пучок <gent>"
+msgstr "Это пучок "
 
 msgid " well-prepared"
 msgstr " неплохо приготовлен"
@@ -36249,16 +36249,16 @@ msgid "It is "
 msgstr "Это "
 
 msgid "encrusted with"
-msgstr "инкрустирован <ablt>"
+msgstr "инкрустирован "
 
 msgid "studded with"
-msgstr "усеян <ablt>"
+msgstr "усеян "
 
 msgid "decorated with"
-msgstr "украшен <ablt>"
+msgstr "украшен "
 
 msgid "glazed with"
-msgstr "глазирован <ablt>"
+msgstr "глазирован "
 
 msgid "well-prepared "
 msgstr "хорошо приготовлен "
@@ -36291,7 +36291,7 @@ msgid " by an unknown artist"
 msgstr " неизвестным художником"
 
 msgid "encircled with bands of "
-msgstr "окружён лентами <gent>"
+msgstr "окружён лентами "
 
 msgid " are made from "
 msgstr "сделаны из"
@@ -36309,10 +36309,10 @@ msgid "This object "
 msgstr "Этот предмет "
 
 msgid "is adorned with hanging rings of "
-msgstr "украшен висящими кольцами <gent>"
+msgstr "украшен висящими кольцами "
 
 msgid "menaces with spikes of "
-msgstr "угрожает шипами из <gent>"
+msgstr "угрожает шипами из "
 
 msgid "It is made from "
 msgstr "Он сделан из "
@@ -36363,19 +36363,19 @@ msgid "This object is mangled.  "
 msgstr "Этот предмет искромсан.  "
 
 msgid "You gain possession of the "
-msgstr "Вы восстанавливаете контроль над <ablt>"
+msgstr "Вы восстанавливаете контроль над "
 
 msgid " remains stuck in your "
 msgstr " продолжает торчать в вашей "
 
 msgid "You maintain possession of the "
-msgstr "Вы сохраняете контроль над <ablt>"
+msgstr "Вы сохраняете контроль над "
 
 msgid " is torn from your "
 msgstr " вырван из вашей "
 
 msgid "You've lost possession of the "
-msgstr "Вы потеряли контроль над <ablt>"
+msgstr "Вы потеряли контроль над "
 
 msgid "mangled "
 msgstr "изуродован "
@@ -36441,7 +36441,7 @@ msgid " cloth"
 msgstr " ткань"
 
 msgid " woven by "
-msgstr " соткана <ablt>"
+msgstr " соткана "
 
 msgid "Slayer"
 msgstr "Убийца"
@@ -36450,7 +36450,7 @@ msgid " kill"
 msgstr " убить"
 
 msgid "In memory of"
-msgstr "В память о <loct>"
+msgstr "В память о "
 
 msgid " / Born "
 msgstr " / Родился "
@@ -36513,10 +36513,10 @@ msgid "Burned up in "
 msgstr "Сгорел в "
 
 msgid "Burned to death by "
-msgstr "Сожжён заживо <ablt>"
+msgstr "Сожжён заживо "
 
 msgid "Burned to death by a "
-msgstr "Сожжён заживо <ablt>"
+msgstr "Сожжён заживо "
 
 msgid "Burned to death"
 msgstr "Сгорел заживо"
@@ -36624,16 +36624,16 @@ msgid "d."
 msgstr "ум."
 
 msgid "Creator of "
-msgstr "Создатель <gent>"
+msgstr "Создатель "
 
 msgid "Slayer of"
-msgstr "Убийца <gent>"
+msgstr "Убийца "
 
 msgid "Slayer of "
-msgstr "Убийца <gent>"
+msgstr "Убийца "
 
 msgid "Hunter of "
-msgstr "Охотник на <accs>"
+msgstr "Охотник на "
 
 msgid "Loving "
 msgstr "Любимый "
@@ -36651,13 +36651,13 @@ msgid "parent and spouse"
 msgstr "родитель и супруг"
 
 msgid "United with "
-msgstr "Любил <accs>"
+msgstr "Любил "
 
 msgid "At one with "
-msgstr "Любил <accs>"
+msgstr "Любил "
 
 msgid "Lover of "
-msgstr "Любил <accs>"
+msgstr "Любил "
 
 msgid " wood"
 msgstr " древесина"
@@ -36666,10 +36666,10 @@ msgid " fabric"
 msgstr " ткань"
 
 msgid "Admirer of "
-msgstr "Поклонник <gent>"
+msgstr "Поклонник "
 
 msgid "Friend of "
-msgstr "Друг <gent>"
+msgstr "Друг "
 
 msgid "The color "
 msgstr "Цвет "
@@ -36924,10 +36924,10 @@ msgid " had unfolded differently?\"  "
 msgstr "был абсолютно другим?\""
 
 msgid "It concerns the lineage of "
-msgstr "Произведение связано с родословной <gent>"
+msgstr "Произведение связано с родословной "
 
 msgid "It concerns "
-msgstr "Произведение связано с <ablt>"
+msgstr "Произведение связано с "
 
 msgid "The work has no particular subject.  "
 msgstr "Произведение не имеет конкретной темы."
@@ -37143,7 +37143,7 @@ msgid ", authored by "
 msgstr ", автором является "
 
 msgid "The written portion consists of "
-msgstr "Текстовая часть состоит из <gent>"
+msgstr "Текстовая часть состоит из "
 
 msgid " page "
 msgstr " страница "
@@ -37365,16 +37365,16 @@ msgid " (Engrave Memorial)"
 msgstr " (гравировать мемориал)"
 
 msgid "Decorate With "
-msgstr "Украшать <ablt>"
+msgstr "Украшать "
 
 msgid "Stud With "
-msgstr "Клепать <ablt>"
+msgstr "Клепать "
 
 msgid "Encrust "
 msgstr "Инкрустировать "
 
 msgid " With "
-msgstr " <ablt> "
+msgstr "  "
 
 msgid "Collect Sand"
 msgstr "Собирать песок"
@@ -37461,7 +37461,7 @@ msgid " Quiver"
 msgstr " колчан"
 
 msgid "Bait Trap with "
-msgstr "Заряжать ловушку <ablt>"
+msgstr "Заряжать ловушку "
 
 msgid " Ballista Arrow Head"
 msgstr " наконечник стрелы баллисты"
@@ -42009,7 +42009,7 @@ msgid " strands"
 msgstr " нити"
 
 msgid "Ore of "
-msgstr "Руда <gent>"
+msgstr "Руда "
 
 msgid " has become entangled in a hidden web!"
 msgstr " запутался в скрытой паутине!"
@@ -42048,10 +42048,10 @@ msgid " has cooked a masterpiece!"
 msgstr " приготовил шедевральное блюдо!"
 
 msgid " has been cursed by "
-msgstr "был проклят <ablt>"
+msgstr "был проклят "
 
 msgid " been cursed by "
-msgstr "проклят <ablt>"
+msgstr "проклят "
 
 msgid "form of music used for entertainment"
 msgstr "развлекательный жанр музыки"
@@ -42066,7 +42066,7 @@ msgid "devotional form of music"
 msgstr "религиозной жанр музыки"
 
 msgid " directed toward the worship of "
-msgstr "направленный на поклонение <datv>"
+msgstr "направленный на поклонение "
 
 msgid ""
 "The rules of the form are applied by composers to produce individual pieces "
@@ -42077,7 +42077,7 @@ msgid "The form guides musicians during improvised performances.  "
 msgstr "Жанр направляет музыкантов во время импровизированных выступлений."
 
 msgid "A"
-msgstr "<capitalize>"
+msgstr ""
 
 msgid "singer"
 msgstr "певец"
@@ -42095,10 +42095,10 @@ msgid "recites"
 msgstr "читает"
 
 msgid " the words of "
-msgstr "слова <gent>"
+msgstr "слова "
 
 msgid " any composition of"
-msgstr "любая композиция из <gent>"
+msgstr "любая композиция из "
 
 msgid " nonsensical words and sounds"
 msgstr "бессмысленные слова и звуки"
@@ -42770,7 +42770,7 @@ msgid "the rhythm of the"
 msgstr "ритм"
 
 msgid " reciting the words of "
-msgstr "произнесение слов <gent>"
+msgstr "произнесение слов "
 
 msgid " reciting"
 msgstr "речитатив"
@@ -42797,7 +42797,7 @@ msgid "resumes the original tempo"
 msgstr "возвращается к первоначальному темпу"
 
 msgid "each of the "
-msgstr "каждый из <gent>"
+msgstr "каждый из "
 
 msgid "s'"
 msgstr "s"
@@ -43147,13 +43147,13 @@ msgid "was "
 msgstr "был "
 
 msgid "felt "
-msgstr "чувствовал <accs>"
+msgstr "чувствовал "
 
 msgid "feels "
 msgstr "чувствует"
 
 msgid "was in "
-msgstr "был в <loct>"
+msgstr "был в "
 
 msgid "is in "
 msgstr "в"
@@ -43447,7 +43447,7 @@ msgid " is married to "
 msgstr " в браке с "
 
 msgid " is romantically involved with "
-msgstr " в романтических отношениях с <ablt>"
+msgstr " в романтических отношениях с "
 
 msgid "an ardent worshipper"
 msgstr "горячий  поклонник"
@@ -43468,7 +43468,7 @@ msgid " is imprisoning "
 msgstr " держит в заключении "
 
 msgid " is imprisoned by "
-msgstr " заключён в тюрьму <ablt> "
+msgstr " заключён в тюрьму  "
 
 msgid " apprentices "
 msgstr " ученики "
@@ -43489,7 +43489,7 @@ msgid " used to be an apprentice under "
 msgstr "обучался под руководством"
 
 msgid " is traveling with "
-msgstr " путешествует с <ablt>"
+msgstr " путешествует с "
 
 msgid "a former "
 msgstr "бывший "
@@ -43534,22 +43534,22 @@ msgid "a former worker"
 msgstr "бывший работник"
 
 msgid "a legendary hero of"
-msgstr "легендарный герой <gent>"
+msgstr "легендарный герой "
 
 msgid "a famous hero of"
-msgstr "известный герой <gent>"
+msgstr "известный герой "
 
 msgid "a hero of"
-msgstr "герой <gent>"
+msgstr "герой "
 
 msgid "greatly respected for heroic acts by"
-msgstr "чрезвычайно уважаем за героизм <ablt>"
+msgstr "чрезвычайно уважаем за героизм "
 
 msgid "respected for heroic acts by"
-msgstr "уважаем за героизм <ablt>"
+msgstr "уважаем за героизм "
 
 msgid "a legendary monster of"
-msgstr "легендарный монстр <gent>"
+msgstr "легендарный монстр "
 
 msgid "an infamous monster of"
 msgstr "печально известный монстр из"
@@ -43579,7 +43579,7 @@ msgid "feared as a brigand by"
 msgstr "разбойник, внушающий страх"
 
 msgid "a legendary bully of"
-msgstr "легендарный хулиган <gent>"
+msgstr "легендарный хулиган "
 
 msgid "an infamous bully of"
 msgstr "печально известный хулиган из"
@@ -43642,16 +43642,16 @@ msgid "a legendary killer of"
 msgstr "легендарный убийца "
 
 msgid "an infamous killer of"
-msgstr "печально известный убийца <gent>"
+msgstr "печально известный убийца "
 
 msgid "a noted killer of"
 msgstr "замеченный убийца"
 
 msgid "greatly feared as a killer by"
-msgstr "убийца, внушающий ужас <datv>"
+msgstr "убийца, внушающий ужас "
 
 msgid "feared as a killer by"
-msgstr "убийца, внушающий страх <ablt>"
+msgstr "убийца, внушающий страх "
 
 msgid "a legendary murderer of"
 msgstr "легендарный убийца"
@@ -43663,10 +43663,10 @@ msgid "a noted murderer of"
 msgstr "заметный убийца"
 
 msgid "greatly feared as a murderer by"
-msgstr "убийца, внушающий ужас <datv>"
+msgstr "убийца, внушающий ужас "
 
 msgid "feared as a murderer by"
-msgstr "убийца, внушающий страх <datv>"
+msgstr "убийца, внушающий страх "
 
 msgid "a legendary fighter against"
 msgstr "легендарный борец против"
@@ -43759,7 +43759,7 @@ msgid "When possible, "
 msgstr "По возможности "
 
 msgid " prefers to consume "
-msgstr " предпочитает употреблять<accs> "
+msgstr " предпочитает употреблять "
 
 msgid "unknown meat"
 msgstr "неизвестное мясо"
@@ -43792,7 +43792,7 @@ msgid "unknown item"
 msgstr "неизвестный предмет"
 
 msgid " absolutely detests "
-msgstr " совершенно не выносит<accs> "
+msgstr " совершенно не выносит "
 
 msgid " needs alcohol to get through the working day"
 msgstr " не может прожить и дня без алкоголя"
@@ -43886,7 +43886,7 @@ msgid "after being kept from alcohol"
 msgstr "после отсутствия возможности употреблять алкоголь"
 
 msgid "after communing with "
-msgstr "после разговора с <ablt>"
+msgstr "после разговора с "
 
 msgid "after meditation"
 msgstr "после медитации"
@@ -45419,7 +45419,7 @@ msgid " abilities when undertaking specific ventures"
 msgstr " способностях, когда идёт на риск"
 
 msgid "is generally quite confident of "
-msgstr "как правило, достаточно уверен в <loct>"
+msgstr "как правило, достаточно уверен в "
 
 msgid "sometimes acts with little determination and confidence"
 msgstr "иногда действует  решительно и уверенно"
@@ -45458,7 +45458,7 @@ msgid " talents and accomplishments"
 msgstr " собственными талантами и достижениями"
 
 msgid "is not inherently proud of "
-msgstr "в сущности, не гордится <ablt>"
+msgstr "в сущности, не гордится "
 
 msgid " talents and appearance"
 msgstr " собственных талантах и внешнем виде"
@@ -45978,7 +45978,7 @@ msgid " sense of independence"
 msgstr " чувство независимости"
 
 msgid " finds this can conflict with "
-msgstr " считает это противоречащим <datv>"
+msgstr " считает это противоречащим "
 
 msgid ", although "
 msgstr ", хотя "
@@ -46606,7 +46606,7 @@ msgid "after playing make believe"
 msgstr "после игры в \"изобрази\""
 
 msgid "after playing with "
-msgstr "после игры с <ablt>"
+msgstr "после игры с "
 
 msgid "after becoming a parent"
 msgstr "после того, как стал родителем"
@@ -46851,7 +46851,7 @@ msgid "when starving"
 msgstr "при истощении"
 
 msgid "due to "
-msgstr "из-за <gent>"
+msgstr "из-за "
 
 msgid "after being away from people for too long"
 msgstr "после долгой разлуки с людьми"
@@ -47323,7 +47323,7 @@ msgid "after being attacked by the dead"
 msgstr "после того, как был атакован мертвецом"
 
 msgid "has been attacked by "
-msgstr "был атакован <ablt>"
+msgstr "был атакован "
 
 msgid " own dead "
 msgstr "собственным умершим"
@@ -47617,7 +47617,7 @@ msgid "A mandate has ended."
 msgstr "Поручение закончилось."
 
 msgid "The work slowdown by the "
-msgstr "Замедление работы из-за <gent>"
+msgstr "Замедление работы из-за "
 
 msgid " is over."
 msgstr " окончено."
@@ -47736,7 +47736,7 @@ msgid "Making demands of "
 msgstr "Требования "
 
 msgid "Trading with "
-msgstr "Торговля с <ablt>"
+msgstr "Торговля с "
 
 msgid " (Owes you "
 msgstr " (Должен вам "
@@ -48133,10 +48133,10 @@ msgid "The world is the same as ever."
 msgstr "Мир больше не будет таким, как раньше."
 
 msgid " meets with "
-msgstr "проводит встречу с <ablt>"
+msgstr "проводит встречу с "
 
 msgid "  Trade Agreement with "
-msgstr " Торговое соглашение с <ablt>"
+msgstr " Торговое соглашение с "
 
 msgid "Priority"
 msgstr "Приоритет"
@@ -48442,7 +48442,7 @@ msgid "to make an apology"
 msgstr "чтобы извиниться"
 
 msgid "to express pleasure with"
-msgstr "чтобы выразить удовольствие <ablt>"
+msgstr "чтобы выразить удовольствие "
 
 msgid "to express grief over"
 msgstr "чтобы выразить горе"
@@ -49022,10 +49022,10 @@ msgid " the subject of the poem"
 msgstr "тема стихотворения"
 
 msgid "concerns "
-msgstr "касается <gent>"
+msgstr "касается "
 
 msgid " is written from the perspective of "
-msgstr "написана с точки зрения <gent>"
+msgstr "написана с точки зрения "
 
 msgid " must make use of "
 msgstr "должен использовать"
@@ -49253,7 +49253,7 @@ msgid "This building has"
 msgstr "Это строение"
 
 msgid "been claimed by"
-msgstr "было занято <ablt>"
+msgstr "было занято "
 
 msgid "works"
 msgstr "работает"
@@ -50048,7 +50048,7 @@ msgid "For Sale at "
 msgstr "Продаётся в "
 
 msgid "Nest box claimed by"
-msgstr "Насест занят <ablt>"
+msgstr "Насест занят "
 
 msgid "Nest box unclaimed"
 msgstr "Насест свободен"
@@ -52721,10 +52721,10 @@ msgid " into an obstacle and "
 msgstr " в препятствие и "
 
 msgid "blow"
-msgstr "бьёте <accs>"
+msgstr "бьёте "
 
 msgid "blows"
-msgstr "бьёт <accs>"
+msgstr "бьёт "
 
 msgid " apart!"
 msgstr " на части!"
@@ -53255,7 +53255,7 @@ msgid " bellows to pressurize air, ultimately blowing it"
 msgstr "мехи нагнетают воздух, после чего подают его"
 
 msgid " through any of "
-msgstr "через любую из <gent>"
+msgstr "через любую из "
 
 msgid " pipes.  "
 msgstr "трубок."
@@ -55145,7 +55145,7 @@ msgid " skin is "
 msgstr " кожа "
 
 msgid "  It was created by "
-msgstr "  Он был создан <ablt>"
+msgstr "  Он был создан "
 
 msgid " and is of a part with "
 msgstr " и является частью "
@@ -61515,7 +61515,7 @@ msgid "Error sorting rivers: working with "
 msgstr "Ошибка сортировки рек: работа с "
 
 msgid " ran into "
-msgstr " столкнулась с <ablt>"
+msgstr " столкнулась с "
 
 msgid "Not enough medium altitude locations after erosion"
 msgstr "Не достаточно средних высот после эрозии"
@@ -64555,7 +64555,7 @@ msgid " has climbed out of depression."
 msgstr " поборол депрессию."
 
 msgid " is aware of "
-msgstr "снова интересуется <ablt>"
+msgstr "снова интересуется "
 
 msgid " surroundings again."
 msgstr "окружающим миром."
@@ -65227,16 +65227,16 @@ msgid "Multigrasp"
 msgstr "Многохват"
 
 msgid "Wrapped around "
-msgstr "Обёрнут вокруг <gent>"
+msgstr "Обёрнут вокруг "
 
 msgid "Strapped to "
-msgstr "Пристёгнут к <datv>"
+msgstr "Пристёгнут к "
 
 msgid "Stuck in "
-msgstr "Застрял в <loct>"
+msgstr "Застрял в "
 
 msgid "Sewn into "
-msgstr "Вшит в <accs>"
+msgstr "Вшит в "
 
 msgid "Right shoulder"
 msgstr "Правое плечо"
@@ -65257,7 +65257,7 @@ msgid "drops"
 msgstr "роняет"
 
 msgid "Your miners have defaced a "
-msgstr "Ваши шахтёры повредили <accs>"
+msgstr "Ваши шахтёры повредили "
 
 msgid " takes the full force of the impact"
 msgstr " принимает всю силу удара"
@@ -65272,10 +65272,10 @@ msgid "'s mandates have ended."
 msgstr " поручения закончились."
 
 msgid " a cloud of "
-msgstr " облако <gent>"
+msgstr " облако "
 
 msgid " a glob of "
-msgstr " шар <gent>"
+msgstr " шар "
 
 msgid " was born today, which makes "
 msgstr " родился сегодня, поэтому  "
@@ -65371,7 +65371,7 @@ msgid " is to blame!"
 msgstr " обвинён!"
 
 msgid " toppled by "
-msgstr " свергнут <ablt>"
+msgstr " свергнут "
 
 msgid " is throwing objects around the fortress!"
 msgstr " разбрасывает предметы по всей крепости!"
@@ -65547,10 +65547,10 @@ msgid "been drained of blood"
 msgstr "был обескровлен."
 
 msgid "been drained of blood by "
-msgstr "был обескровлен <ablt>"
+msgstr "был обескровлен "
 
 msgid "been murdered by "
-msgstr "был убит <ablt>"
+msgstr "был убит "
 
 msgid "been killed by a trap."
 msgstr "убит ловушкой."
@@ -66138,7 +66138,7 @@ msgid "This artwork appears on a "
 msgstr "Это произведение искусства находится на "
 
 msgid " and was crafted in "
-msgstr " и было создано в <loct>"
+msgstr " и было создано в "
 
 msgid "This artwork appears "
 msgstr "Это произведение искусства находится "
@@ -66192,7 +66192,7 @@ msgid " fine"
 msgstr " прекрасный"
 
 msgid " rendition of "
-msgstr " исполнение <gent>"
+msgstr " исполнение "
 
 msgid " well-designed"
 msgstr " хорошо выполнен "
@@ -66222,7 +66222,7 @@ msgid "The image "
 msgstr "Изображение"
 
 msgid "is the symbol of"
-msgstr "- символ <gent>"
+msgstr "- символ "
 
 msgid "was commissioned by"
 msgstr "был введён в эксплуатацию"
