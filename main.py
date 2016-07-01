@@ -174,24 +174,7 @@ for menuitem in main_menu:
             CURSOR += opcodes.make_new_string(old_off, CURSOR, menuitem,
                                      e_df, OLD_BASE_ADDR, NEW_BASE_ADDR, NEW_OFFSET, all_data, opcode_and_offset)
 
-
-print("Патчится функция выравнивания строк")
-offset = 0x8778C8C #FIXME найти способ нахождения функции автоматически
-binFile = '/tmp/str_resize_path.bin'
-os.system('bash ./asm/str_resize_patch.sh ' + binFile)
-
 CALL_SIZE = 5
-if exists(binFile):
-    call = opcodes.make_call(offset + CALL_SIZE, CURSOR + NEW_BASE_ADDR)
-    e_df.seek(offset - OLD_BASE_ADDR)
-    e_df.write(call) #Создаем CALL-перехват управления на новую функцию
-    e_df.seek(CURSOR + NEW_OFFSET)
-    asm_patch = open(binFile, 'rb').read()
-    e_df.write(asm_patch) #Патчим файл результатом FASM
-    CURSOR += len(asm_patch) + 1
-    os.remove(binFile)
-else:
-    print("---> !!!Ошибка при сборке asm-модуля!!!")
 
 print("Патчится функция  std::string::assign(char  const*, uint)")
 offset = 0x804C8C8
