@@ -71,7 +71,7 @@ def check_founded_gemini(gemini, buf):
 """Извлекает все похожее на строки из секции .rodata"""
 def extract_strings(fn):
     import os
-    os.system("objdump -x ./Dwarf_Fortress | grep \.rodata | awk '{print $3,$4,$6}' > /tmp/ex_str.txt")
+    os.system("objdump -x " + fn + " | grep \.rodata | awk '{print $3,$4,$6}' > /tmp/ex_str.txt")
     rodata_size, rodata_vaddr, rodata_offset = [int(x,16) for x in open("/tmp/ex_str.txt").read().split(" ")]
     os.remove("/tmp/ex_str.txt")
     

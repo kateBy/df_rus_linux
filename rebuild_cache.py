@@ -12,7 +12,7 @@ from time import time
 print("Ищем строки в исходном файле")
 words = extract_strings('Dwarf_Fortress')
 
-all_data = open("Dwarf_Fortress", 'rb').read()
+all_data = open("Dwarf_Fortress64", 'rb').read()
 
 #Предел поиска строк
 MAX_TO_FIND = len(all_data) #FIXME длина не соответствует концу секции

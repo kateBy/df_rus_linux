@@ -36,13 +36,14 @@ def find_word(bytes_word, print_length = 10):
         if last != -1:
             print("0x%X -->" % (last + OLD_BASE_ADDR), all_data[last:last+print_length])
 
-
+DF = "Dwarf_Fortress64"
+NEW_DF = "Edited_DF64"
 
 print("Загружаются строки перевода")
 trans = load_trans_po('trans.po')
 
 print("Ищем строки в исходном файле")
-words = extract_strings('Dwarf_Fortress')
+#words = extract_strings(DF)
 
 
 print("Создаётся файл для новой секции с переводом")
@@ -50,7 +51,7 @@ rus_words   = make_dat_file('/tmp/rus.dat', trans)
 
 #Получаем сдвиг новой секции в памяти, выравниваем по 4096
 try:
-    os.system("objdump -x ./Dwarf_Fortress | grep \.bss | awk '{print $4,$3}' > /tmp/dwarf_base_addr")
+    os.system("objdump -x "+ DF +" | grep \.bss | awk '{print $4,$3}' > /tmp/dwarf_base_addr")
     bss_offset, bss_len = open('/tmp/dwarf_base_addr').read().strip().split(" ")
     os.remove('/tmp/dwarf_base_addr')
     NEW_BASE_ADDR = ((int(bss_offset,16) + int(bss_len, 16))//4096 + 1 ) * 4096
@@ -61,18 +62,18 @@ except:
 
 #Созданный файл с новыми строками вставляется как новая секция
 print("Создаётся модифицированный исполняемый файл")
-os.system("objcopy ./Dwarf_Fortress ./Edited_DF  --add-section .rus=/tmp/rus.dat")
-os.system("objcopy ./Edited_DF --set-section-flags .rus=A")
-os.system("objcopy ./Edited_DF --change-section-vma .rus=%s" % hex(NEW_BASE_ADDR))
+os.system("objcopy "+DF+" "+NEW_DF+"  --add-section .rus=/tmp/rus.dat")
+os.system("objcopy "+NEW_DF+" --set-section-flags .rus=A")
+os.system("objcopy "+NEW_DF+" --change-section-vma .rus=%s" % hex(NEW_BASE_ADDR))
 os.remove('/tmp/rus.dat')
 
-e_df = open("./Edited_DF", "r+b")
+e_df = open(NEW_DF, "r+b")
 all_data = e_df.read()
 
-OLD_BASE_ADDR = 0x08048000
+OLD_BASE_ADDR = 0x400000
 
 try:
-    os.system("objdump -x ./Edited_DF | grep \.rus | awk '{print $6}' > /tmp/dwarf_offset")
+    os.system("objdump -x "+NEW_DF+" | grep \.rus | awk '{print $6}' > /tmp/dwarf_offset")
     rus_offset = open('/tmp/dwarf_offset').read().strip()
     os.remove('/tmp/dwarf_offset')
     NEW_OFFSET = int(rus_offset, 16)
@@ -88,7 +89,7 @@ h0 = template.pack(1, NEW_OFFSET, NEW_BASE_ADDR,  NEW_BASE_ADDR, 0x100000, 0x100
 #52-длина заголовка, 32-длина секции, 7-номер секции, которую можно переписать
 e_df.seek(52 + 32 * 7)
 e_df.write(h0)
-
+exit()
 print("Поиск перекрестных ссылок")
 #Ищем указатели на используемые строки, в несколько потоков
 xref = find_xref.find(words, 0, all_data, load_from_cache=True)
