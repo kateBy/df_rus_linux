@@ -58,10 +58,12 @@ def find(words, MAX_TO_FIND, all_data, load_from_cache = False):
        load_from_cache - параметр, благодаря которому можно указать, нужно ли
        обновлять кэш или искать все заново (что даже на 4 ядрах где-то 2 минуты)"""
 
+    CACHE_FILE = 'cache64.txt'
+
     #Если получили указание использовать кэш 
     if load_from_cache:
         try:
-            cache = open('cache.txt', 'rt').readlines()
+            cache = open(CACHE_FILE, 'rt').readlines()
             res = {}
             for line in cache:
                 word, data = line.split('" -> [')
@@ -122,15 +124,10 @@ def find(words, MAX_TO_FIND, all_data, load_from_cache = False):
 
     #Байты, которые должны идти перед указателем на строку, все остальные, кроме mov esp - мусор
     good_bits = [
-             0xb8, # mov eax, offset
-             0xb9, # mov ecx, offset
              0xba, # mov edx, offset
-             0xbb, # mov ebx, offset
-             0xbd, # mov ebp, offset
              0xbe, # mov esi, offset
-             0xbf, # mov edi, offset
              ]
-
+    
 
 
     bug_addr = []
@@ -153,8 +150,7 @@ def find(words, MAX_TO_FIND, all_data, load_from_cache = False):
                 res[ref] = new_ref
             else:
                 res[ref] = None
-
-      
+    
     
         
 
@@ -164,7 +160,7 @@ def find(words, MAX_TO_FIND, all_data, load_from_cache = False):
     sys.stdout.flush()
     print("Запись кэша на диск")
     
-    cache_file = open('cache.txt', 'wt')
+    cache_file = open(CACHE_FILE, 'wt')
     for w in res:
         if res[w] == None:
             continue

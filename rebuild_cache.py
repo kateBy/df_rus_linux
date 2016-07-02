@@ -8,11 +8,13 @@ from extract_strings import *
 import find_xref
 from time import time
 
+DF = 'Dwarf_Fortress64'
 
 print("Ищем строки в исходном файле")
-words = extract_strings('Dwarf_Fortress')
+words = extract_strings(DF)
 
-all_data = open("Dwarf_Fortress64", 'rb').read()
+all_data = open(DF, 'rb').read()
+
 
 #Предел поиска строк
 MAX_TO_FIND = len(all_data) #FIXME длина не соответствует концу секции
