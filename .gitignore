@@ -1,6 +1,8 @@
 *.txt
 Dwarf_Fortress
+Dwarf_Fortress64
 Edited_DF
+Edited_DF64
 __pycache__/*
 additions/*
 *.h
