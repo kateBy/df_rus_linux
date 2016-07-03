@@ -130,68 +130,9 @@ for test_word in xref:
     for pos in all_poses:
         e_df.seek(pos)
         e_df.write(little4bytes(new_index))
-        '''
-        if all_data[pos-16] == 0xb8:
-            if all_data[pos-15] == (len(test_word)+1):
-                
-                """
-                Непонятно почему используется значение +1 в меню
-                Создать с доп. параметрами
-                Арена тестирования объектов
-                """
-                
-                e_df.seek(pos-15)
-                e_df.write(little4bytes(len(trans[test_word])+1))
-                continue
-        ''' 
-print("Отдельные строки для главного меню")
-
 
 CURSOR = rus_words["CURSOR"]
-'''
 
-main_menu = {"Продолжить Игру": b"Continue",
-             "Начать Игру":b"Star",
-             " Выход ":b"Quit",
-             "Создать Новый Мир!":b"Crea",
-             "Об Игре":b"Abou",
-
-             #Меняющийся заголовок
-             "Истории о ":b"Hist",
-             #Слова в заголовке у них загрузка в стёк через eax
-             "Жадности" : b"Gree",
-             "Алчности" : b"Avar",
-             "Настойчивости":b"Pers",
-             "Зависти":b"Jeal",
-             "Решительности":b"Dete",
-             "Обжорстве":b"Glut",
-             "Храбрости":b"Mett",
-             "Ненасытности":b"Cupi",
-             "Динамичности":b"Dyna",
-             "Упорстве":b"Tena",
-             "Старании":b"Exer",
-             "Предприимчивости":b"Ente",
-             "Усердии":b"Dili",
-             "Усердном труде":b"Toil",
-             "Трудолюбии":b"Indu",
-             "Находчивости":b"Reso",
-             " и ":b" and"
-             }
-
-#Варианты опкодов и сдвига в памяти в зависимости от вида
-_start_bytes = {b"\xc7\x06":["esi",0],
-                b"\xc7\x43\x0e":["esi",0], #Истории о
-                b"\xc7\x42\x0e":["eax",0], #Для меняющихся слов в заголовке
-                b"\xc7\x40\x0e":["eax",0xe]}
-
-for menuitem in main_menu:
-    for start_bytes in _start_bytes:
-        old_off = all_data.find(start_bytes + main_menu[menuitem])
-        if old_off != -1:
-            opcode_and_offset = _start_bytes[start_bytes]     
-            CURSOR += opcodes.make_new_string(old_off, CURSOR, menuitem,
-                                     e_df, OLD_BASE_ADDR, NEW_BASE_ADDR, NEW_OFFSET, all_data, opcode_and_offset)
-'''
 CALL_SIZE = 5
 FAR_JMP_SIZE = 6
 print("Патчится функция  std::string::assign(char  const*, uint)")

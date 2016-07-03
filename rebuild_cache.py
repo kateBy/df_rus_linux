@@ -13,11 +13,11 @@ DF = 'Dwarf_Fortress64'
 print("Ищем строки в исходном файле")
 words = extract_strings(DF)
 
-all_data = open(DF, 'rb').read()
-
+data = open(DF, 'rb').read()
+find = data.find
 
 #Предел поиска строк
-MAX_TO_FIND = len(all_data) #FIXME длина не соответствует концу секции
+MAX_TO_FIND = len(data) #FIXME длина не соответствует концу секции
 
 
 print("Загружаются строки перевода")
@@ -27,15 +27,16 @@ trans = load_trans_po('trans.po')
 print("Поиск строк-близнецов")
 start = time()
 gemini = find_gemini(words, trans)
-chk = check_founded_gemini(gemini, all_data)
+chk = check_founded_gemini(gemini, data)
 print("Поиск занял", time() - start, "c")
 
 words.update(chk)
 
 print("Поиск перекрестных ссылок")
 #Ищем указатели на используемые строки, в несколько потоков
-start = time()
-xref = find_xref.find(words, MAX_TO_FIND, all_data, load_from_cache=False)
+
+xref = find_xref.find(words, MAX_TO_FIND, data, load_from_cache=False)
+
 print("Поиск занял", time() - start, "c")
 
 

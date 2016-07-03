@@ -17,6 +17,7 @@ def find_xrefs(words, procN, all_data, MAX_TO_FIND, msg, pipe, lock):
     pipe - объект Pipe, через него будут переданы результаты поиска
     lock - объект для блокировки стандатного вывода
     """
+    ESI = b'\xbe'
 
     result = {}
    
@@ -30,14 +31,14 @@ def find_xrefs(words, procN, all_data, MAX_TO_FIND, msg, pipe, lock):
         index += 1
         
         old_index = words[test_word]           #Получаем из списка смещение найденой строки
-        bOldindex = old_index.to_bytes(4, byteorder="little") #Преобразуем смещение в байты
+        bOldindex = ESI + old_index.to_bytes(4, byteorder="little") #Преобразуем смещение в байты
         all_poses = []
         pos = 0
         #И ищем совпадение 4-байтного смещения во всем файле, долго, но что поделать :)
         while pos != -1:
             pos = _find(bOldindex, pos+1, MAX_TO_FIND)
             if pos != -1:
-                all_poses.append(pos)
+                all_poses.append(pos+1)
 
         if all_poses != []:
             result[test_word] = all_poses
@@ -120,39 +121,6 @@ def find(words, MAX_TO_FIND, all_data, load_from_cache = False):
     res = {}
     for d in results:
         res.update(d)
-
-
-    #Байты, которые должны идти перед указателем на строку, все остальные, кроме mov esp - мусор
-    good_bits = [
-             0xba, # mov edx, offset
-             0xbe, # mov esi, offset
-             ]
-    
-
-
-    bug_addr = []
-    for ref in res:
-        bug_addr.clear()
-        for xaddr in res[ref]:
-            bit = all_data[xaddr-1]
-            if not (bit in good_bits):              #Первый байт подозрителен
-                if all_data[xaddr-4] != 0xc7:       #Проверяем может быть это mov dword ptr esp
-                    if all_data[xaddr-3] != 0xc7:   #Проверяем может быть это mov  word ptr esp
-                        bug_addr.append(xaddr)      #Скорее всего - ошибочный адрес, исключаем его
-
-                        
-        if bug_addr != []:                          #Если в результате поиска были найдены подозрительные адреса
-            new_ref = []                            #Создадим новый список, в который включим только валидные адреса
-            for i in res[ref]:
-                if not (i in bug_addr):
-                    new_ref.append(i)
-            if new_ref != []:
-                res[ref] = new_ref
-            else:
-                res[ref] = None
-    
-    
-        
 
 
     #Записываем результаты на диск, для последующего использования
