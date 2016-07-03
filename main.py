@@ -176,6 +176,27 @@ else:
     print("---> !!!Ошибка при сборке asm-модуля!!!")
 
 
+print("Патчится функция  std::string::string(char  const*, ...")
+offset = 0x405cb0
+func_addr = ' -dFUNC_ADDR=0x1707620 '
+binFile = '/tmp/str_str.bin'
+os.system('fasm ./asm/str_str_patch.asm ' + func_addr + binFile)
+
+if exists(binFile):
+    jmp = opcodes.make_near_jmp(offset + CALL_SIZE, CURSOR + NEW_BASE_ADDR)
+    e_df.seek(offset - OLD_BASE_ADDR)
+    e_df.write(jmp) #Создаем JMP-перехват управления на новую функцию
+
+    asm_patch = open(binFile, 'rb').read()
+    e_df.seek(CURSOR+NEW_OFFSET)
+    e_df.write(asm_patch) #Записываем результат работы FASM в файл
+    
+    CURSOR += len(asm_patch) + FAR_JMP_SIZE + 1
+    os.remove(binFile)
+else:
+    print("---> !!!Ошибка при сборке asm-модуля!!!")
+
+
 print("Сохраняется результат...")
 e_df.close()
 
