@@ -28660,7 +28660,7 @@ msgid "Greed"
 msgstr " жадности"
 
 msgid "Avarice"
-msgstr "б алчности"
+msgstr " алчности"
 
 msgid "Jealousy"
 msgstr " зависти"
