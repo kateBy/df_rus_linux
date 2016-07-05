@@ -137,6 +137,13 @@ def make_dat_file(fn, trans, size = 0x100000):
         file.write(encoded)
         offset += ru_len + 4
 
+    #Особый патч строки "Готовить"
+    result["__COOK__"] = offset + 4
+    cook = "Готовить".encode('cp1251') + b"\x00"
+    file.write((len(cook)-1).to_bytes(4, 'little'))
+    file.write(cook)
+    offset += len(cook) + 4
+    
     open(fn, 'wb').write(file.getvalue())
 
     result["CURSOR"] = offset

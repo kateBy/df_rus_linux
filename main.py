@@ -126,10 +126,16 @@ for test_word in xref:
     except KeyError:
         continue
 
-    #Обрабатываем все найденые индексы и корректируем длину строки в коде
+    #Обрабатываем все найденые индексы
     for pos in all_poses:
         e_df.seek(pos)
         e_df.write(little4bytes(new_index))
+
+print("Патчим строку \"Готовить\"")
+e_df.seek(0x9527c3 - OLD_BASE_ADDR)
+print(hex(NEW_OFFSET))
+_cook = rus_words["__COOK__"] + NEW_BASE_ADDR
+e_df.write(b"\xbe" + little4bytes(_cook))
 
 CURSOR = rus_words["CURSOR"]
 
