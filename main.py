@@ -132,8 +132,8 @@ for test_word in xref:
         e_df.write(little4bytes(new_index))
 
 print("Патчим строку \"Готовить\"")
-e_df.seek(0x9527c3 - OLD_BASE_ADDR)
-print(hex(NEW_OFFSET))
+COOK_OFFSET = 0x9527c3
+e_df.seek(COOK_OFFSET - OLD_BASE_ADDR)
 _cook = rus_words["__COOK__"] + NEW_BASE_ADDR
 e_df.write(b"\xbe" + little4bytes(_cook))
 
