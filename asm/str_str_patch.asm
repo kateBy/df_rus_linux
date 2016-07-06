@@ -2,141 +2,98 @@ use64
 
 ;FUNC_ADDR = 0x1707620
 
-CONTINUE = "Continue" ;Continue Playing
-START    = "Start Pl" ;Start Playing
-QUIT     = "Quit"     ;Quit
-CREATE   = "Create N" ;Create New World
-ABOUT    = "About DF" ;About DF
-DESIGN   = "Design N" ;Design New World with Advanced Parameters
-OBJECT   = "Object T" ;Object Testing Arena
-HISTOR   = "Historie" ;Histories of 
+include 'mystrcopy.inc'
 
-cmp rsi, r12                  ;Строки главного меню так передаются
-jne NO
+cmp rsi, r12                      ;Строки главного меню так передаются
+jne @NO
 	mov rax, [rsi]            ;Чтобы не обращаться много раз к памяти
 
-	mov r13, HISTOR
-	cmp r13, rax
-	je _HISTOR
+	cmp rax, qword [dbHISTORY]
+	je  @HISTOR
 	
-	mov r13, CONTINUE
-	cmp r13, rax
-	je  _CONTINUE
+	cmp rax, qword [dbCONTINUE]
+	je  @CONTINUE
 
-	mov r13, START
-	cmp r13, rax
-	je  _START
+	cmp rax, qword [dbSTART]
+	je  @START
 
-	mov r13d, QUIT
-	cmp r13d, eax
-	je  _QUIT
+	cmp eax, dword [dbQUIT]
+	je  @QUIT
 
-	mov r13, CREATE
-	cmp r13, rax
-	je  _CREATE
+	cmp rax, qword [dbCREATE]
+	je  @CREATE
 
-	mov r13, ABOUT
-	cmp r13, rax
-	je  _ABOUT
+	cmp rax, qword [dbABOUT]
+	je  @ABOUT
 
-	mov r13, DESIGN
-	cmp r13, rax
-	je  _DESIGN
+	cmp rax, qword [dbDESIGN]
+	je  @DESIGN
 
-	mov r13, OBJECT
-	cmp r13, rax
-	je  _OBJECT
+	cmp rax, qword [dbOBJECT]
+	je  @OBJECT
 
-NO:
+@NO:
 jmp qword [qword FUNC_ADDR]       ;Переход к функции
 
-_CONTINUE:
-CONTINUE_F0 = 0xe8e6ebeee4eef0cf ; Продолжи
-CONTINUE_F1 = 0xf3f0e3c820fcf2   ; ть Игру
-mov rax, CONTINUE_F0
-mov qword [rsi], rax
-mov rax, CONTINUE_F1
-mov qword [rsi+8], rax
-jmp NO
+@CONTINUE:
+strcopyq sCONTINUE, lCONTINUE
+jmp @NO
 
-_START:
-START_F0 = 0xc820fcf2e0f7e0cd ; Начать И
-START_F1 = 0xf3f0e3           ; гру
-mov rax, START_F0
-mov qword [rsi], rax
-mov rax, START_F1
-mov qword [rsi+8], rax
-jmp NO
+@START:
+strcopyq sSTART, lSTART
+jmp @NO
 
-_QUIT:
-QUIT_F  =  0xe4eef5fbc2    ;Выход,0
-mov rax, QUIT_F
-mov qword [rsi], rax
-jmp NO
+@QUIT:
+mov rax, qword [sQUIT]
+mov [rsi], rax
+jmp @NO
 
-_CREATE:
-CREATE_F0 = 0x20fcf2e0e4e7eed1 ; Создать 
-CREATE_F1 = 0xe8cc20e9fbe2eecd ; Новый Ми
-CREATE_F2 = 0x21f0             ; р!
-mov rax, CREATE_F0
-mov qword [rsi], rax
-mov rax, CREATE_F1
-mov qword [rsi+8], rax
-mov rax, CREATE_F2
-mov qword [rsi+16], rax
-jmp NO
+@CREATE:
+strcopyq sCREATE, lCREATE
+jmp @NO
 
-_ABOUT:
-ABOUT_F0 = 0xe5f0e3c820e1ce ; Об Игре
-mov rax, ABOUT_F0
-mov qword [rsi], rax
-jmp NO
+@ABOUT:
+mov rax, qword [sABOUT]
+mov [rsi], rax
+jmp @NO
 
-_DESIGN:
-DESIGN_F0 = 0x20fcf2e0e4e7eed1; Создать 
-DESIGN_F1 = 0xf1c820f120f0e8cc; Мир с Ис
-DESIGN_F2 = 0xe0e2eee7fcebeeef; пользова
-DESIGN_F3 = 0xf1e0d020ece5e8ed; нием Рас
-DESIGN_F4 = 0xf5fbedede5f0e8f8; ширенных
-DESIGN_F5 = 0xf2e5ece0f0e0cf20;  Парамет
-DESIGN_F6 = 0xe2eef0          ; ров
-mov rax, DESIGN_F0
-mov qword [rsi], rax
-mov rax, DESIGN_F1
-mov qword [rsi+8], rax
-mov rax, DESIGN_F2
-mov qword [rsi+16], rax
-mov rax, DESIGN_F3
-mov qword [rsi+24], rax
-mov rax, DESIGN_F4
-mov qword [rsi+32], rax
-mov rax, DESIGN_F5
-mov qword [rsi+40], rax
-mov rax, DESIGN_F6
-mov qword [rsi+48], rax
-jmp NO
+@DESIGN:
+strcopyq sDESIGN, lDESIGN
+jmp @NO
 
-_OBJECT:
-OBJECT_F0 = 0xe5d220e0ede5f0c0; Арена Те
-OBJECT_F1 = 0xede0e2eef0e8f2f1; стирован
-OBJECT_F2 = 0xeae5fae1ce20ffe8; ия Объек
-OBJECT_F3 = 0xe2eef2          ; тов
-mov rax, OBJECT_F0
-mov qword [rsi], rax
-mov rax, OBJECT_F1
-mov qword [rsi+8], rax
-mov rax, OBJECT_F2
-mov qword [rsi+16], rax
-mov rax, OBJECT_F3
-mov qword [rsi+24], rax
-jmp NO
+@OBJECT:
+strcopyq sOBJECT, lOBJECT
+jmp @NO
 
-_HISTOR:
-HISTOR_F0 = 0xf0eef2f1c8202020 ;    Истор
-HISTOR_F1 = 0xee20e8e8 ; ии о
-mov rax, HISTOR_F0
-mov qword [rsi], rax
-mov eax, HISTOR_F1
-mov dword [rsi+8], eax
-jmp NO
+@HISTOR:
+strcopyd sHISTOR, lHISTOR
+jmp @NO
+
+;Переведенные слова в cp1251
+sCONTINUE  db 207, 240, 238, 228, 238, 235, 230, 232, 242, 252, 32, 200, 227, 240, 243, 0; "Продолжить Игру",0
+lCONTINUE = $-sCONTINUE
+sSTART     db 205, 224, 247, 224, 242, 252, 32, 200, 227, 240, 243, 0, 0, 0, 0, 0        ; "Начать Игру",0
+lSTART  = $-sSTART
+sQUIT      db 194, 251, 245, 238, 228, 0, 0, 0                                           ; "Выход",0
+lQUIT   = $-sQUIT
+sCREATE    db 209, 238, 231, 228, 224, 242, 252, 32, 205, 238, 226, 251, 233, 32, 204, 232, 240, 33, 0, 0, 0, 0, 0, 0; Создать Новый Мир!
+lCREATE = $-sCREATE
+sABOUT     db 206, 225, 32, 200, 227, 240, 229, 0 ; Об Игре
+lABOUT  = $-sABOUT
+sDESIGN    db 209,238,231,228,224,242,252,32,204,232,240,32,241,32,208,224,241,248,232,240,229,237,237,251,236,232,32,207,224,240,224,236,229,242,240,224,236,232,0,0
+lDESIGN = $-sDESIGN
+sOBJECT    db 192,240,229,237,224,32,210,229,241,242,232,240,238,226,224,237,232,255,32,206,225,250,229,234,242,238,226,0,0,0,0,0
+lOBJECT = $-sOBJECT
+sHISTOR    db 32, 32, 32, 200, 241, 242, 238, 240, 232, 232, 32, 238
+lHISTOR = $-sHISTOR
+
+;Полные слова для поиска соответствия, но толко по первым 8-ми байтам
+dbCONTINUE db "Continue Playing",0
+dbSTART    db "Start Playing",0
+dbQUIT     db "Quit",0
+dbCREATE   db "Create New World",0
+dbABOUT    db "About DF",0
+dbDESIGN   db "Design New World with Advanced Parameters",0
+dbOBJECT   db "Object Testing Arena",0
+dbHISTORY  db "Histories of",0
 
