@@ -1,10 +1,10 @@
-TARGET = Edited_DF
+TARGET = Edited_DF64
 PYTHON = python3
 
-MAIN_OBJS = cache.txt trans.po Dwarf_Fortress
+MAIN_OBJS = $(CACHE) $(CACHE_OBJS) Dwarf_Fortress64
 MAIN = main.py
 CACHE_OBJS = trans.po
-CACHE = cache.txt
+CACHE = cache64.txt
 REBUILD_CACHE = rebuild_cache.py
 
 
