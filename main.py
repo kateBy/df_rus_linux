@@ -13,6 +13,42 @@ import find_xref
 import opcodes
 from os.path import exists
 
+"""Функция патча с указаной позиции встраивая jmp или call для перехвата
+   управления в новую секцию"""
+def makePatch(patchOffset, asmFile, jmpType, asmCommandLine = ""):
+    global CURSOR
+    offset = patchOffset
+    binFile = '/tmp/df_patch.bin'
+    os.system('fasm %s %s %s' % (asmFile, asmCommandLine, binFile))
+
+    if not jmpType in ["JMP", "CALL"]:
+        print("Не выбран тип перехода. [JMP, CALL]")
+        exit()
+
+    JMP_CALL_SZ= 5
+
+    if exists(binFile):
+        if jmpType == "CALL":
+            jmp = opcodes.make_call(offset + JMP_CALL_SZ, CURSOR + NEW_BASE_ADDR)
+        elif jmpType == "JMP":
+            jmp = opcodes.make_near_jmp(offset + JMP_CALL_SZ, CURSOR + NEW_BASE_ADDR)
+        else:
+            exit()
+            
+        e_df.seek(offset - OLD_BASE_ADDR)
+        e_df.write(jmp) #Создаем JMP-перехват управления на новую функцию
+
+        asm_patch = open(binFile, 'rb').read()
+        e_df.seek(CURSOR+NEW_OFFSET)
+        e_df.write(asm_patch) #Записываем результат работы FASM в файл
+        
+        CURSOR += len(asm_patch) + JMP_CALL_SZ + 1
+        os.remove(binFile)
+    else:
+        print("---> !!!Ошибка при сборке asm-модуля!!!")
+
+
+
 #Функция, использовалась при отладке для поиска
 def get_ip(text):
     last = 0
@@ -137,91 +173,20 @@ e_df.seek(COOK_OFFSET - OLD_BASE_ADDR)
 _cook = rus_words["__COOK__"] + NEW_BASE_ADDR
 e_df.write(b"\xbe" + little4bytes(_cook))
 
+global CURSOR
 CURSOR = rus_words["CURSOR"]
 
-CALL_SIZE = 5
-FAR_JMP_SIZE = 6
 print("Патчится функция  std::string::assign(char  const*, uint)")
-offset = 0x405870
-func_addr = ' -dFUNC_ADDR=0x1707400 '
-binFile = '/tmp/str_len.bin'
-os.system('fasm ./asm/str_len.asm ' + func_addr + binFile)
-
-if exists(binFile):
-    jmp = opcodes.make_near_jmp(offset + CALL_SIZE, CURSOR + NEW_BASE_ADDR)
-    e_df.seek(offset - OLD_BASE_ADDR)
-    e_df.write(jmp) #Создаем JMP-перехват управления на новую функцию
-
-    asm_patch = open(binFile, 'rb').read()
-    e_df.seek(CURSOR+NEW_OFFSET)
-    e_df.write(asm_patch) #Записываем результат работы FASM в файл
-
-    CURSOR += len(asm_patch) + FAR_JMP_SIZE + 1
-    os.remove(binFile)
-else:
-    print("---> !!!Ошибка при сборке asm-модуля!!!")
+makePatch(0x405870, 'asm/str_len.asm', 'JMP', '-dFUNC_ADDR=0x1707400')
 
 print("Патчится функция  std::string::append(char  const*, uint)")
-offset = 0x4055e0
-func_addr = ' -dFUNC_ADDR=0x17072B8 '
-binFile = '/tmp/str_len2.bin'
-os.system('fasm ./asm/str_len.asm ' + func_addr + binFile)
-
-if exists(binFile):
-    jmp = opcodes.make_near_jmp(offset + CALL_SIZE, CURSOR + NEW_BASE_ADDR)
-    e_df.seek(offset - OLD_BASE_ADDR)
-    e_df.write(jmp) #Создаем JMP-перехват управления на новую функцию
-
-    asm_patch = open(binFile, 'rb').read()
-    e_df.seek(CURSOR+NEW_OFFSET)
-    e_df.write(asm_patch) #Записываем результат работы FASM в файл
-    
-    CURSOR += len(asm_patch) + FAR_JMP_SIZE + 1
-    os.remove(binFile)
-else:
-    print("---> !!!Ошибка при сборке asm-модуля!!!")
-
+makePatch(0x4055e0, 'asm/str_len.asm', 'JMP', '-dFUNC_ADDR=0x17072B8')
 
 print("Патчится функция  std::string::string(char  const*, ...")
-offset = 0x405cb0
-func_addr = ' -dFUNC_ADDR=0x1707620 '
-binFile = '/tmp/str_str.bin'
-os.system('fasm ./asm/str_str_patch.asm ' + func_addr + binFile)
-
-if exists(binFile):
-    jmp = opcodes.make_near_jmp(offset + CALL_SIZE, CURSOR + NEW_BASE_ADDR)
-    e_df.seek(offset - OLD_BASE_ADDR)
-    e_df.write(jmp) #Создаем JMP-перехват управления на новую функцию
-
-    asm_patch = open(binFile, 'rb').read()
-    e_df.seek(CURSOR+NEW_OFFSET)
-    e_df.write(asm_patch) #Записываем результат работы FASM в файл
-    
-    CURSOR += len(asm_patch) + FAR_JMP_SIZE + 1
-    os.remove(binFile)
-else:
-    print("---> !!!Ошибка при сборке asm-модуля!!!")
+makePatch(0x405cb0, 'asm/str_str_patch.asm', 'JMP', '-dFUNC_ADDR=0x1707620')
 
 print("Патчится  функция вывода мыслей и предпочтений")
-offset = 0x9c15ef
-#func_addr = ' -dFUNC_ADDR=0x1707620 '
-binFile = '/tmp/str_minds.bin'
-os.system('fasm ./asm/str_resize_patch.asm ' + binFile)
-
-if exists(binFile):
-    jmp = opcodes.make_call(offset + CALL_SIZE, CURSOR + NEW_BASE_ADDR)
-    e_df.seek(offset - OLD_BASE_ADDR)
-    e_df.write(jmp) #Создаем JMP-перехват управления на новую функцию
-
-    asm_patch = open(binFile, 'rb').read()
-    e_df.seek(CURSOR+NEW_OFFSET)
-    e_df.write(asm_patch) #Записываем результат работы FASM в файл
-    
-    CURSOR += len(asm_patch) + FAR_JMP_SIZE + 1
-    os.remove(binFile)
-else:
-    print("---> !!!Ошибка при сборке asm-модуля!!!")
-
+makePatch(0x9c15ef, 'asm/str_resize_patch.asm', 'CALL')
 
 print("Сохраняется результат...")
 e_df.close()
