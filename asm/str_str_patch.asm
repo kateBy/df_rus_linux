@@ -36,11 +36,11 @@ jne @NO
 jmp qword [qword FUNC_ADDR]       ;Переход к функции
 
 @CONTINUE:
-strcopyq sCONTINUE, lCONTINUE
+strcopy sCONTINUE, lCONTINUE, 8
 jmp @NO
 
 @START:
-strcopyq sSTART, lSTART
+strcopy sSTART, lSTART, 8
 jmp @NO
 
 @QUIT:
@@ -49,7 +49,7 @@ mov [rsi], rax
 jmp @NO
 
 @CREATE:
-strcopyq sCREATE, lCREATE
+strcopy sCREATE, lCREATE, 8
 jmp @NO
 
 @ABOUT:
@@ -58,31 +58,32 @@ mov [rsi], rax
 jmp @NO
 
 @DESIGN:
-strcopyq sDESIGN, lDESIGN
+strcopy sDESIGN, lDESIGN, 8
 jmp @NO
 
 @OBJECT:
-strcopyq sOBJECT, lOBJECT
+strcopy sOBJECT, lOBJECT, 8
 jmp @NO
 
 @HISTOR:
-strcopyd sHISTOR, lHISTOR
+strcopy sHISTOR, lHISTOR, 4
 jmp @NO
 
 ;Переведенные слова в cp1251
 sCONTINUE  db 207, 240, 238, 228, 238, 235, 230, 232, 242, 252, 32, 200, 227, 240, 243, 0; "Продолжить Игру",0
 lCONTINUE = $-sCONTINUE
-sSTART     db 205, 224, 247, 224, 242, 252, 32, 200, 227, 240, 243, 0, 0, 0, 0, 0        ; "Начать Игру",0
+sSTART     db 205, 224, 247, 224, 242, 252, 32, 200, 227, 240, 243, 5 dup(0)             ; "Начать Игру",0
 lSTART  = $-sSTART
-sQUIT      db 194, 251, 245, 238, 228, 0, 0, 0                                           ; "Выход",0
+sQUIT      db 194, 251, 245, 238, 228, 3 dup(0)                                          ; "Выход",0
 lQUIT   = $-sQUIT
-sCREATE    db 209, 238, 231, 228, 224, 242, 252, 32, 205, 238, 226, 251, 233, 32, 204, 232, 240, 33, 0, 0, 0, 0, 0, 0; Создать Новый Мир!
+sCREATE    db 209, 238, 231, 228, 224, 242, 252, 32, 205, 238, 226, 251, 233, 32, 204, 232, 240, 33, 6 dup(0); Создать Новый Мир!
 lCREATE = $-sCREATE
+
 sABOUT     db 206, 225, 32, 200, 227, 240, 229, 0 ; Об Игре
 lABOUT  = $-sABOUT
 sDESIGN    db 209,238,231,228,224,242,252,32,204,232,240,32,241,32,208,224,241,248,232,240,229,237,237,251,236,232,32,207,224,240,224,236,229,242,240,224,236,232,0,0
 lDESIGN = $-sDESIGN
-sOBJECT    db 192,240,229,237,224,32,210,229,241,242,232,240,238,226,224,237,232,255,32,206,225,250,229,234,242,238,226,0,0,0,0,0
+sOBJECT    db 192,240,229,237,224,32,210,229,241,242,232,240,238,226,224,237,232,255,32,206,225,250,229,234,242,238,226, 5 dup(0)
 lOBJECT = $-sOBJECT
 sHISTOR    db 32, 32, 32, 200, 241, 242, 238, 240, 232, 232, 32, 238
 lHISTOR = $-sHISTOR
