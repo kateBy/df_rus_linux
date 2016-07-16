@@ -173,6 +173,11 @@ e_df.seek(COOK_OFFSET - OLD_BASE_ADDR)
 _cook = rus_words["__COOK__"] + NEW_BASE_ADDR
 e_df.write(b"\xbe" + little4bytes(_cook))
 
+print("Патчим множественное число")
+S_OFFSET = 0x12B95E7
+e_df.seek(S_OFFSET - OLD_BASE_ADDR)
+#e_df.write(b" \x00")
+
 global CURSOR
 CURSOR = rus_words["CURSOR"]
 
@@ -185,7 +190,7 @@ makePatch(0x4055e0, 'asm/str_len.asm', 'JMP', '-dFUNC_ADDR=0x17072B8')
 print("Патчится функция  std::string::string(char  const*, ...")
 makePatch(0x405cb0, 'asm/str_str_patch.asm', 'JMP', '-dFUNC_ADDR=0x1707620')
 
-print("Патчится  функция вывода мыслей и предпочтений")
+print("Патчится функция  вывода мыслей и предпочтений")
 makePatch(0x9c15ef, 'asm/str_resize_patch.asm', 'CALL')
 
 print("Сохраняется результат...")
