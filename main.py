@@ -47,31 +47,6 @@ def makePatch(patchOffset, asmFile, jmpType, asmCommandLine = ""):
     else:
         print("---> !!!Ошибка при сборке asm-модуля!!!")
 
-
-
-#Функция, использовалась при отладке для поиска
-def get_ip(text):
-    last = 0
-    test_addr = words[text].to_bytes(4, 'little')
-    while last != -1:
-        last = all_data.find(test_addr, last+1)
-        if last != -1:
-            return hex(last + OLD_BASE_ADDR)
-
-def get_last(text):
-    for x in words:
-        if x.endswith(text):
-            _addr = get_ip(x)
-            if _addr != None:
-                print(_addr, '--> "%s"' % x)
-
-def find_word(bytes_word, print_length = 10):
-    last = 0
-    while last != -1:
-        last = all_data.find(bytes_word, last + 1)
-        if last != -1:
-            print("0x%X -->" % (last + OLD_BASE_ADDR), all_data[last:last+print_length])
-
 DF = "Dwarf_Fortress64"
 NEW_DF = "Edited_DF64"
 
@@ -80,7 +55,6 @@ trans = load_trans_po('trans.po')
 
 print("Ищем строки в исходном файле")
 words = extract_strings(DF)
-
 
 print("Создаётся файл для новой секции с переводом")
 rus_words   = make_dat_file('/tmp/rus.dat', trans)
@@ -128,7 +102,7 @@ prgEntryCount = elf64header[10] #Количество записей в Program 
 #без этой правки новая секция не будет подгружена в память
 template = struct.Struct("IIQQQQQQ")
 h0 = template.pack(1,             #Type of segment    | LOAD
-                   4,             #Segment attributes | r--
+                   0b100,         #Segment attributes | r--
                    NEW_OFFSET,    #Offset in file     |
                    NEW_BASE_ADDR, #Vaddr in memory    |
                    0x100000,      #Reserved           |

@@ -37326,25 +37326,25 @@ msgid "Tame a Small Animal"
 msgstr "Приручать мелкое животное"
 
 msgid " Figurine"
-msgstr "Статуэтка"
+msgstr " Статуэтка"
 
 msgid " Amulet"
-msgstr "Амулет"
+msgstr " Амулет"
 
 msgid " Scepter"
-msgstr "Скипетр"
+msgstr " Скипетр"
 
 msgid " Crown"
-msgstr "Корона"
+msgstr " Корона"
 
 msgid " Ring"
-msgstr "Кольцо"
+msgstr " Кольцо"
 
 msgid " Earring"
-msgstr "Серьга"
+msgstr " Серьга"
 
 msgid " Bracelet"
-msgstr "Браслет"
+msgstr " Браслет"
 
 msgid "Make Large "
 msgstr "Делать большой "
