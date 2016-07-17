@@ -88,7 +88,7 @@ lOBJECT = $-sOBJECT
 sHISTOR    db 32, 32, 32, 200, 241, 242, 238, 240, 232, 232, 32, 238
 lHISTOR = $-sHISTOR
 
-;Полные слова для поиска соответствия, но толко по первым 8-ми байтам
+;Полные слова для поиска соответствия, но только по первым 8-ми байтам
 dbCONTINUE db "Continue Playing",0
 dbSTART    db "Start Playing",0
 dbQUIT     db "Quit",0
