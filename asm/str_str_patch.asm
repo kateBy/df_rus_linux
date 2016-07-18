@@ -1,7 +1,6 @@
 use64
 
 ;FUNC_ADDR = 0x1707620
-GPS = 0x1707860
 
 include 'mystrcopy.inc'
 
@@ -51,7 +50,7 @@ mov rax, 0x29-lQUIT/2
 mov [qword GPS], rax
 jmp @NO
 
-@CREATE:
+@CREATE: 
 strcopy sCREATE, lCREATE, 8, 0x2b-lCREATE/2
 jmp @NO
 
@@ -69,7 +68,7 @@ strcopy sOBJECT, lOBJECT, 4, 0x2a-lOBJECT/2
 jmp @NO
 
 @HISTOR:
-strcopy sHISTOR, lHISTOR, 4, 0
+strcopy sHISTOR, lHISTOR, 4, -1
 jmp @NO
 
 ;Переведенные слова в cp1251

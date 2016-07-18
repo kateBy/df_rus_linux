@@ -24,8 +24,10 @@ macro strcopy source,size,block_size,xoffset {
     mov rdi, r11          ; восстанавливаем rdi из r11
     mov rsi, rax          ; восстанавливаем rsi из rax
 
-    ;Далее коррекция сдвига для центрирования текста
-    mov rax, xoffset
-    mov [qword GPS], rax
+    ;Далее коррекция сдвига для центрирования текста, -1 если коррекция не нужна
+    if ~ xoffset eq -1
+       mov rax, xoffset
+       mov [qword GPS], rax
+    end if
 
 }

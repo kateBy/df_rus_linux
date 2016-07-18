@@ -152,6 +152,13 @@ S_OFFSET = 0x12B95E7
 e_df.seek(S_OFFSET - OLD_BASE_ADDR)
 #e_df.write(b" \x00")
 
+print("Патчим надписи в главном меню...")
+MAIN_MENU_OFFSETS = [(0x9B9566, 19), (0x9B9698, 13), (0x9B9740, 15)]
+for mainmenu in MAIN_MENU_OFFSETS:
+    off, xpos = mainmenu
+    e_df.seek(off - OLD_BASE_ADDR)
+    e_df.write(b"\x48\xc7\xc0" + int.to_bytes(xpos, 4, 'little')) #mov rax, 19
+
 global CURSOR
 CURSOR = rus_words["CURSOR"]
 
