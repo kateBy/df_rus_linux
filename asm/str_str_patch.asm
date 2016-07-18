@@ -1,6 +1,7 @@
 use64
 
 ;FUNC_ADDR = 0x1707620
+GPS = 0x1707860
 
 include 'mystrcopy.inc'
 
@@ -36,20 +37,22 @@ jne @NO
 jmp qword [qword FUNC_ADDR]       ;Переход к функции
 
 @CONTINUE:
-strcopy sCONTINUE, lCONTINUE, 8
+strcopy sCONTINUE, lCONTINUE, 8, 0x28-lCONTINUE/2
 jmp @NO
 
 @START:
-strcopy sSTART, lSTART, 8
+strcopy sSTART, lSTART, 8, 0x2a-lSTART/2
 jmp @NO
 
 @QUIT:
 mov rax, qword [sQUIT]
 mov [rsi], rax
+mov rax, 0x29-lQUIT/2
+mov [qword GPS], rax
 jmp @NO
 
 @CREATE:
-strcopy sCREATE, lCREATE, 8
+strcopy sCREATE, lCREATE, 8, 0x2b-lCREATE/2
 jmp @NO
 
 @ABOUT:
@@ -58,15 +61,15 @@ mov [rsi], rax
 jmp @NO
 
 @DESIGN:
-strcopy sDESIGN, lDESIGN, 8
+strcopy sDESIGN, lDESIGN, 4, 0x29-lDESIGN/2
 jmp @NO
 
 @OBJECT:
-strcopy sOBJECT, lOBJECT, 8
+strcopy sOBJECT, lOBJECT, 4, 0x2a-lOBJECT/2
 jmp @NO
 
 @HISTOR:
-strcopy sHISTOR, lHISTOR, 4
+strcopy sHISTOR, lHISTOR, 4, 0
 jmp @NO
 
 ;Переведенные слова в cp1251

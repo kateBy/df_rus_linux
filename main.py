@@ -165,7 +165,7 @@ print("Патчится функция  std::string::string(char  const*, ...")
 makePatch(0x405cb0, 'asm/str_str_patch.asm', 'JMP', '-dFUNC_ADDR=0x1707620')
 
 print("Патчится функция  вывода мыслей и предпочтений")
-makePatch(0x9c15ef, 'asm/str_resize_patch.asm', 'CALL')
+#makePatch(0x9c15ef, 'asm/str_resize_patch.asm', 'CALL')
 
 print("Сохраняется результат...")
 e_df.close()

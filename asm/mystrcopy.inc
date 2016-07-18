@@ -1,6 +1,7 @@
-macro strcopy source,size,block_size {
+GPS = 0x1707860
+macro strcopy source,size,block_size,xoffset {
  
-   common
+    common
     mov rax, rsi          ; сохраняем rsi в rax
     mov r11, rdi          ; сохраняем rdi - в нем будет адрес назначения для movsq
     mov rdi, rsi          ; в rsi - находится адрес того, куда нужно занести перевод , переносим в rdi - для того,чтобы оно стало назначением
@@ -21,6 +22,10 @@ macro strcopy source,size,block_size {
     end if 
 
     mov rdi, r11          ; восстанавливаем rdi из r11
-    mov rsi, rax           ; восстанавливаем rsi из rax
+    mov rsi, rax          ; восстанавливаем rsi из rax
+
+    ;Далее коррекция сдвига для центрирования текста
+    mov rax, xoffset
+    mov [qword GPS], rax
 
 }
