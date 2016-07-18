@@ -35,3 +35,8 @@ macro strcopy source, size, full_size, block_size {
     mov [qword GPS], rax   ;заносим результат в gps.xoffset 
 
 }
+
+;Добавляем байты, чтобы длина строки была кратна нужному числу
+macro make_align length, block {
+    db (length / block + 1)*block - length  dup(0)
+}
