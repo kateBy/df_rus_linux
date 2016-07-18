@@ -1,5 +1,7 @@
 GPS = 0x1707860
-macro strcopy source,size,block_size,xoffset {
+WIDTH = 0x17E74A0 + 0x14
+
+macro strcopy source, size, full_size, block_size {
  
     common
     mov rax, rsi          ; сохраняем rsi в rax
@@ -7,7 +9,7 @@ macro strcopy source,size,block_size,xoffset {
     mov rdi, rsi          ; в rsi - находится адрес того, куда нужно занести перевод , переносим в rdi - для того,чтобы оно стало назначением
     lea rsi, [source]     ; грузим в rsi адрес переведенной строки
 
-    mov rcx, qword size / block_size
+    mov rcx, qword full_size / block_size
 
     if block_size eq 8
         rep movsq 
@@ -21,13 +23,15 @@ macro strcopy source,size,block_size,xoffset {
         rep movsb
     end if 
 
-    mov rdi, r11          ; восстанавливаем rdi из r11
-    mov rsi, rax          ; восстанавливаем rsi из rax
+    mov rdi, r11           ; восстанавливаем rdi из r11
+    mov rsi, rax           ; восстанавливаем rsi из rax
 
-    ;Далее коррекция сдвига для центрирования текста, -1 если коррекция не нужна
-    if ~ xoffset eq -1
-       mov rax, xoffset
-       mov [qword GPS], rax
-    end if
+    ;Далее коррекция сдвига для центрирования текста
+    mov eax, [dword WIDTH] ;получаем текущую ширину экрана
+    sub eax, 1
+    sar eax, 1             ;теперь в eax - половина ширины экрана
+    sub eax, size / 2      ;отнимаем половину ширины текста, чтобы получить центральное положение
+    cdqe                   ;расширяем eax -> rax
+    mov [qword GPS], rax   ;заносим результат в gps.xoffset 
 
 }
