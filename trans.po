@@ -25296,7 +25296,7 @@ msgid "Competition"
 msgstr "Завершение"
 
 msgid "Perseverance"
-msgstr "упорстве"
+msgstr "Упорстве"
 
 msgid "Leisure Time"
 msgstr "Свободное время"
@@ -28657,52 +28657,52 @@ msgid "Histories of "
 msgstr "Истории о"
 
 msgid "Greed"
-msgstr " жадности"
+msgstr " Жадности"
 
 msgid "Avarice"
-msgstr " алчности"
+msgstr "б Алчности"
 
 msgid "Jealousy"
-msgstr " зависти"
+msgstr " Зависти"
 
 msgid "Cupidity"
-msgstr " скупости"
+msgstr " Скупости"
 
 msgid "Gluttony"
-msgstr "б обжорстве"
+msgstr "б Обжорстве"
 
 msgid "Industry"
-msgstr "производстве"
+msgstr "Производстве"
 
 msgid "Enterprise"
-msgstr "предприимчивости"
+msgstr "Предприимчивости"
 
 msgid "Resourcefulness"
-msgstr "находчивости"
+msgstr "Находчивости"
 
 msgid "Determination"
-msgstr "решительности"
+msgstr "Решительности"
 
 msgid "Mettle"
-msgstr "отваге"
+msgstr "Отваге"
 
 msgid "Dynamism"
-msgstr "стремительности"
+msgstr "Стремительности"
 
 msgid "Labor"
-msgstr "работе"
+msgstr "Работе"
 
 msgid "Toil"
-msgstr "труде"
+msgstr "Труде"
 
 msgid "Diligence"
-msgstr "усердии"
+msgstr "Усердии"
 
 msgid "Exertion"
-msgstr "напряжении"
+msgstr "Напряжении"
 
 msgid "Tenacity"
-msgstr "стойкости"
+msgstr "Стойкости"
 
 msgid "Command Line: "
 msgstr "Командная строка: "
