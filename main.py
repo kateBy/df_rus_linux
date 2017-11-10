@@ -1,4 +1,4 @@
-#!/usr/bin/python3.4
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
 
@@ -15,15 +15,24 @@ from os.path import exists
 
 """Функция патча с указаной позиции встраивая jmp или call для перехвата
    управления в новую секцию"""
-def makePatch(patchOffset, asmFile, jmpType, asmCommandLine = ""):
+def makePatch(patchOffset, asmFile, jmpType):
     global CURSOR
     offset = patchOffset
+
+    e_df.seek(offset - OLD_BASE_ADDR)
+    s  = struct.Struct('<hI')
+    _,off = s.unpack(e_df.read(6))
+
+    
+    funcAddr = hex(patchOffset + off + 6)
+    print(hex(patchOffset + off + 6))
+    
     binFile = '/tmp/df_patch.bin'
-    os.system('fasm %s %s %s' % (asmFile, asmCommandLine, binFile))
+    os.system('fasm %s -dFUNC_ADDR=%s %s' % (asmFile, funcAddr, binFile))
 
     if not jmpType in ["JMP", "CALL"]:
         print("Не выбран тип перехода. [JMP, CALL]")
-        exit()
+        return
 
     JMP_CALL_SZ= 5
 
@@ -47,8 +56,8 @@ def makePatch(patchOffset, asmFile, jmpType, asmCommandLine = ""):
     else:
         print("---> !!!Ошибка при сборке asm-модуля!!!")
 
-DF = "Dwarf_Fortress64"
-NEW_DF = "Edited_DF64"
+DF = "Dwarf_Fortress"
+NEW_DF = "Edited_DF"
 
 print("Загружаются строки перевода")
 trans = load_trans_po('trans.po')
@@ -142,36 +151,39 @@ for test_word in xref:
         e_df.write(little4bytes(new_index))
 
 print("Патчим строку \"Готовить\"")
-COOK_OFFSET = 0x9527c3
-e_df.seek(COOK_OFFSET - OLD_BASE_ADDR)
-_cook = rus_words["__COOK__"] + NEW_BASE_ADDR
-e_df.write(b"\xbe" + little4bytes(_cook))
+#COOK_OFFSET = 0x9527c3
+#e_df.seek(COOK_OFFSET - OLD_BASE_ADDR)
+#_cook = rus_words["__COOK__"] + NEW_BASE_ADDR
+#e_df.write(b"\xbe" + little4bytes(_cook))
 
 print("Патчим множественное число")
-S_OFFSET = 0x12B95E7
-e_df.seek(S_OFFSET - OLD_BASE_ADDR)
+#S_OFFSET = 0x12B95E7
+#e_df.seek(S_OFFSET - OLD_BASE_ADDR)
 #e_df.write(b" \x00")
 
 print("Патчим надписи в главном меню...")
-MAIN_MENU_OFFSETS = [(0x9B9568, 20), (0x9B969a, 26), (0x9B9742, 24)]
-for mainmenu in MAIN_MENU_OFFSETS:
-    off, xpos = mainmenu
-    e_df.seek(off - OLD_BASE_ADDR)
-    e_df.write(b"\x83\xe8" + int.to_bytes(xpos, 1, 'little')) #sub eax, 20
+#MAIN_MENU_OFFSETS = [(0x9B9568, 20), (0x9B969a, 26), (0x9B9742, 24)]
+#for mainmenu in MAIN_MENU_OFFSETS:
+#    off, xpos = mainmenu
+#    e_df.seek(off - OLD_BASE_ADDR)
+#    e_df.write(b"\x83\xe8" + int.to_bytes(xpos, 1, 'little')) #sub eax, 20
 
 global CURSOR
 CURSOR = rus_words["CURSOR"]
 
 print("Патчится функция  std::string::assign(char  const*, uint)")
-makePatch(0x405870, 'asm/str_len.asm', 'JMP', '-dFUNC_ADDR=0x1707400')
+#_ZNSs6assignEPKcm
+makePatch(0x405870, 'asm/str_len.asm', 'JMP')
 
 print("Патчится функция  std::string::append(char  const*, uint)")
-makePatch(0x4055e0, 'asm/str_len.asm', 'JMP', '-dFUNC_ADDR=0x17072B8')
+#_ZNSs6appendEPKcm
+makePatch(0x4055e0, 'asm/str_len.asm', 'JMP')
 
 print("Патчится функция  std::string::string(char  const*, ...")
-makePatch(0x405cb0, 'asm/str_str_patch.asm', 'JMP', '-dFUNC_ADDR=0x1707620')
+#_ZNSsC1EPKcRKSaIcE
+makePatch(0x405cb0, 'asm/str_str_patch.asm', 'JMP')
 
-print("Патчится функция  вывода мыслей и предпочтений")
+#print("Патчится функция  вывода мыслей и предпочтений")
 #makePatch(0x9c15ef, 'asm/str_resize_patch.asm', 'CALL')
 
 print("Сохраняется результат...")

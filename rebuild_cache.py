@@ -1,4 +1,4 @@
-#!/usr/bin/python3.4
+#!/usr/bin/python3
 
 
 if __name__ != '__main__':
@@ -8,7 +8,7 @@ from extract_strings import *
 import find_xref
 from time import time
 
-DF = 'Dwarf_Fortress64'
+DF = 'Dwarf_Fortress'
 
 print("Ищем строки в исходном файле")
 words = extract_strings(DF)
