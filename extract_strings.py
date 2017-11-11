@@ -32,14 +32,13 @@ def check_forbidden(byte_string):
 def find_gemini(words, translated):
     result = {}
     for word in words:
-        max_i = len(word)
+        max_i = len(word) - 1
         i = 1
-        
-        while i < max_i-1:
+
+        while i < max_i:
             if word[i:] in translated:
                 if not (word[i:] in words):
-                     result[words[word] + i] = word[i:]
-                    
+                    result[words[word] + i] = word[i:]
 
             i += 1
 
@@ -70,18 +69,15 @@ def check_founded_gemini(gemini, buf):
 
 """Извлекает все похожее на строки из секции .rodata"""
 def extract_strings(fn):
-    import os
-    os.system("objdump -x " + fn + " | grep \.rodata | awk '{print $3,$4,$6}' > /tmp/ex_str.txt")
-    rodata_size, rodata_vaddr, rodata_offset = [int(x,16) for x in open("/tmp/ex_str.txt").read().split(" ")]
-    os.remove("/tmp/ex_str.txt")
-    
+    import subprocess
+    rodata = subprocess.check_output("objdump -x " + fn + " | grep \.rodata | awk '{print $3,$4,$6}'", shell=True).decode().strip()
+    rodata_size, rodata_vaddr, rodata_offset = [int(x, 16) for x in rodata.split(" ")]
 
     _file = open(fn, "rb")
     _file.seek(rodata_offset)
     rodata = _file.read(rodata_size)
     _file.close()
     
-    max_index = len(rodata)
     index = 0
     words = {}
     
@@ -90,7 +86,7 @@ def extract_strings(fn):
             next_zero = rodata.find(0, index)
             if next_zero != -1:
                 checked = check_forbidden(rodata[index:next_zero])
-                if checked != None:
+                if checked is not None:
                     words[checked] = index + rodata_vaddr
                 index = next_zero
             
@@ -105,7 +101,7 @@ def load_trans_po(fn):
     result = {}
     pofile = polib.pofile(fn)
     for i in pofile:
-        if i.msgid.endswith(' '):      #Англ. кончается на пробел
+        if i.msgid.endswith(' '):      # Англ. кончается на пробел
             angl_spaces = len(i.msgid) - len(i.msgid.rstrip())
             ru_spaces = len(i.msgstr) - len(i.msgstr.rstrip())
             if angl_spaces != ru_spaces:
@@ -121,23 +117,27 @@ def load_trans_po(fn):
 
 """Создаёт секцию с новыми строками и возвращает словарь,
 содержащий английскую версию строки и индекс ее в новой секции.
+Перед строкой стоит 4 байта длины этой строки для использования в функции
 Строки разделяются между собой одинарным нулём"""
-def make_dat_file(fn, trans, size = 0x100000):
+def make_dat_file(fn, trans, size=0x100000) -> dict:
     from io import BytesIO
     result = {}
     offset = 0
     file = BytesIO()
     file.write(b"\x00" * size)
     file.seek(0)
+
+    # trans["'s"] = " "  # Пустая строка для множественного числа
+
     for i in trans:
-        result[i] = offset + 4 #Перед строкой идет 4 байта ее длины
+        result[i] = offset + 4  # Перед строкой идет 4 байта ее длины
         encoded = trans[i].encode('cp1251') + b"\x00"
         ru_len = len(encoded)
-        file.write((ru_len-1).to_bytes(4, 'little')) #Записываем длину строки
+        file.write((ru_len-1).to_bytes(4, 'little'))  # Записываем длину строки
         file.write(encoded)
         offset += ru_len + 4
 
-    #Особый патч строки "Готовить"
+    # Особый патч строки "Готовить"
     result["__COOK__"] = offset + 4
     cook = "Готовить".encode('cp1251') + b"\x00"
     file.write((len(cook)-1).to_bytes(4, 'little'))
@@ -155,7 +155,7 @@ def make_dat_file(fn, trans, size = 0x100000):
 """Разбивает словарь на несколько словарей,
 нужно для запуска нескольких потоков замены индексов"""
 def split_dictionary(some_dict, out_count):
-    result = [{} for x in range(out_count)]
+    result = [{} for _ in range(out_count)]
     cursor = 0
 
     for i in some_dict:

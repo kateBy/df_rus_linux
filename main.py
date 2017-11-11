@@ -1,60 +1,66 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
-
-if __name__ != '__main__':
-    exit()
-
 from extract_strings import *
 import struct
-import sys
 import os
 import find_xref
 import opcodes
 from os.path import exists
+import subprocess
+
+
+OLD_BASE_ADDR = 0x400000  # Стартовый виртуальный адрес ELF
+RUS_SECTION = '/tmp/rus.dat'  # Файл с секцией .rus
+
 
 """Функция патча с указаной позиции встраивая jmp или call для перехвата
    управления в новую секцию"""
-def makePatch(patchOffset, asmFile, jmpType):
+def makePatch(patchOffset, asm_file: str, jmp_type: str, **fasmvars):
+
+    if jmp_type not in ["JMP", "CALL"]:
+        print("Не выбран тип перехода. [JMP, CALL]")
+        return
+
     global CURSOR
     offset = patchOffset
 
     e_df.seek(offset - OLD_BASE_ADDR)
-    s  = struct.Struct('<hI')
-    _,off = s.unpack(e_df.read(6))
+    s = struct.Struct('<hI')
+    _, off = s.unpack(e_df.read(6))
 
-    
-    funcAddr = hex(patchOffset + off + 6)
-    print(hex(patchOffset + off + 6))
-    
-    binFile = '/tmp/df_patch.bin'
-    os.system('fasm %s -dFUNC_ADDR=%s %s' % (asmFile, funcAddr, binFile))
+    func_addr = hex(patchOffset + off + 6)
 
-    if not jmpType in ["JMP", "CALL"]:
-        print("Не выбран тип перехода. [JMP, CALL]")
-        return
+    fasmvars['FUNC_ADDR'] = func_addr  # Задаем адрес функции, куда нужно сделать переход после патча
 
-    JMP_CALL_SZ= 5
+    args = " ".join(["-d" + k + "=" + v for k, v in fasmvars.items()])  # Аргументы для FASM
 
-    if exists(binFile):
-        if jmpType == "CALL":
+    bin_file = '/tmp/df_patch.bin'
+    os.system('fasm %s %s %s' % (asm_file, args, bin_file))
+
+    JMP_CALL_SZ = 5
+
+    if exists(bin_file):
+        if jmp_type == "CALL":
             jmp = opcodes.make_call(offset + JMP_CALL_SZ, CURSOR + NEW_BASE_ADDR)
-        elif jmpType == "JMP":
+        elif jmp_type == "JMP":
             jmp = opcodes.make_near_jmp(offset + JMP_CALL_SZ, CURSOR + NEW_BASE_ADDR)
-        else:
-            exit()
-            
-        e_df.seek(offset - OLD_BASE_ADDR)
-        e_df.write(jmp) #Создаем JMP-перехват управления на новую функцию
 
-        asm_patch = open(binFile, 'rb').read()
+        e_df.seek(offset - OLD_BASE_ADDR)
+        e_df.write(jmp)  # Создаем JMP-перехват управления на новую функцию
+
+        asm_patch = open(bin_file, 'rb').read()
         e_df.seek(CURSOR+NEW_OFFSET)
-        e_df.write(asm_patch) #Записываем результат работы FASM в файл
-        
+        e_df.write(asm_patch)  # Записываем результат работы FASM в файл
+
         CURSOR += len(asm_patch) + JMP_CALL_SZ + 1
-        os.remove(binFile)
+        os.remove(bin_file)
     else:
         print("---> !!!Ошибка при сборке asm-модуля!!!")
+
+
+if __name__ != '__main__':
+    exit()
 
 DF = "Dwarf_Fortress"
 NEW_DF = "Edited_DF"
@@ -66,86 +72,79 @@ print("Ищем строки в исходном файле")
 words = extract_strings(DF)
 
 print("Создаётся файл для новой секции с переводом")
-rus_words   = make_dat_file('/tmp/rus.dat', trans)
+rus_words = make_dat_file(RUS_SECTION, trans)
 
-#Получаем сдвиг новой секции в памяти, выравниваем по 4096
-try:
-    os.system("objdump -x "+ DF +" | grep \.bss | awk '{print $4,$3}' > /tmp/dwarf_base_addr")
-    bss_offset, bss_len = open('/tmp/dwarf_base_addr').read().strip().split(" ")
-    os.remove('/tmp/dwarf_base_addr')
-    NEW_BASE_ADDR = ((int(bss_offset,16) + int(bss_len, 16))//4096 + 1 ) * 4096
-except:
-    print("Ошибка при получении адреса секции")
-    exit()
+# Получаем сдвиг новой секции в памяти, выравниваем по 4096
 
+bss = subprocess.check_output("objdump -x " + DF + " | grep \.bss | awk '{print $3,$4}'", shell=True).decode().strip()
+bss_len, bss_offset = bss.split(" ")
+NEW_BASE_ADDR = ((int(bss_offset, 16) + int(bss_len, 16))//4096 + 1) * 4096
 
-#Созданный файл с новыми строками вставляется как новая секция
+# Созданный файл с новыми строками вставляется как новая секция
 print("Создаётся модифицированный исполняемый файл")
-os.system("objcopy "+DF+" "+NEW_DF+"  --add-section .rus=/tmp/rus.dat")
-os.system("objcopy "+NEW_DF+" --set-section-flags .rus=A" +
-          " --change-section-vma .rus=%s" % hex(NEW_BASE_ADDR))
-os.remove('/tmp/rus.dat')
+os.system("objcopy '%s' '%s' --add-section .rus=%s" % (DF, NEW_DF, RUS_SECTION))
+os.system("objcopy '%s' --set-section-flags .rus=A --change-section-vma .rus=%s" % (NEW_DF, hex(NEW_BASE_ADDR)))
+os.remove(RUS_SECTION)
 
 e_df = open(NEW_DF, "r+b")
 all_data = e_df.read()
 
-OLD_BASE_ADDR = 0x400000
 
-try:
-    os.system("objdump -x "+NEW_DF+" | grep \.rus | awk '{print $6}' > /tmp/dwarf_offset")
-    rus_offset = open('/tmp/dwarf_offset').read().strip()
-    os.remove('/tmp/dwarf_offset')
-    NEW_OFFSET = int(rus_offset, 16)
-except:
-    print("Ошибка при получении сдвига секции в памяти")
-    exit()
+rodata = subprocess.check_output("objdump -x " + NEW_DF + " | grep \.rus | awk '{print $3,$4,$6}'", shell=True).decode().strip()
+rus_size, rus_vaddr, rus_offset = [int(x, 16) for x in rodata.split(" ")]
 
-#Читаем заголовок elf64
+NEW_OFFSET = rus_offset
+
+# Читаем заголовок elf64
 elf64header = struct.Struct("16sHHIQQQIHHHHHH").unpack(all_data[:64])
-prgHdrOffset  = elf64header[5] #Смещение Program Header
-prgEntrySize  = elf64header[9] #Длина одной записи в Program Header
-prgEntryCount = elf64header[10] #Количество записей в Program Header
+prgHdrOffset = elf64header[5]  # Смещение Program Header
+prgEntrySize = elf64header[9]  # Длина одной записи в Program Header
+prgEntryCount = elf64header[10]  # Количество записей в Program Header
 
-              
-#Создаётся запись для программного заголовка с указателями на новую секцию
-#без этой правки новая секция не будет подгружена в память
+
+# Создаётся запись для программного заголовка с указателями на новую секцию
+# без этой правки новая секция не будет подгружена в память
 template = struct.Struct("IIQQQQQQ")
-h0 = template.pack(1,             #Type of segment    | LOAD
-                   0b100,         #Segment attributes | r--
-                   NEW_OFFSET,    #Offset in file     |
-                   NEW_BASE_ADDR, #Vaddr in memory    |
-                   0x100000,      #Reserved           |
-                   0x100000,      #Size in file       |
-                   0x100000,      #Size in memory     |
-                   4)             #Alignment          | 2**2
+h0 = template.pack(1,              # Type of segment    | LOAD
+                   0b100,          # Segment attributes | r--
+                   rus_offset,     # Offset in file     |
+                   NEW_BASE_ADDR,  # Vaddr in memory    |
+                   0x100000,       # Reserved           |
+                   0x100000,       # Size in file       |
+                   0x100000,       # Size in memory     |
+                   4)              # Alignment          | 2**2
 
 
-"""prgHdrOffset-длина заголовка,
+"""
+prgHdrOffset-длина заголовка,
 #prgEntrySize-длина секции
-#7-номер секции, которую можно переписать"""
+#7-номер секции, которую можно переписать
+"""
 e_df.seek(prgHdrOffset + prgEntrySize * 7)
 e_df.write(h0)
 
 print("Поиск перекрестных ссылок")
-#Ищем указатели на используемые строки, в несколько потоков
+# Ищем указатели на используемые строки, в несколько потоков
 xref = find_xref.find(words, 0, all_data, load_from_cache=True)
 
 print("Перевод...")
 
-#Т.к. операция используется много раз
-little4bytes = lambda x: x.to_bytes(4, byteorder="little")
+# Т.к. операция используется много раз
+def little4bytes(x: int) -> bytes:
+    return x.to_bytes(4, byteorder="little")
 
 
 for test_word in xref:
-   
-    try:
-        #Если строки из бинарника нет в переводе просто проигнорируем это
-        new_index = rus_words[test_word] + NEW_BASE_ADDR
-        all_poses = xref[test_word]
-    except KeyError:
+
+    # Если строки из бинарника нет в переводе просто проигнорируем это
+    word_offset = rus_words.get(test_word)  # Смещение слова в секции .rus
+    if word_offset is None:
         continue
 
-    #Обрабатываем все найденые индексы
+    new_index = word_offset + NEW_BASE_ADDR
+    all_poses = xref[test_word]
+
+    # Обрабатываем все найденые индексы
     for pos in all_poses:
         e_df.seek(pos)
         e_df.write(little4bytes(new_index))
@@ -156,11 +155,6 @@ print("Патчим строку \"Готовить\"")
 #_cook = rus_words["__COOK__"] + NEW_BASE_ADDR
 #e_df.write(b"\xbe" + little4bytes(_cook))
 
-print("Патчим множественное число")
-#S_OFFSET = 0x12B95E7
-#e_df.seek(S_OFFSET - OLD_BASE_ADDR)
-#e_df.write(b" \x00")
-
 print("Патчим надписи в главном меню...")
 #MAIN_MENU_OFFSETS = [(0x9B9568, 20), (0x9B969a, 26), (0x9B9742, 24)]
 #for mainmenu in MAIN_MENU_OFFSETS:
@@ -168,23 +162,22 @@ print("Патчим надписи в главном меню...")
 #    e_df.seek(off - OLD_BASE_ADDR)
 #    e_df.write(b"\x83\xe8" + int.to_bytes(xpos, 1, 'little')) #sub eax, 20
 
-global CURSOR
 CURSOR = rus_words["CURSOR"]
 
 print("Патчится функция  std::string::assign(char  const*, uint)")
-#_ZNSs6assignEPKcm
-makePatch(0x405870, 'asm/str_len.asm', 'JMP')
+# _ZNSs6assignEPKcm
+makePatch(0x405870, 'asm/str_len.asm', 'JMP', RU_OFFSET=hex(rus_vaddr), RU_SIZE=hex(rus_size))
 
 print("Патчится функция  std::string::append(char  const*, uint)")
-#_ZNSs6appendEPKcm
-makePatch(0x4055e0, 'asm/str_len.asm', 'JMP')
+# _ZNSs6appendEPKcm
+makePatch(0x4055e0, 'asm/str_len.asm', 'JMP', RU_OFFSET=hex(rus_vaddr), RU_SIZE=hex(rus_size))
 
 print("Патчится функция  std::string::string(char  const*, ...")
-#_ZNSsC1EPKcRKSaIcE
+# _ZNSsC1EPKcRKSaIcE
 makePatch(0x405cb0, 'asm/str_str_patch.asm', 'JMP')
 
-#print("Патчится функция  вывода мыслей и предпочтений")
-#makePatch(0x9c15ef, 'asm/str_resize_patch.asm', 'CALL')
+# print("Патчится функция  вывода мыслей и предпочтений")
+# makePatch(0x9c15ef, 'asm/str_resize_patch.asm', 'CALL')
 
 print("Сохраняется результат...")
 e_df.close()

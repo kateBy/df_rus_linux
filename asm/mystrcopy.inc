@@ -1,5 +1,5 @@
-GPS = 0x1707860
-WIDTH = 0x17E74A0 + 0x14
+GPS = 0x1706860 ; Секция .bss + 0xe0 public gps 01706780
+WIDTH = 0x17E64A0 + 0x14 ; Секция .bss + 0xdfd20 public init[0x14]
 
 macro strcopy source, size, block_size {
  
