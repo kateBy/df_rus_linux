@@ -24,6 +24,7 @@ def find_xrefs(words, procN, all_data, MAX_TO_FIND, msg: Queue, pipe: Pipe, lock
     result = {}
    
     _find = all_data.find    # Так должно быть быстрее
+    to_bytes = int.to_bytes
     index = 0
     for test_word in words:
         if index % 100 == 0:
@@ -32,7 +33,7 @@ def find_xrefs(words, procN, all_data, MAX_TO_FIND, msg: Queue, pipe: Pipe, lock
         index += 1
         
         old_index = words[test_word]           # Получаем из списка смещение найденой строки
-        boldindex = ESI + old_index.to_bytes(4, byteorder="little")  # type: bytes  # Преобразуем смещение в байты
+        boldindex = ESI + to_bytes(old_index, 4, byteorder="little")  # type: bytes  # Преобразуем смещение в байты
         all_poses = []
         pos = 0
         # И ищем совпадение 4-байтного смещения во всем файле, долго, но что поделать :)

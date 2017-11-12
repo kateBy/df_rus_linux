@@ -1,17 +1,21 @@
-"""Модуль содержит функции для извлечения строк из исполняемого файла
+"""
+Модуль содержит функции для извлечения строк из исполняемого файла
 а так же поиска т.н. близнецов строк, т.к. GCC для строк, которые содержатся
 в других строках использует одни и те же строки, только со смещением,
 например:
 The finest place,0 и place,0 будут совмещены в одно место, только при запросе
-строки 'place' будет дана ссылка на [The finest place]+12 и т.д."""
+строки 'place' будет дана ссылка на [The finest place]+12 и т.д.
+"""
+
+import subprocess
 
 chars = set(i for i in range(32, 127))
 nums = b'1234567890'
 
 
 
-"""Проверяем найденую строку на нечитаемые символы"""
 def check_forbidden(byte_string):
+    """Проверяем найденую строку на нечитаемые символы"""
     if len(byte_string) < 2:
         return None
         
@@ -26,10 +30,10 @@ def check_forbidden(byte_string):
 
 
 
-"""Поиск строк-близнецов постепенно отрезая от исходной строки буквы
-а после - сравнение со словарём переводов, если строка имеется в переводах,
-заносим ее в список"""
 def find_gemini(words, translated):
+    """Поиск строк-близнецов постепенно отрезая от исходной строки буквы
+    а после - сравнение со словарём переводов, если строка имеется в переводах,
+    заносим ее в список"""
     result = {}
     for word in words:
         max_i = len(word) - 1
@@ -46,32 +50,38 @@ def find_gemini(words, translated):
 
 
 
-"""Проверяем, имеется ли в буфере ссылка с таким адресом"""
-def check_founded_gemini(gemini, buf):
-    result = {}
+def check_founded_gemini(gemini: dict, buf: bytes) -> dict:
+    """Проверяем, имеется ли в буфере ссылка с таким адресом"""
+
     buf_find = buf.find
+    from_bytes = int.from_bytes
+    to_bytes = int.to_bytes
+
+    result = {}
     max_ind = len(gemini)
     ind = 0
     for g in gemini:
         ind += 1
-        link_byte = buf_find(int.to_bytes(g, 4, byteorder="little"))
+        link_byte = buf_find(to_bytes(g, 4, byteorder="little"))
         if link_byte != -1:
-            if gemini[g] in result:
-                print(gemini[g], "--->", hex(int.from_bytes(buf[link_byte:link_byte+4], 'little')), hex(g))
+            # if gemini[g] in result:
+            #     print(gemini[g], "--->", hex(from_bytes(buf[link_byte:link_byte+4], 'little')), hex(g))
                       
-            result[gemini[g]] = int.from_bytes(buf[link_byte:link_byte+4], 'little')
+            result[gemini[g]] = from_bytes(buf[link_byte:link_byte+4], 'little')
         if (ind % 100) == 0:
             print("%.2f" % (ind / max_ind * 100), "%")
 
     return result
 
-            
 
-"""Извлекает все похожее на строки из секции .rodata"""
-def extract_strings(fn):
-    import subprocess
-    rodata = subprocess.check_output("objdump -x " + fn + " | grep \.rodata | awk '{print $3,$4,$6}'", shell=True).decode().strip()
-    rodata_size, rodata_vaddr, rodata_offset = [int(x, 16) for x in rodata.split(" ")]
+def shell(command: str) -> str:
+    return subprocess.check_output(command, shell=True).decode().strip()
+
+
+def extract_strings(fn: str) -> dict:
+    """Извлекает все похожее на строки из секции .rodata"""
+    rodata = shell("objdump -x '%s' | grep \.rodata | awk '{print $3,$4,$6}'" % fn)
+    rodata_size, rodata_vaddr, rodata_offset = [int(x, 16) for x in rodata.split(" ")]  # type: int, int, int
 
     _file = open(fn, "rb")
     _file.seek(rodata_offset)
@@ -95,8 +105,8 @@ def extract_strings(fn):
 
 
 
-'''Загрузка перевода из файла .po с помощью библиотеки polib'''
 def load_trans_po(fn):
+    """Загрузка перевода из файла .po с помощью библиотеки polib"""
     import polib
     result = {}
     pofile = polib.pofile(fn)
@@ -115,11 +125,12 @@ def load_trans_po(fn):
 
 
 
-"""Создаёт секцию с новыми строками и возвращает словарь,
-содержащий английскую версию строки и индекс ее в новой секции.
-Перед строкой стоит 4 байта длины этой строки для использования в функции
-Строки разделяются между собой одинарным нулём"""
-def make_dat_file(fn, trans, size=0x100000) -> dict:
+def make_dat_file(fn: str, trans: dict, size=0x100000) -> dict:
+    """Создаёт секцию с новыми строками и возвращает словарь,
+    содержащий английскую версию строки и индекс ее в новой секции.
+    Перед строкой стоит 4 байта длины этой строки для использования в функции
+    Строки разделяются между собой одинарным нулём"""
+
     from io import BytesIO
     result = {}
     offset = 0
@@ -152,9 +163,9 @@ def make_dat_file(fn, trans, size=0x100000) -> dict:
 
 
 
-"""Разбивает словарь на несколько словарей,
-нужно для запуска нескольких потоков замены индексов"""
 def split_dictionary(some_dict, out_count):
+    """Разбивает словарь на несколько словарей, нужно для запуска нескольких потоков замены индексов"""
+
     result = [{} for _ in range(out_count)]
     cursor = 0
 

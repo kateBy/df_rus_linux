@@ -63,8 +63,6 @@ def makePatch(patchOffset, asm_file: str, jmp_type: str, **fasmvars):
 def little4bytes(x: int) -> bytes:
     return x.to_bytes(4, byteorder="little")
 
-def shell(command: str) -> str:
-    return subprocess.check_output(command, shell=True).decode().strip()
 
 
 if __name__ != '__main__':

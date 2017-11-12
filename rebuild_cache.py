@@ -1,12 +1,11 @@
 #!/usr/bin/python3
 
-
-if __name__ != '__main__':
-    exit()
-
 from extract_strings import *
 import find_xref
 from time import time
+
+if __name__ != '__main__':
+    exit()
 
 DF = 'Dwarf_Fortress'
 
@@ -16,8 +15,8 @@ words = extract_strings(DF)
 data = open(DF, 'rb').read()
 find = data.find
 
-#Предел поиска строк
-MAX_TO_FIND = len(data) #FIXME длина не соответствует концу секции
+# Предел поиска строк
+max_offset = len(data)  # FIXME длина не соответствует концу секции
 
 
 print("Загружаются строки перевода")
@@ -33,9 +32,9 @@ print("Поиск занял", time() - start, "c")
 words.update(chk)
 
 print("Поиск перекрестных ссылок")
-#Ищем указатели на используемые строки, в несколько потоков
+# Ищем указатели на используемые строки, в несколько потоков
 
-xref = find_xref.find(words, MAX_TO_FIND, data, load_from_cache=False)
+xref = find_xref.find(words, max_offset, data, load_from_cache=False)
 
 print("Поиск занял", time() - start, "c")
 
