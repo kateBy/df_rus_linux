@@ -127,7 +127,7 @@ def make_dat_file(fn, trans, size=0x100000) -> dict:
     file.write(b"\x00" * size)
     file.seek(0)
 
-    # trans["'s"] = " "  # Пустая строка для множественного числа
+    trans["'s"] = " "  # Пустая строка притяжательного падежа
 
     for i in trans:
         result[i] = offset + 4  # Перед строкой идет 4 байта ее длины

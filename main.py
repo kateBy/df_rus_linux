@@ -59,6 +59,14 @@ def makePatch(patchOffset, asm_file: str, jmp_type: str, **fasmvars):
         print("---> !!!Ошибка при сборке asm-модуля!!!")
 
 
+# Т.к. операция используется много раз
+def little4bytes(x: int) -> bytes:
+    return x.to_bytes(4, byteorder="little")
+
+def shell(command: str) -> str:
+    return subprocess.check_output(command, shell=True).decode().strip()
+
+
 if __name__ != '__main__':
     exit()
 
@@ -68,29 +76,26 @@ NEW_DF = "Edited_DF"
 print("Загружаются строки перевода")
 trans = load_trans_po('trans.po')
 
-print("Ищем строки в исходном файле")
-words = extract_strings(DF)
-
 print("Создаётся файл для новой секции с переводом")
 rus_words = make_dat_file(RUS_SECTION, trans)
 
 # Получаем сдвиг новой секции в памяти, выравниваем по 4096
 
-bss = subprocess.check_output("objdump -x " + DF + " | grep \.bss | awk '{print $3,$4}'", shell=True).decode().strip()
+bss = shell("objdump -x '%s' | grep \.bss | awk '{print $3,$4}'" % DF)
 bss_len, bss_offset = bss.split(" ")
 NEW_BASE_ADDR = ((int(bss_offset, 16) + int(bss_len, 16))//4096 + 1) * 4096
 
 # Созданный файл с новыми строками вставляется как новая секция
 print("Создаётся модифицированный исполняемый файл")
 os.system("objcopy '%s' '%s' --add-section .rus=%s" % (DF, NEW_DF, RUS_SECTION))
-os.system("objcopy '%s' --set-section-flags .rus=A --change-section-vma .rus=%s" % (NEW_DF, hex(NEW_BASE_ADDR)))
+os.system("objcopy '%s' --set-section-flags .rus=A --change-section-vma .rus=0x%X" % (NEW_DF, NEW_BASE_ADDR))
 os.remove(RUS_SECTION)
 
 e_df = open(NEW_DF, "r+b")
 all_data = e_df.read()
 
 
-rodata = subprocess.check_output("objdump -x " + NEW_DF + " | grep \.rus | awk '{print $3,$4,$6}'", shell=True).decode().strip()
+rodata = shell("objdump -x '%s' | grep \.rus | awk '{print $3,$4,$6}'" % NEW_DF)
 rus_size, rus_vaddr, rus_offset = [int(x, 16) for x in rodata.split(" ")]
 
 NEW_OFFSET = rus_offset
@@ -117,45 +122,45 @@ h0 = template.pack(1,              # Type of segment    | LOAD
 
 """
 prgHdrOffset-длина заголовка,
-#prgEntrySize-длина секции
-#7-номер секции, которую можно переписать
+prgEntrySize-длина секции
+7-номер секции, которую можно переписать
 """
 e_df.seek(prgHdrOffset + prgEntrySize * 7)
 e_df.write(h0)
 
 print("Поиск перекрестных ссылок")
 # Ищем указатели на используемые строки, в несколько потоков
+words = extract_strings(DF)
 xref = find_xref.find(words, 0, all_data, load_from_cache=True)
 
 print("Перевод...")
 
-# Т.к. операция используется много раз
-def little4bytes(x: int) -> bytes:
-    return x.to_bytes(4, byteorder="little")
-
-
-for test_word in xref:
-
+for word in xref:
     # Если строки из бинарника нет в переводе просто проигнорируем это
-    word_offset = rus_words.get(test_word)  # Смещение слова в секции .rus
-    if word_offset is None:
-        continue
+    word_offset = rus_words.get(word)  # Смещение слова в секции .rus
 
-    new_index = word_offset + NEW_BASE_ADDR
-    all_poses = xref[test_word]
+    if word_offset is not None:
 
-    # Обрабатываем все найденые индексы
-    for pos in all_poses:
-        e_df.seek(pos)
-        e_df.write(little4bytes(new_index))
+        new_index = word_offset + NEW_BASE_ADDR
+        all_poses = xref[word]
 
-print("Патчим строку \"Готовить\"")
+        # Обрабатываем все найденые индексы
+        for pos in all_poses:
+            e_df.seek(pos)
+            e_df.write(little4bytes(new_index))
+
+#print("Патчим множественное число")
+#S_OFFSET = 0x12B95E7
+#e_df.seek(S_OFFSET - OLD_BASE_ADDR)
+#e_df.write(b" \x00")
+
+#print("Патчим строку \"Готовить\"")
 #COOK_OFFSET = 0x9527c3
 #e_df.seek(COOK_OFFSET - OLD_BASE_ADDR)
 #_cook = rus_words["__COOK__"] + NEW_BASE_ADDR
 #e_df.write(b"\xbe" + little4bytes(_cook))
 
-print("Патчим надписи в главном меню...")
+#print("Патчим надписи в главном меню...")
 #MAIN_MENU_OFFSETS = [(0x9B9568, 20), (0x9B969a, 26), (0x9B9742, 24)]
 #for mainmenu in MAIN_MENU_OFFSETS:
 #    off, xpos = mainmenu
