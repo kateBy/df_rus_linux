@@ -1,7 +1,7 @@
 use64
 
-GPS = 0x1706860 ; readelf -s Dwarf_Fortress | grep gps | awk '{print $2}'
-INIT = 0x17E64A0 ; readelf -s Dwarf_Fortress | grep init | awk '{print $2}'
+;GPS = 0x1706860 ; readelf -s Dwarf_Fortress | grep gps | awk '{print $2}'
+;INIT = 0x17E64A0 ; readelf -s Dwarf_Fortress | grep " init$" | awk '{print $2}'
 WIDTH = INIT + 0x14 ; public init[0x14]
 
 macro strcopy source, size, block_size {

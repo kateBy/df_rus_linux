@@ -162,9 +162,9 @@ _cook = rus_words["__COOK__"] + NEW_BASE_ADDR
 MOV_ESI = b"\xbe"
 e_df.write(MOV_ESI + little4bytes(_cook))
 
-#print("Патчим надписи в главном меню...")
-#MAIN_MENU_OFFSETS = [(0x9B9568, 20), (0x9B969a, 26), (0x9B9742, 24)]
-#for mainmenu in MAIN_MENU_OFFSETS:
+# print("Патчим надписи в главном меню...")
+# MAIN_MENU_OFFSETS = [(0x9B9568, 20), (0x9B969a, 26), (0x9B9742, 24)]
+# for mainmenu in MAIN_MENU_OFFSETS:
 #    off, xpos = mainmenu
 #    e_df.seek(off - OLD_BASE_ADDR)
 #    e_df.write(b"\x83\xe8" + int.to_bytes(xpos, 1, 'little')) #sub eax, 20
@@ -181,7 +181,11 @@ makePatch(0x4055e0, 'asm/str_len.asm', 'JMP', RU_OFFSET=hex(rus_vaddr), RU_SIZE=
 
 print("Патчится функция  std::string::string(char  const*, ...")
 # _ZNSsC1EPKcRKSaIcE
-makePatch(0x405cb0, 'asm/str_str_patch.asm', 'JMP')
+gps_addr = int(shell("readelf -s '%s' | grep gps | awk '{print $2}'" % DF), 16)
+print("GPS: 0x%x" % gps_addr)
+init_addr = int(shell("readelf -s '%s' | grep ' init$' | awk '{print $2}'" % DF), 16)
+print("INIT: 0x%x" % init_addr)
+makePatch(0x405cb0, 'asm/str_str_patch.asm', 'JMP', GPS=hex(gps_addr), INIT=hex(init_addr))
 
 # print("Патчится функция  вывода мыслей и предпочтений")
 # makePatch(0x9c15ef, 'asm/str_resize_patch.asm', 'CALL')
