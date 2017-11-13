@@ -23,16 +23,19 @@ print("Загружаются строки перевода")
 trans = load_trans_po('trans.po')
 
 
-print("Поиск строк-близнецов")
+print("Поиск строк-близнецов...")
 start = time()
 gemini = find_gemini(words, trans)
+
+
+print("Отсеивание строк-близнецов...")
 # chk = check_founded_gemini(gemini, data)
 chk = check_founded_gemini_multi(gemini, data)
 print("Поиск занял", time() - start, "c")
 
 words.update(chk)
 
-print("Поиск перекрестных ссылок")
+print("Поиск перекрестных ссылок...")
 # Ищем указатели на используемые строки, в несколько потоков
 
 xref = find_xref.find(words, max_offset, data, load_from_cache=False)

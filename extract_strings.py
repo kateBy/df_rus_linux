@@ -139,7 +139,9 @@ def check_founded_gemini_multi(gemini: dict, buf: bytes) -> dict:
 
     return res
 
+
 def shell(command: str) -> str:
+    """Исполнить shell-команду и отдать результат в виде строки"""
     return subprocess.check_output(command, shell=True).decode().strip()
 
 

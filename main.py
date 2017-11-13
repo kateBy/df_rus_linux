@@ -7,7 +7,6 @@ import os
 import find_xref
 import opcodes
 from os.path import exists
-import subprocess
 
 
 OLD_BASE_ADDR = 0x400000  # Стартовый виртуальный адрес ELF
@@ -57,6 +56,23 @@ def makePatch(patchOffset, asm_file: str, jmp_type: str, **fasmvars):
         os.remove(bin_file)
     else:
         print("---> !!!Ошибка при сборке asm-модуля!!!")
+
+
+def get_plt_func(fname, log=False):
+    """Получить адрес заглушки для динамической функции"""
+    # Получаем размер и адрес секции .plt
+    plt = shell("objdump -x '%s' | grep ' \.plt' | awk '{print $3,$4}'" % DF)
+    plt_size, plt_offset = (int(_, 16) for _ in plt.split(" "))
+    # Получаем адрес нужной функции
+    addr = shell("objdump --start-address=0x%x --stop-address=0x%x -S  %s | grep '%s' | awk '{print $1}'" %
+                 (plt_offset, plt_offset + plt_size, DF, fname))
+
+    addr = int(addr, 16)
+
+    if log:
+        print(fname, hex(addr))
+
+    return addr
 
 
 # Т.к. операция используется много раз
@@ -173,19 +189,23 @@ CURSOR = rus_words["CURSOR"]
 
 print("Патчится функция  std::string::assign(char  const*, uint)")
 # _ZNSs6assignEPKcm
-makePatch(0x405870, 'asm/str_len.asm', 'JMP', RU_OFFSET=hex(rus_vaddr), RU_SIZE=hex(rus_size))
+_addr = get_plt_func('_ZNSs6assignEPKcm', True)
+makePatch(_addr, 'asm/str_len.asm', 'JMP', RU_OFFSET=hex(rus_vaddr), RU_SIZE=hex(rus_size))
 
 print("Патчится функция  std::string::append(char  const*, uint)")
 # _ZNSs6appendEPKcm
-makePatch(0x4055e0, 'asm/str_len.asm', 'JMP', RU_OFFSET=hex(rus_vaddr), RU_SIZE=hex(rus_size))
+_addr = get_plt_func('_ZNSs6appendEPKcm', True)
+makePatch(_addr, 'asm/str_len.asm', 'JMP', RU_OFFSET=hex(rus_vaddr), RU_SIZE=hex(rus_size))
 
 print("Патчится функция  std::string::string(char  const*, ...")
-# _ZNSsC1EPKcRKSaIcE
 gps_addr = int(shell("readelf -s '%s' | grep gps | awk '{print $2}'" % DF), 16)
 print("GPS: 0x%x" % gps_addr)
 init_addr = int(shell("readelf -s '%s' | grep ' init$' | awk '{print $2}'" % DF), 16)
 print("INIT: 0x%x" % init_addr)
-makePatch(0x405cb0, 'asm/str_str_patch.asm', 'JMP', GPS=hex(gps_addr), INIT=hex(init_addr))
+
+# _ZNSsC1EPKcRKSaIcE
+_addr = get_plt_func('_ZNSsC1EPKcRKSaIcE', True)
+makePatch(_addr, 'asm/str_str_patch.asm', 'JMP', GPS=hex(gps_addr), INIT=hex(init_addr))
 
 # print("Патчится функция  вывода мыслей и предпочтений")
 # makePatch(0x9c15ef, 'asm/str_resize_patch.asm', 'CALL')
