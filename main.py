@@ -147,16 +147,20 @@ for word in xref:
             e_df.seek(pos)
             e_df.write(little4bytes(new_index))
 
-#print("Патчим множественное число")
-#S_OFFSET = 0x12B95E7
-#e_df.seek(S_OFFSET - OLD_BASE_ADDR)
-#e_df.write(b" \x00")
+print("Патчим множественное число")
+# Находим перехватом функции string::assign в меню Статус (кнопка z)
+# Т.к. неизвестно какое слово, оканчивающееся на 's' выберет компилятор
+S_OFFSET = 0x12b83c7
+e_df.seek(S_OFFSET - OLD_BASE_ADDR)
+e_df.write(b" \x00")
 
-#print("Патчим строку \"Готовить\"")
-#COOK_OFFSET = 0x9527c3
-#e_df.seek(COOK_OFFSET - OLD_BASE_ADDR)
-#_cook = rus_words["__COOK__"] + NEW_BASE_ADDR
-#e_df.write(b"\xbe" + little4bytes(_cook))
+print("Патчим строку \"Готовить\"")
+# Ищем среди нескольких ссылок в cache.json -> "Cook"
+COOK_OFFSET = 0x954583
+e_df.seek(COOK_OFFSET - OLD_BASE_ADDR)
+_cook = rus_words["__COOK__"] + NEW_BASE_ADDR
+MOV_ESI = b"\xbe"
+e_df.write(MOV_ESI + little4bytes(_cook))
 
 #print("Патчим надписи в главном меню...")
 #MAIN_MENU_OFFSETS = [(0x9B9568, 20), (0x9B969a, 26), (0x9B9742, 24)]
