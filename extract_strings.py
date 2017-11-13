@@ -9,6 +9,8 @@ The finest place,0 и place,0 будут совмещены в одно мест
 
 import subprocess
 from typing import List, Optional
+from multiprocessing import Process, Queue, Pipe, Lock, cpu_count
+import sys
 
 chars = set(i for i in range(32, 127))
 nums = b'1234567890'
@@ -50,7 +52,6 @@ def find_gemini(words: dict, translated: dict) -> dict:
     return result
 
 
-
 def check_founded_gemini(gemini: dict, buf: bytes) -> dict:
     """Проверяем, имеется ли в буфере ссылка с таким адресом"""
 
@@ -74,6 +75,69 @@ def check_founded_gemini(gemini: dict, buf: bytes) -> dict:
 
     return result
 
+
+def one_gemini_proc(gemini: dict, buf: bytes, pid: int, msg: Queue, pipe: Pipe, lock):
+    buf_find = buf.find
+    from_bytes = int.from_bytes
+    to_bytes = int.to_bytes
+
+    result = {}
+    index = 0
+
+    for g in gemini:
+        index += 1
+        link_byte = buf_find(to_bytes(g, 4, byteorder="little"))
+        if link_byte != -1:
+            result[gemini[g]] = from_bytes(buf[link_byte:link_byte + 4], 'little')
+        if (index % 100) == 0:
+            msg.put(100)  # Сообщаем главному процессу о том, что обработано 100 вариантов
+
+    lock.acquire()  # В принципе не обязательно ставить lock, но не помешает
+    try:
+        msg.put(pid)  # Посылаем процессу-родителю сообщение о том, что поиск закончен
+        pipe.send(result)  # Отдаём результаты поиска
+    finally:
+        lock.release()
+
+
+
+def check_founded_gemini_multi(gemini: dict, buf: bytes) -> dict:
+    msg = Queue()                                   # Объект для обмена сообщениями между потоками
+    child_pipe, parent_pipe = Pipe()                # Объект для передачи результата работы потоков
+    lock = Lock()
+    # Количество ядер процессора нужно, потому что нет смысла запускать процессов больше, чем ядер
+    cpus = cpu_count()
+
+    print("Количество ядер процессора:", cpus)
+
+    splitted_words = split_dictionary(gemini, cpus)  # Делим словарь для потоков
+
+    for i in range(cpus):
+        Process(target=one_gemini_proc, args=(splitted_words[i], buf, i, msg, child_pipe, lock,)).start()
+
+    procs = cpus  # Будем отнимать отсюда оп 1 когда процесс сообщит, что закончил
+    progress = 0
+    max_progress = len(gemini)
+    results = []
+    msgs = [x for x in range(cpus)]
+    while True:
+        m = msg.get()
+        if m in msgs:
+            procs -= 1
+            results.append(parent_pipe.recv())
+        elif m == 100:
+            progress += 100
+            sys.stdout.write("%.2f" % (progress / max_progress * 100) + "% ")  # Вывод текущего прогресса
+            sys.stdout.flush()
+
+        if procs == 0:  # Если все процессы сообщили об окончании procs будет равно 0
+            break
+
+    res = {}
+    for d in results:
+        res.update(d)
+
+    return res
 
 def shell(command: str) -> str:
     return subprocess.check_output(command, shell=True).decode().strip()
