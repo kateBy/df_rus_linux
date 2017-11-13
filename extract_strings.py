@@ -8,29 +8,30 @@ The finest place,0 и place,0 будут совмещены в одно мест
 """
 
 import subprocess
+from typing import List, Optional
 
 chars = set(i for i in range(32, 127))
 nums = b'1234567890'
 
 
 
-def check_forbidden(byte_string):
+def check_forbidden(byte_string: bytes) -> Optional[str]:
     """Проверяем найденую строку на нечитаемые символы"""
     if len(byte_string) < 2:
-        return None
+        return
         
     if byte_string[0] in nums:
-        return None
+        return
     for char in byte_string:
         if not (char in chars):
-            return None
+            return
 
             
     return byte_string.decode()
 
 
 
-def find_gemini(words, translated):
+def find_gemini(words: dict, translated: dict) -> dict:
     """Поиск строк-близнецов постепенно отрезая от исходной строки буквы
     а после - сравнение со словарём переводов, если строка имеется в переводах,
     заносим ее в список"""
@@ -105,7 +106,7 @@ def extract_strings(fn: str) -> dict:
 
 
 
-def load_trans_po(fn):
+def load_trans_po(fn) -> dict:
     """Загрузка перевода из файла .po с помощью библиотеки polib"""
     import polib
     result = {}
@@ -163,7 +164,7 @@ def make_dat_file(fn: str, trans: dict, size=0x100000) -> dict:
 
 
 
-def split_dictionary(some_dict, out_count):
+def split_dictionary(some_dict, out_count) -> List[dict]:
     """Разбивает словарь на несколько словарей, нужно для запуска нескольких потоков замены индексов"""
 
     result = [{} for _ in range(out_count)]

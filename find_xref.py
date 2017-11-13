@@ -10,7 +10,7 @@ import json
 ESI = b'\xbe'
 CACHE_FILE = 'cache.json'
 
-def find_xrefs(words, procN, all_data, MAX_TO_FIND, msg: Queue, pipe: Pipe, lock):
+def find_xrefs(words: dict, pid: int, all_data: bytes, _max_offset: int, msg: Queue, pipe: Pipe, lock):
     """Один из потоков поиска использования смещений на строки
     words - список найденых строк в файле
     procN - номер процесса
@@ -38,7 +38,7 @@ def find_xrefs(words, procN, all_data, MAX_TO_FIND, msg: Queue, pipe: Pipe, lock
         pos = 0
         # И ищем совпадение 4-байтного смещения во всем файле, долго, но что поделать :)
         while pos != -1:
-            pos = _find(boldindex, pos+1, MAX_TO_FIND)
+            pos = _find(boldindex, pos + 1, _max_offset)
             if pos != -1:
                 all_poses.append(pos+1)
 
@@ -47,14 +47,14 @@ def find_xrefs(words, procN, all_data, MAX_TO_FIND, msg: Queue, pipe: Pipe, lock
 
     lock.acquire()         # В принципе не обязательно ставить lock, но не помешает
     try:
-        msg.put(procN)     # Посылаем процессу-родителю сообщение о том, что поиск закончен
+        msg.put(pid)     # Посылаем процессу-родителю сообщение о том, что поиск закончен
         pipe.send(result)  # Отдаём результаты поиска
     finally:
         lock.release()
 
 
 
-def find(words, max_offset: int, all_data: bytes, load_from_cache=False):
+def find(words: dict, max_offset: int, all_data: bytes, load_from_cache=False) -> dict:
     """Основная функция поиска используемых смещений на строки.
        words - словарь найденых слов
        all_data - буфер для поиска
